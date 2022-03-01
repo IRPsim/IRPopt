@@ -1,0 +1,304 @@
+[{:label "Komponenten"
+ :description "Konkretisieren der Technologien"
+ :icon "fa fa-power-off"                       
+  :sections [{:label "Verbrauchertechnologien"
+              :sections [{:set "set_load_DS_E"
+                          :sections [{:label "Elektrische Lasten"
+                                      :icon "fa fa-plug" 
+                                      :tags [["X" "DS" "E" "support"] ["X" "DS" "E" "PVself"] ["L" "DS" "E"]]}
+									 {:label "Endkundentarife"
+                                      :tags [["F" "E" "EGrid" "energy"] ["F" "E" "EGrid" "basic"]]}
+									 {:label "Geschäftsfeldtarife"
+                                      :tags [["F" "E" "EGrid" "intenergy"]]}]}
+                         {:set "set_load_DS_W"
+                          :sections [{:label "Wärme Lasten"
+                                      :icon "fa fa-fire" 
+                                      :tags [["X" "DS" "W" "support"]["L" "W"] ]}
+									 {:label "Endkundentarife"
+                                      :tags [["F" "W" "WGrid" "energy"] ["F" "W" "WGrid" "basic"]]}
+									 {:label "Geschäftsfeldtarife"
+                                      :tags [["F" "W" "WGrid" "intenergy"] ["F" "W" "WGrid" "basic"]]}]}
+						 {:set "set_load_DS_G"
+                          :sections [{:label "Erdgas Lasten"
+                                      :icon "fa fa-leaf" 
+                                      :tags [["X" "DS" "G" "support"] ["L" "G"] ]}
+									 {:label "Endkundentarife"
+                                      :tags [["F" "G" "GGrid" "energy"] ["F" "G" "GGrid"  "basic"]]}]}
+									 {:label "Geschäftsfeldtarife"
+                                      :tags [["F" "G" "GGrid" "intenergy"]]}]}
+  
+             {:label "Speichertechnologien"
+              :sections [{:set "set_tech_DES_ES"
+                          :sections [{:label "Endkundentarife"
+									   :sections [{:label "Netzbezug"
+												  :tags [["F" "E" "EGrid" "energy"]["F" "E" "EGrid" "basic"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "E" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}					  
+						 {:set "set_tech_DES_TS"
+                          :sections [{:label "Endkundentarife"
+                                      :tags [["F" "W" "WGrid" "energy"] ["F" "W" "WGrid" "basic"] ]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "W" "WGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "W" "WGrid" "intenergyinfeed"]]}]}]}
+					     {:set "set_tech_DES_SC"
+                          :sections [{:label "Endkundentarife"
+                                      :tags [["F" "C" "CGrid" "energy"] ["F" "C" "CGrid" "basic"] ]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "C" "CGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "C" "CGrid" "intenergyinfeed"]]}]}]}
+												  ]}
+												  
+			 {:label "Kleinerzeugungstechnologien"
+              :sections [{:set "set_tech_DES_NGB"
+			              :tags [["X" "support"]]
+                          :sections [{:label "Endkundentarife"
+                                      :tags [["F" "G" "GGrid" "energy"] ["F" "G" "GGrid"  "basic"]]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "G" "GGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "W" "WGrid" "intenergyinfeed"]]}]}]}
+						 {:set "set_tech_DES_EB"
+                          :sections [{:label "Endkundentarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "E" "EGrid" "energy"]["F" "E" "EGrid" "basic"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "E" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+						 {:set "set_tech_DES_PV"
+                          :sections [{:label "Endkundentarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "energyinfeed"]["F" "E" "EGrid" "basic"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "neg"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]]}]}]}
+					     {:set "set_tech_DES_ST"
+                          :sections [{:label "Endkundentarife"
+                                      :tags [["kein" "thermischer" "Einspeisetarif" "vorhanden"]]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["F" "W" "WGrid" "intenergyinfeed"]]}]}]}
+						 {:set "set_tech_DES_HP"
+                          :sections [{:label "Endkundentarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "E" "EGrid" "energy"]["F" "E" "EGrid" "basic"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "E" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+						{:set "set_tech_DES_CHP"
+						  :tags [["X" "support"]]
+                          :sections [{:label "Endkundentarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "G" "GGrid" "energy"]["F" "G" "GGrid"  "basic"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "energyinfeed"] ]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "G" "GGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "intenergyinfeed"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+						 {:set "set_tech_DES_CR"
+                          :sections [{:label "Endkundentarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "E" "EGrid" "energy"]["F" "E" "EGrid" "basic"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "E" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+					     {:set "set_tech_DES_SC"
+                          :sections [{:label "Endkundentarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "W" "EGrid" "energy"]["F" "W" "EGrid" "basic"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "W" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "C" "WGrid" "intenergyinfeed"]]}]}]}]}
+             
+             {:label "Großerzeugungstechnologien"
+              :sections [{:set "set_tech_SS_WT"
+                          :sections [{:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+                         {:set "set_tech_SS_RH"
+                          :sections [{:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+                         {:set "set_tech_SS_PV"
+                          :sections [{:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+                         {:set "set_tech_SS_CHP"
+                          :sections [{:label "Geschäftsfeldtarife"
+									  :tags [["X" "support"]]
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "G" "GGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "intenergyinfeed"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+						 {:set "set_tech_SS_TPS"
+                          :sections [{:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "G" "GGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+                         {:set "set_tech_SS_RC"
+                          :sections [{:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "G" "GGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "intenergyinfeed"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+                         {:set "set_tech_SS_PHS"
+                          :sections [{:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["F" "E" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}]}
+			
+			
+			{:label "Leistungsmessungspunkte"
+              :sections [{:set "set_power_E"
+                          :sections [{:label "Endkundentarife" 
+                                      :tags [["F" "E" "EGrid" "capacity"]]}]}
+                         {:set "set_power_W"
+                          :sections [{:label "Endkundentarife" 
+                                      :tags [["F" "W" "WGrid" "capacity"]]}]}
+                         {:set "set_power_G"
+                          :sections [{:label "Endkundentarife" 
+                                      :tags [["F" "G" "GGrid" "capacity"]]}]}]}]}
+ 
+ {:label "Geschäftsmodelle"
+  :description "Regulatorische bzw. produktbezogene Anforderungen des Umfeldes als idealtypische Geschäftsmodellkonstrukte."
+  :icon "fa fa-cubes"
+              :sections [{:label "Direktvermarktung"
+						  :sections [{:label "Direktvermarktungstarife"
+									  :sections [{:label "Erzeugungsanlage"
+												  :set "set_tech_DES_PV"
+												  :tags [["F" "E" "BM" "PVdirect" "energyinfeed"]]}
+												 {:label "Lastbezug"
+												  :set "set_load_DS_E"
+												  :tags [["F" "E" "BM" "PVdirect" "energy"]]}
+												 {:label "Wärmepumpenbezug"
+												  :set "set_tech_DES_HP"
+												  :tags [["F" "E" "BM" "PVdirect" "energy"]]}  
+												  ]}]}
+						 {:label "Sonnentank"
+						  :sections [{:label "Sonnentanktarife"
+									  :sections [{:label "Erzeugungsanlage"
+												  :set "set_tech_DES_PV"
+												  :tags [["F" "E" "BM" "Sonnentank" "energyinfeed"]]}
+												 {:label "Lastbezug"
+												  :set "set_load_DS_E"
+												  :tags [["F" "E" "BM" "Sonnentank" "energy"]]}
+												 {:label "Teilnahmegebühr"
+												  :tags [["F" "SMS" "E" "fee" "Sonnentank"]["F" "NS" "E" "fee" "Sonnentank"]["F" "PS" "E" "fee" "Sonnentank"]["X" "BM" "Sonnentank" "NS" "disclosure"] ["X" "BM" "Sonnentank" "PS" "disclosure"]]}]}]}
+						{:label "Netzspeicher"
+						  :sections [{:label "Netzspeichertarife"
+									  :sections [{:label "Erzeugungsanlage"
+												  :set "set_tech_DES_PV"
+												  :tags [["F" "E" "BM" "NaS" "energyinfeed"]]}
+												 {:label "Lastbezug"
+												  :set "set_load_DS_E"
+												  :tags [["F" "E" "BM" "NaS" "energy"]]}]}]}
+						 {:label "Lastverschiebung"
+						  :sections [{:label "Lastverschiebungstarife"
+									  :tags [["X" "support"]["F" "E" "EGrid" "energy"]]
+									  }]}]}
+ {:label "Märkte"
+  :icon "fa fa-line-chart "
+  :description "Festlegen der Marktpreise und Marktrestriktionen der Optimierung."
+  :sections [{:label "Strommarkt"
+              :tags [["C" "MS" "E"] ["C" "MS" "P"] ["P" "MS" "powerLink"]]}
+			 {:label "Gasmarkt"
+              :tags [["C" "MS" "fuel"] ]}
+			 {:label "Wärmemarkt"
+              :tags [["C" "MS" "W"]]} 
+			 {:label "Reservemärkte"
+			  :sections [{:label "Primär"
+						  :tags [["X" "MS" "pri" "sim"]["R" "MS" "PR" "pri"]["R" "MS" "NR" "pri"]["H" "MS" "PR" "pri" "min"]["H" "MS" "NR" "pri" "min"] ["P" "MS" "PR" "pri" "min"] ["P" "MS" "NR" "pri" "min"]["P" "MS" "PR" "pri" "max"]["P" "MS" "NR" "pri" "max"]]}
+						 {:label "Sekundär"
+						  :tags [["R" "MS" "PR" "sec"]["R" "MS" "NR" "sec"]["H" "MS" "PR" "sec" "min"]["H" "MS" "NR" "sec" "min"] ["P" "MS" "PR" "sec" "min"] ["P" "MS" "NR" "sec" "min"]["P" "MS" "PR" "sec" "max"]["P" "MS" "NR" "sec" "max"]]}
+						 {:label "Tertitär"
+						  :tags [["R" "MS" "PR" "ter"]["R" "MS" "NR" "ter"]["H" "MS" "PR" "ter" "min"]["H" "MS" "NR" "ter" "min"] ["P" "MS" "PR" "ter" "min"] ["P" "MS" "NR" "ter" "min"]["P" "MS" "PR" "ter" "max"]["P" "MS" "NR" "ter" "max"]]}]}	  
+			 {:label "Sonstige"
+			  :sections [{:label "Ölmarkt"
+						  :tags [["C" "MS" "O"] ]}
+						 {:label "Abfallmarkt"
+						  :tags [["C" "MS" "RF"] ]}	
+						 {:label "Biomassemarkt"
+						  :tags [["C" "MS" "B" "l"]["C" "MS" "B" "g"]["C" "MS" "B" "s"] ]}
+						 {:label "Braunkohlemarkt"
+						  :tags [["C" "MS" "L"]]}
+						 {:label "Steinkohlemarkt"
+						  :tags [["C" "MS" "HC"]]}]}	  		     
+			 {:label "Zertifikatemarkt"
+              :tags [["C" "MS" "CO2"] ["C" "MS" "GC"] ["R" "MS" "disposal"]]}
+			 {:label "Kurswerte"
+              :tags [["i" "DES"]["exchange" "MS"]["Emis" "MS" "E" "CO2"]]}]} 
+ 
+ {:label "Politik"
+  :description "Festlegen der landesspezifischen Abgaben und Förderungen der Optimierung."
+  :icon "fa fa-institution"
+  :sections [{:label "Allgemein"
+              :icon "fa fa-institution"
+              :tags [["Tax" "PS"]]}]}
+			 
+ {:label "Umwelt"
+  :icon "fa fa-thermometer-half"
+  :description "In diesem Bereich werden die für die Optimierung relevanten Klimadaten in Form von Zeitreihen für die Sonneneinstrahlung, die Außentemperatur und die Windgeschwindigkeit hinterlegt."    :sections [{:label "Globalstrahlung"
+              :tags [["I" "ES"]["S" "DS" "growth"]]}
+			 {:label "Außentemperatur"
+              :tags [["T" "ES"]["MH" "ES" "T"]]}
+			 {:label "Windgeschwindigkeit"
+              :tags [["V" "ES"]["Z" "ES"]["MH" "ES" "V"]]}]}]

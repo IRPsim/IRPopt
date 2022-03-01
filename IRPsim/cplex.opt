@@ -1,0 +1,22 @@
+*Cplex option file, damit marignal nicht 0 gesetzt werden
+*relaxfixedinfeas 1 
+*Nutzung von nur einem Thread (Maximalwert unserer Lizenz ist 4)
+*threads 12
+*(-1) Deaktiviere Gomory fractional cuts / 0 Auto / 1 An
+*fraccuts=0
+*Initial Relaxtion mit Barrier Algorithmus (4) / 0 Auto
+*startalg=4
+*Daten werden unkomprimiert auf der Festplatte abgespeichert, wenn kein Arbeitsspeicher mehr verfügbar 
+*nodefileind 2
+*Limit für Arbeitsspeicher bei 16 GB bei VMs
+*workmem 8000
+*Knotenauswahl
+*2= Best estimate search
+*nodesel 2
+*Auswahl der branching variable
+*3: strong branching
+*varsel 3
+*names 1
+eprhs 0.000000001
+*mipstart 1
+

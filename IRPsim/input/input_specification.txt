@@ -1,0 +1,1412 @@
+*Optimierungsvorgaben
+*****************************************************
+par=sca_X_MS_DE_country rng=Country!A3:A3 rdim=0
+par=sca_X_MS_CH_country rng=Country!B3:B3 rdim=0
+
+*Optimierungsvorgaben
+*****************************************************
+set=set_a rng=Optimierungssets!A3:A3 rdim=1
+par=sca_a rng=Optimierungssets!B3:B3 rdim=0
+par=sca_delta_ii rng=Optimierungssets!H3:H3 rdim=0
+set=set_ii_0 rng=Optimierungssets!I3:I675 rdim=1
+set=set_ii rng=Optimierungssets!C3:C674 rdim=1
+set=set_optsteps rng=Optimierungssets!D3:D9 rdim=1
+set=set_t rng=Optimierungssets!E3:E195 rdim=1
+set=set_optstore rng=Optimierungssets!F3:F98 rdim=1
+par=par_Setii rng=Optimierungssets!J3:K674 rdim=1
+set=set_a_total rng=Optimierungssets!L3:L22 rdim=1
+set=set_jj rng=Optimierungssets!M3:M14 rdim=1
+
+*set - Mengeninitialisierungen
+*****************************************************
+set=set_side rng=Modellsets!A3:A10 rdim=1
+set=set_side_cust rng=Modellsets!I3:I3 rdim=1
+set=set_side_orga rng=Modellsets!J3:J7 rdim=1
+set=set_side_other rng=Modellsets!K3:K4 rdim=1
+set=set_side_fares rng=Modellsets!Z3:Z5 rdim=1
+set=set_side_fares_int rng=Modellsets!BC3:BC9 rdim=1
+set=set_side_opt rng=Modellsets!B3:B3 rdim=1
+
+set=set_sector rng=Modellsets!C3:C20 rdim=1
+set=set_sector_E rng=Sektorensets!A3:A3 rdim=1
+set=set_sector_W rng=Sektorensets!B3:B3 rdim=1
+set=set_sector_G rng=Sektorensets!C3:C3 rdim=1
+set=set_sector_PR rng=Sektorensets!D3:D3 rdim=1
+set=set_sector_NR rng=Sektorensets!E3:E3 rdim=1
+set=set_sector_O rng=Sektorensets!F3:F3 rdim=1
+set=set_sector_B rng=Sektorensets!G3:G3 rdim=1
+set=set_sector_RF rng=Sektorensets!H3:H3 rdim=1
+set=set_sector_T rng=Sektorensets!I3:I3 rdim=1
+set=set_sector_C rng=Sektorensets!J3:J3 rdim=1
+set=set_sector_L rng=Sektorensets!K3:K3 rdim=1
+set=set_sector_HC rng=Sektorensets!L3:L3 rdim=1
+set=set_sector_H rng=Sektorensets!M3:M3 rdim=1
+set=set_sector_A rng=Sektorensets!N3:N3 rdim=1
+set=set_sector_PF rng=Sektorensets!O3:O3 rdim=1
+set=set_sector_NF rng=Sektorensets!R3:R3 rdim=1
+set=set_sector_CL rng=Sektorensets!P3:P3 rdim=1
+
+set=set_sector_NC rng=Sektorensets!Q3:Q3 rdim=1
+set=set_sector_NO rng=Sektorensets!S3:S3 rdim=1
+set=set_sector_CO rng=Sektorensets!T3:T3 rdim=1
+set=set_sector_OZ rng=Sektorensets!U3:U3 rdim=1
+
+
+set=set_pss rng=Modellsets!D3:D75 rdim=1
+set=set_tech_DES rng=Modellsets!E3:E22 rdim=1
+set=set_tech_DESTO rng=Modellsets!AW3:AW8 rdim=1
+set=set_tech_DEGEN rng=Modellsets!AX3:AX11 rdim=1
+set=set_tech_SSGEN rng=Modellsets!AY3:AY12 rdim=1
+set=set_load_DSLOA rng=Modellsets!AZ3:AZ8 rdim=1
+set=set_grid_NSTRA rng=Modellsets!BA3:BA9 rdim=1
+set=set_tech_SS rng=Modellsets!F3:F16 rdim=1
+
+set=set_grid_NS rng=Modellsets!G3:G9 rdim=1
+set=set_grid_NS_E rng=Modellsets!U3:U3 rdim=1
+set=set_grid_NS_W rng=Modellsets!W3:W3 rdim=1
+set=set_grid_NS_G rng=Modellsets!V3:V3 rdim=1
+set=set_grid_NS_R rng=Modellsets!X3:X3 rdim=1
+set=set_grid_NS_C rng=Modellsets!AS3:AS3 rdim=1
+set=set_grid_NS_H rng=Modellsets!BE3:BE3 rdim=1
+set=set_grid_NS_F rng=Modellsets!BH3:BH3 rdim=1
+
+set=set_market_MS rng=Modellsets!H3:H29 rdim=1
+set=set_market_MSPHY rng=Modellsets!BB3:BB22 rdim=1
+set=set_market_MS_E rng=Modellsets!Q3:Q3 rdim=1
+set=set_market_MS_W rng=Modellsets!S3:S3 rdim=1
+set=set_market_MS_G rng=Modellsets!R3:R3 rdim=1
+set=set_market_MS_R rng=Modellsets!T3:T10 rdim=1
+set=set_market_MS_P rng=Modellsets!AR3:AR6 rdim=1
+set=set_market_MS_O rng=Modellsets!AM3:AM3 rdim=1
+set=set_market_MS_B rng=Modellsets!AN3:AN5 rdim=1
+set=set_market_MS_RF rng=Modellsets!AO3:AO3 rdim=1
+set=set_market_MS_CL rng=Modellsets!AP3:AP3 rdim=1
+set=set_market_MS_C rng=Modellsets!AQ3:AQ3 rdim=1
+set=set_market_MS_HC rng=Modellsets!AT3:AT3 rdim=1
+set=set_market_MS_L rng=Modellsets!AU3:AU3 rdim=1
+set=set_market_MS_H rng=Modellsets!BF3:BF3 rdim=1
+set=set_load_DS rng=Modellsets!L3:L8 rdim=1
+set=set_load_DS_E rng=Technologiesets!M3:M3 rdim=1
+set=set_load_DS_W rng=Technologiesets!N3:N3 rdim=1
+set=set_load_DS_G rng=Technologiesets!O3:O3 rdim=1
+set=set_load_DS_C rng=Technologiesets!Y3:Y3 rdim=1
+set=set_load_DS_H rng=Technologiesets!AD3:AD3 rdim=1
+set=set_load_DS_CL rng=Technologiesets!AM3:AM3 rdim=1
+
+set=set_tech_DES_ES rng=Technologiesets!A3:A4 rdim=1
+set=set_tech_DES_TS rng=Technologiesets!B3:B3 rdim=1
+set=set_tech_DES_GS rng=Technologiesets!AE3:AE3 rdim=1
+set=set_tech_DES_HS rng=Technologiesets!AF3:AF3 rdim=1
+set=set_tech_DES_EB rng=Technologiesets!C3:C3 rdim=1
+set=set_tech_DES_NGB rng=Technologiesets!D3:D3 rdim=1
+set=set_tech_DES_HP rng=Technologiesets!E3:E3 rdim=1
+set=set_tech_DES_PV rng=Technologiesets!F3:F4 rdim=1
+set=set_tech_DES_ST rng=Technologiesets!V3:V3 rdim=1
+set=set_tech_DES_CHP rng=Technologiesets!U3:U3 rdim=1
+set=set_tech_DES_CR rng=Technologiesets!W3:W3 rdim=1
+set=set_tech_DES_SC rng=Technologiesets!AC3:AC3 rdim=1
+set=set_tech_DES_CS rng=Technologiesets!X3:X3 rdim=1
+set=set_tech_DES_GTP rng=Technologiesets!Z3:Z3 rdim=1
+set=set_tech_DES_FC rng=Technologiesets!AG3:AG3 rdim=1
+set=set_tech_DES_EY rng=Technologiesets!AH3:AH3 rdim=1
+set=set_tech_DES_CLS rng=Technologiesets!AL3:AL3 rdim=1
+
+set=set_tech_SS_WT rng=Technologiesets!G3:G3 rdim=1
+set=set_tech_SS_CHP rng=Technologiesets!H3:H3 rdim=1
+set=set_tech_SS_PHS rng=Technologiesets!I3:I3 rdim=1
+set=set_tech_SS_RH rng=Technologiesets!J3:J3 rdim=1
+set=set_tech_SS_PV rng=Technologiesets!K3:K3 rdim=1
+set=set_tech_SS_RC rng=Technologiesets!L3:L3 rdim=1
+set=set_tech_SS_TPS rng=Technologiesets!P3:P33 rdim=1
+set=set_tech_SS_BGP rng=Technologiesets!Q3:Q3 rdim=1
+set=set_tech_SS_ETB rng=Technologiesets!R3:R3 rdim=1
+set=set_tech_SS_PLB rng=Technologiesets!S3:S3 rdim=1
+set=set_tech_SS_TC rng=Technologiesets!T3:T3 rdim=1
+set=set_tech_SS_FC rng=Technologiesets!AI3:AI3 rdim=1
+set=set_tech_SS_EY rng=Technologiesets!AJ3:AJ3 rdim=1
+set=set_tech_SS_MT rng=Technologiesets!AK3:AK3 rdim=1
+
+set=set_power rng=Modellsets!M3:M8 rdim=1
+set=set_power_E rng=Modellsets!N3:N3 rdim=1
+set=set_power_G rng=Modellsets!O3:O3 rdim=1
+set=set_power_W rng=Modellsets!P3:P3 rdim=1
+set=set_power_H rng=Modellsets!BD3:BD3 rdim=1
+set=set_power_E_MS rng=Modellsets!Y3:Y3 rdim=1
+set=set_power_G_MS rng=Modellsets!AD3:AD3 rdim=1
+
+set=set_BM rng=Modellsets!AE3:AE9 rdim=1
+set=set_BM_Sonnentank rng=Modellsets!AF3:AF3 rdim=1
+set=set_BM_Netzspeicher rng=Modellsets!AG3:AG3 rdim=1
+set=set_BM_Direktvermarktung rng=Modellsets!AH3:AH3 rdim=1
+set=set_BM_Lastverschiebung rng=Modellsets!AI3:AI3 rdim=1
+set=set_BM_Elektromobilitaet rng=Modellsets!AJ3:AJ3 rdim=1
+set=set_BM_P2G rng=Modellsets!AK3:AK3 rdim=1
+set=set_BM_P2H rng=Modellsets!AL3:AL3 rdim=1
+
+*PSS-energyLink_base
+*****************************************************
+par=par_X_E_DES_fromES_NS_toEGrid_energyLink rng=energyLink_base!A3:C4 rdim=2
+par=par_X_R_DES_ES_NS_RGrid_energyLink rng=energyLink_base!D3:F4 rdim=2
+par=par_X_E_DES_ES_DS_ELoad_energyLink rng=energyLink_base!G3:I4 rdim=2
+par=par_X_E_DES_ES_DES_HP_energyLink rng=energyLink_base!J3:L4 rdim=2
+par=par_X_E_DES_ES_DES_EB_energyLink rng=energyLink_base!M3:O4 rdim=2
+
+
+par=par_X_E_DES_PV_NS_EGrid_energyLink rng=energyLink_base!P3:R4 rdim=2
+par=par_X_E_DES_PV_DES_ES_energyLink rng=energyLink_base!S3:U6 rdim=2
+par=par_X_E_DES_PV_DES_EB_energyLink rng=energyLink_base!V3:X4 rdim=2
+par=par_X_E_DES_PV_DES_HP_energyLink rng=energyLink_base!Y3:AA4 rdim=2
+par=par_X_E_DES_PV_DS_ELoad_energyLink rng=energyLink_base!AN3:AP4 rdim=2
+par=par_X_R_DES_PV_NS_RGrid_energyLink rng=energyLink_base!PB3:PD4 rdim=2
+
+par=par_X_E_NS_EGrid_DES_EY_energyLink rng=energyLink_base_EY!Y3:AA3 rdim=2
+par=par_X_E_DES_ES_DES_EY_energyLink rng=energyLink_base_EY!A3:C4 rdim=2
+par=par_X_E_DES_PV_DES_EY_energyLink rng=energyLink_base_EY!D3:F4 rdim=2
+par=par_X_H_DES_EY_DS_HLoad_energyLink rng=energyLink_base_EY!G3:I3 rdim=2
+par=par_X_R_DES_EY_NS_RGrid_energyLink rng=energyLink_base_EY!J3:L3 rdim=2
+par=par_X_H_DES_EY_DES_HS_energyLink rng=energyLink_base_EY!M3:O3 rdim=2
+par=par_X_H_DES_EY_NS_HGrid_energyLink rng=energyLink_base_EY!P3:R3 rdim=2
+par=par_X_H_DES_EY_DES_FC_energyLink rng=energyLink_base_EY!V3:X3 rdim=2
+par=par_X_E_DES_CHP_DES_EY_energyLink rng=energyLink_base_EY!S3:U3 rdim=2
+par=par_X_H_DES_HS_DS_HLoad_energyLink rng=energyLink_base_EY!AH3:AJ3 rdim=2
+par=par_X_H_DES_HS_DES_FC_energyLink rng=energyLink_base_EY!AK3:AM3 rdim=2
+par=par_X_H_NS_fromHGrid_DES_toHS_energyLink rng=energyLink_base_EY!AE3:AG3 rdim=2
+par=par_X_H_DES_fromHS_NS_toHGrid_energyLink rng=energyLink_base_EY!AB3:AD3 rdim=2
+par=par_X_H_NS_HGrid_DS_HLoad_energyLink rng=energyLink_base_EY!AN3:AP3 rdim=2
+par=par_X_H_MS_HMarket_NS_HGrid_energyLink rng=energyLink_base_EY!AQ3:AS3 rdim=2
+par=par_X_H_NS_HGrid_MS_HMarket_energyLink rng=energyLink_base_EY!AT3:AV3 rdim=2
+par=par_X_H_NS_HGrid_DES_FC_energyLink rng=energyLink_base_EY!AW3:AY3 rdim=2
+par=par_X_E_DES_FC_NS_EGrid_energyLink rng=energyLink_base_EY!AZ3:BB3 rdim=2
+par=par_X_H_DES_HS_MS_HMarket_energyLink rng=energyLink_base_EY!BC3:BE3 rdim=2
+par=par_X_H_MS_HMarket_DES_HS_energyLink rng=energyLink_base_EY!BF3:BH3 rdim=2
+
+par=par_X_E_NS_EGrid_SS_EY_energyLink rng=energyLink_base_EY_SS!Y3:AA3 rdim=2
+par=par_X_E_DES_ES_SS_EY_energyLink rng=energyLink_base_EY_SS!A3:C4 rdim=2
+par=par_X_E_SS_PV_SS_EY_energyLink rng=energyLink_base_EY_SS!D3:F3 rdim=2
+par=par_X_H_SS_EY_DS_HLoad_energyLink rng=energyLink_base_EY_SS!G3:I3 rdim=2
+par=par_X_R_SS_EY_NS_RGrid_energyLink rng=energyLink_base_EY_SS!J3:L3 rdim=2
+par=par_X_H_SS_EY_DES_HS_energyLink rng=energyLink_base_EY_SS!M3:O3 rdim=2
+par=par_X_H_SS_EY_NS_HGrid_energyLink rng=energyLink_base_EY_SS!P3:R3 rdim=2
+par=par_X_H_SS_EY_SS_FC_energyLink rng=energyLink_base_EY_SS!V3:X3 rdim=2
+par=par_X_E_SS_CHP_SS_EY_energyLink rng=energyLink_base_EY_SS!S3:U3 rdim=2
+par=par_X_H_DES_HS_SS_FC_energyLink rng=energyLink_base_EY_SS!AK3:AM3 rdim=2
+par=par_X_E_SS_WT_SS_EY_energyLink rng=energyLink_base_EY_SS!AQ3:AS3 rdim=2
+
+
+par=par_X_E_NS_fromEGrid_DES_toES_energyLink rng=energyLink_base!AB3:AD4 rdim=2
+par=par_X_E_NS_EGrid_DES_HP_energyLink rng=energyLink_base!AE3:AG3 rdim=2
+par=par_X_E_NS_EGrid_DES_EB_energyLink rng=energyLink_base!AH3:AJ3 rdim=2
+*par=par_X_G_NS_GGrid_DESNGBnergyLink rng=energyLink_base!AK3:AM3 rdim=2
+
+par=par_X_W_DES_NGB_DS_WLoad_energyLink rng=energyLink_base!AQ3:AS3 rdim=2
+par=par_X_W_DES_EB_DS_WLoad_energyLink rng=energyLink_base!AT3:AV3 rdim=2
+par=par_X_W_DES_HP_DS_WLoad_energyLink rng=energyLink_base!AW3:AY3 rdim=2
+par=par_X_R_DES_HP_NS_RGrid_energyLink rng=energyLink_base!FA3:FC3 rdim=2
+par=par_X_R_DES_EB_NS_RGrid_energyLink rng=energyLink_base!EX3:EZ3 rdim=2
+
+par=par_X_W_DES_NGB_DES_TS_energyLink rng=energyLink_base!AZ3:BB3 rdim=2
+par=par_X_W_DES_EB_DES_TS_energyLink rng=energyLink_base!BC3:BE3 rdim=2
+par=par_X_W_DES_HP_DES_TS_energyLink rng=energyLink_base!BF3:BH3 rdim=2
+par=par_X_W_NS_fromWGrid_DES_toTS_energyLink rng=energyLink_base!BI3:BK3 rdim=2
+par=par_X_W_DES_TS_DS_WLoad_energyLink rng=energyLink_base!BL3:BN3 rdim=2
+par=par_X_W_DES_fromTS_NS_toWGrid_energyLink rng=energyLink_base!BO3:BQ3 rdim=2
+par=par_X_W_DES_EB_NS_WGrid_energyLink rng=energyLink_base_add!CY3:DA3 rdim=2
+par=par_X_W_DES_HP_NS_WGrid_energyLink rng=energyLink_base_add!DB3:DD3 rdim=2
+par=par_X_W_DES_NGB_NS_WGrid_energyLink rng=energyLink_base_add!DE3:DG3 rdim=2
+
+par=par_X_H_DES_NGB_NS_HGrid_energyLink rng=energyLink_base_add!DK3:DM3 rdim=2
+par=par_X_H_DES_NGB_DES_HS_energyLink rng=energyLink_base_add!DN3:DP3 rdim=2
+par=par_X_H_DES_NGB_DS_H_energyLink rng=energyLink_base_add!DQ3:DS3 rdim=2
+
+par=par_X_G_MS_GMarket_DES_CHP_energyLink rng=energyLink_base!OS3:OU3 rdim=2
+par=par_X_G_MS_GMarket_DES_NGB_energyLink rng=energyLink_base!OP3:OR3 rdim=2
+par=par_X_O_MS_OMarket_DES_NGB_energyLink rng=energyLink_base!OM3:OO3 rdim=2
+par=par_X_G_NS_GGrid_DES_NGB_energyLink rng=energyLink_base!BR3:BT3 rdim=2
+par=par_X_G_NS_GGrid_DS_GLoad_energyLink rng=energyLink_base!EO3:EQ3 rdim=2
+par=par_X_G_MS_GMarket_DS_GLoad_energyLink rng=energyLink_base!OV3:OX3 rdim=2
+
+par=par_X_W_NS_WGrid_DS_WLoad_energyLink rng=energyLink_base!BU3:BW3 rdim=2
+par=par_X_E_NS_EGrid_DS_ELoad_energyLink rng=energyLink_base!BX3:BZ3 rdim=2
+
+par=par_X_E_SS_WT_NS_EGrid_energyLink rng=energyLink_base!CA3:CC3 rdim=2
+par=par_X_E_SS_CHP_NS_EGrid_energyLink rng=energyLink_base!CD3:CF3 rdim=2
+par=par_X_E_SS_RH_NS_EGrid_energyLink rng=energyLink_base!CG3:CI3 rdim=2
+par=par_X_E_SS_PV_NS_EGrid_energyLink rng=energyLink_base!CJ3:CL3 rdim=2
+par=par_X_E_NS_EGrid_SS_ETB_energyLink rng=energyLink_base!OY3:PA3 rdim=2
+par=par_X_E_SS_WT_MS_EMarket_energyLink rng=energyLink_base!CM3:CO3 rdim=2
+par=par_X_E_SS_CHP_MS_EMarket_energyLink rng=energyLink_base!CP3:CR3 rdim=2
+par=par_X_E_SS_RH_MS_EMarket_energyLink rng=energyLink_base!CS3:CU3 rdim=2
+par=par_X_E_SS_PV_MS_EMarket_energyLink rng=energyLink_base!CV3:CX3 rdim=2
+
+par=par_X_E_SS_fromPHS_NS_toEGrid_energyLink rng=energyLink_base!CY3:DA3 rdim=2
+par=par_X_E_NS_fromEGrid_SS_toPHS_energyLink rng=energyLink_base!DB3:DD3 rdim=2
+
+par=par_X_E_SS_fromPHS_MS_toEMarket_energyLink rng=energyLink_base!DE3:DG3 rdim=2
+par=par_X_E_MS_fromEMarket_SS_toPHS_energyLink rng=energyLink_base!DH3:DJ3 rdim=2
+
+par=par_X_W_SS_RC_NS_WGrid_energyLink rng=energyLink_base!DK3:DM3 rdim=2
+par=par_X_E_SS_RC_NS_EGrid_energyLink rng=energyLink_base!ER3:ET3 rdim=2
+par=par_X_E_SS_RC_MS_EMarket_energyLink rng=energyLink_base!EU3:EW3 rdim=2
+par=par_X_W_SS_CHP_NS_WGrid_energyLink rng=energyLink_base!DN3:DP3 rdim=2
+par=par_X_G_NS_GGrid_SS_RC_energyLink rng=energyLink_base!DQ3:DS3 rdim=2
+par=par_X_G_NS_G_SS_CHP_energyLink rng=energyLink_base!DT3:DV3 rdim=2
+
+par=par_X_R_SS_WT_NS_RGrid_energyLink rng=energyLink_base!DW3:DY3 rdim=2
+par=par_X_R_SS_PV_NS_RGrid_energyLink rng=energyLink_base!DZ3:EB3 rdim=2
+par=par_X_R_SS_CHP_NS_RGrid_energyLink rng=energyLink_base!EC3:EE3 rdim=2
+par=par_X_R_SS_RH_NS_RGrid_energyLink rng=energyLink_base!EF3:EH3 rdim=2
+par=par_X_R_SS_PHS_NS_RGrid_energyLink rng=energyLink_base!EI3:EK3 rdim=2
+par=par_X_R_SS_RC_NS_RGrid_energyLink rng=energyLink_base!EL3:EN3 rdim=2
+par=par_X_W_SS_ETB_NS_RGrid_energyLink rng=energyLink_base!LJ3:LL3 rdim=2
+
+par=par_X_E_SS_TPS_NS_RGrid_energyLink rng=energyLink_base!FP3:FR3 rdim=2
+par=par_X_B_SS_BGP_NS_RGrid_energyLink rng=energyLink_base!FS3:FU3 rdim=2
+par=par_X_E_SS_TPS_MS_EMarket_energyLink rng=energyLink_base!FV3:FX3 rdim=2
+par=par_X_B_SS_BGP_MS_EMarket_energyLink rng=energyLink_base!FY3:GA3 rdim=2
+
+par=par_X_E_SS_TPS_NS_EGrid_energyLink rng=energyLink_base!GB3:GD3 rdim=2
+par=par_X_B_SS_BGP_NS_EGrid_energyLink rng=energyLink_base!GE3:GG3 rdim=2
+par=par_X_W_SS_TPS_NS_WGrid_energyLink rng=energyLink_base!GH3:GJ3 rdim=2
+par=par_X_B_SS_BGP_NS_WGrid_energyLink rng=energyLink_base!GK3:GM3 rdim=2
+par=par_X_W_SS_ETB_NS_WGrid_energyLink rng=energyLink_base!GN3:GP3 rdim=2
+par=par_X_W_SS_PLB_NS_WGrid_energyLink rng=energyLink_base!GQ3:GS3 rdim=2
+
+par=par_X_G_MS_GMarket_SS_PLB_energyLink rng=energyLink_base!JB3:JD3 rdim=2
+par=par_X_G_MS_GMarket_SS_TPS_energyLink rng=energyLink_base!JE3:JG3 rdim=2
+par=par_X_G_MS_GMarket_SS_CHP_energyLink rng=energyLink_base!JH3:JJ3 rdim=2
+par=par_X_G_MS_GMarket_SS_RC_energyLink rng=energyLink_base!LA3:LC3 rdim=2
+
+par=par_X_O_MS_OMarket_SS_PLB_energyLink rng=energyLink_base!JK3:JM3 rdim=2
+par=par_X_B_MS_BMarket_SS_PLB_energyLink rng=energyLink_base!IY3:JA5 rdim=2
+par=par_X_O_MS_OMarket_SS_TPS_energyLink rng=energyLink_base!JN3:JP3 rdim=2
+par=par_X_O_MS_OMarket_SS_CHP_energyLink rng=energyLink_base!JQ3:JS3 rdim=2
+par=par_X_O_MS_OMarket_SS_RC_energyLink rng=energyLink_base!PE3:PG3 rdim=2
+par=par_X_B_MS_BMarket_SS_TPS_energyLink rng=energyLink_base!OG3:OI5 rdim=2
+par=par_X_B_MS_BMarket_SS_CHP_energyLink rng=energyLink_base!OJ3:OL5 rdim=2
+
+par=par_X_B_MS_BMarket_DES_CHP_energyLink rng=energyLink_base!QI3:QK5 rdim=2
+
+par=par_X_B_MS_BMarket_SS_BGP_energyLink rng=energyLink_base!JZ3:KB5 rdim=2
+par=par_X_RF_MS_RFMarket_SS_RC_energyLink rng=energyLink_base!KC3:KE3 rdim=2
+
+par=par_X_HC_MS_HCMarket_SS_TPS_energyLink rng=energyLink_base!KF3:KH3 rdim=2
+par=par_X_HC_MS_HCMarket_SS_CHP_energyLink rng=energyLink_base!KX3:KZ3 rdim=2
+par=par_X_HC_MS_HCMarket_SS_RC_energyLink rng=energyLink_base!PK3:PM3 rdim=2
+par=par_X_HC_MS_HCMarket_DES_CHP_energyLink rng=energyLink_base!QO3:QQ3 rdim=2
+
+par=par_X_L_MS_LMarket_SS_TPS_energyLink rng=energyLink_base!OA3:OC3 rdim=2
+par=par_X_L_MS_LMarket_SS_CHP_energyLink rng=energyLink_base!OD3:OF3 rdim=2
+par=par_X_L_MS_LMarket_SS_RC_energyLink rng=energyLink_base!PH3:PJ3 rdim=2
+par=par_X_L_MS_LMarket_DES_CHP_energyLink rng=energyLink_base!QL3:QN3 rdim=2
+
+par=par_X_G_NS_G_SS_TPS_energyLink rng=energyLink_base!GT3:GV3 rdim=2
+par=par_X_G_NS_G_SS_PLB_energyLink rng=energyLink_base!IV3:IX3 rdim=2
+
+par=par_X_E_SS_WT_SS_ETB_energyLink rng=energyLink_base!GW3:GY3 rdim=2
+par=par_X_E_SS_WT_SS_PHS_energyLink rng=energyLink_base!GZ3:HB3 rdim=2
+
+par=par_X_E_SS_PV_SS_PHS_energyLink rng=energyLink_base!HF3:HH3 rdim=2
+par=par_X_E_SS_PV_SS_ETB_energyLink rng=energyLink_base!HC3:HE3 rdim=2
+
+par=par_X_E_SS_PHS_SS_ETB_energyLink rng=energyLink_base!HI3:HK3 rdim=2
+par=par_X_E_SS_PHS_SS_PHS_energyLink rng=energyLink_base!IS3:IU3 rdim=2
+
+par=par_X_E_SS_RH_SS_ETB_energyLink rng=energyLink_base!HL3:HN3 rdim=2
+par=par_X_E_SS_RH_SS_PHS_energyLink rng=energyLink_base!HX3:HZ3 rdim=2
+
+par=par_X_E_SS_TPS_SS_ETB_energyLink rng=energyLink_base!HO3:HQ3 rdim=2
+par=par_X_E_SS_TPS_SS_PHS_energyLink rng=energyLink_base!IG3:II3 rdim=2
+
+par=par_X_B_SS_BGP_SS_ETB_energyLink rng=energyLink_base!HR3:HT3 rdim=2
+par=par_X_B_SS_BGP_SS_PHS_energyLink rng=energyLink_base!IA3:IC3 rdim=2
+
+par=par_X_E_SS_CHP_SS_ETB_energyLink rng=energyLink_base!HU3:HW3 rdim=2
+par=par_X_E_SS_CHP_SS_PHS_energyLink rng=energyLink_base!ID3:IF3 rdim=2
+
+par=par_X_E_SS_CHP_DES_EB_energyLink rng=energyLink_base!PT3:PV3 rdim=2
+par=par_X_E_SS_CHP_DES_HP_energyLink rng=energyLink_base!PW3:PY3 rdim=2
+par=par_X_W_SS_CHP_DS_W_energyLink rng=energyLink_base!PZ3:QB3 rdim=2
+par=par_X_W_SS_CHP_DES_TS_energyLink rng=energyLink_base!QC3:QE3 rdim=2
+par=par_X_W_SS_RC_DES_TS_energyLink rng=energyLink_base!QF3:QH3 rdim=2
+
+
+
+par=par_X_W_SS_CHP_MS_WMarket_energyLink rng=energyLink_base!KI3:KK3 rdim=2
+par=par_X_W_SS_ETB_MS_WMarket_energyLink rng=energyLink_base!KL3:KN3 rdim=2
+par=par_X_W_SS_RC_MS_WMarket_energyLink rng=energyLink_base!KU3:KW3 rdim=2
+par=par_X_W_SS_PLB_MS_WMarket_energyLink rng=energyLink_base!KO3:KQ3 rdim=2
+par=par_X_W_SS_TC_MS_WMarket_energyLink rng=energyLink_base!KR3:KT3 rdim=2
+par=par_X_W_SS_TC_NS_WGrid_energyLink rng=energyLink_base_add!CV3:CX3 rdim=2
+par=par_X_B_SS_BGP_MS_WMarket_energyLink rng=energyLink_base!LD3:LF3 rdim=2
+
+par=par_X_R_SS_CHP_MS_RMarket_energyLink rng=energyLink_base!LV3:LX10 rdim=2
+par=par_X_R_SS_ETB_MS_RMarket_energyLink rng=energyLink_base!MH3:MJ10 rdim=2
+par=par_X_R_SS_RC_MS_RMarket_energyLink rng=energyLink_base!LY3:MA10 rdim=2
+par=par_X_R_SS_BGP_MS_RMarket_energyLink rng=energyLink_base!LM3:LO10 rdim=2
+par=par_X_R_SS_WT_MS_RMarket_energyLink rng=energyLink_base!LP3:LR10 rdim=2
+par=par_X_R_SS_PV_MS_RMarket_energyLink rng=energyLink_base!LS3:LU10 rdim=2
+par=par_X_R_SS_PHS_MS_RMarket_energyLink rng=energyLink_base!MB3:MD10 rdim=2
+par=par_X_R_SS_TPS_MS_RMarket_energyLink rng=energyLink_base!ME3:MG10 rdim=2
+par=par_X_R_SS_RH_MS_RMarket_energyLink rng=energyLink_base!MN3:MP10 rdim=2
+
+par=par_X_R_DES_CHP_NS_RGrid_energyLink rng=energyLink_base!MQ3:MS3 rdim=2
+par=par_X_E_DES_CHP_DS_ELoad_energyLink rng=energyLink_base!NI3:NK3 rdim=2
+par=par_X_E_DES_CHP_DES_ES_energyLink rng=energyLink_base!MZ3:NB4 rdim=2
+par=par_X_E_DES_CHP_DES_EB_energyLink rng=energyLink_base!NC3:NE3 rdim=2
+par=par_X_E_DES_CHP_DES_HP_energyLink rng=energyLink_base!NF3:NH3 rdim=2
+par=par_X_E_DES_CHP_NS_EGrid_energyLink rng=energyLink_base!MW3:MY3 rdim=2
+
+par=par_X_G_NS_GGrid_DES_CHP_energyLink rng=energyLink_base!NL3:NN3 rdim=2
+
+par=par_X_W_DES_CHP_DS_WLoad_energyLink rng=energyLink_base!NO3:NQ3 rdim=2
+par=par_X_W_DES_CHP_DES_TS_energyLink rng=energyLink_base!NR3:NT3 rdim=2
+par=par_X_W_DES_CHP_NS_WGrid_energyLink rng=energyLink_base!PN3:PP3 rdim=2
+
+par=par_X_W_DES_ST_DS_WLoad_energyLink rng=energyLink_base!NU3:NW3 rdim=2
+par=par_X_W_DES_ST_DES_TS_energyLink rng=energyLink_base!NX3:NZ3 rdim=2
+
+par=par_X_W_MS_WMarket_NS_WGrid_energyLink rng=energyLink_base_add!A3:C3 rdim=2
+par=par_X_E_MS_fromEMarket_NS_toEGrid_energyLink rng=energyLink_base_add!D3:F3 rdim=2
+par=par_X_W_NS_WGrid_MS_WMarket_energyLink rng=energyLink_base_add!G3:I3 rdim=2
+par=par_X_E_NS_fromEGrid_MS_toEMarket_energyLink rng=energyLink_base_add!J3:L3 rdim=2
+
+par=par_X_G_MS_GMarket_NS_GGrid_energyLink rng=energyLink_base_add!AB3:AD3 rdim=2
+
+par=par_X_C_DES_CR_DES_CS_energyLink rng=energyLink_base_add!AE3:AG3 rdim=2
+par=par_X_C_DES_SC_DES_CS_energyLink rng=energyLink_base_add!AH3:AJ3 rdim=2
+par=par_X_C_NS_fromCGrid_DES_toCS_energyLink rng=energyLink_base_add!AK3:AM3 rdim=2
+par=par_X_C_DES_CS_DS_CLoad_energyLink rng=energyLink_base_add!AN3:AP3 rdim=2
+par=par_X_C_DES_fromCS_NS_toCGrid_energyLink rng=energyLink_base_add!AQ3:AS3 rdim=2
+
+par=par_X_R_NS_RGrid_MS_RMarket_energyLink rng=energyLink_base_add!M3:O10 rdim=2
+
+par=par_X_C_MS_CMarket_NS_CGrid_energyLink rng=energyLink_base_add!P3:R3 rdim=2
+par=par_X_C_NS_CGrid_DS_CLoad_energyLink rng=energyLink_base_add!Y3:AA3 rdim=2
+par=par_X_C_DES_CR_NS_CGrid_energyLink rng=energyLink_base_add!V3:X3 rdim=2
+par=par_X_C_DES_CR_DS_CLoad_energyLink rng=energyLink_base_add!S3:U3 rdim=2
+
+par=par_X_E_DES_ES_DES_CR_energyLink rng=energyLink_base_add!AT3:AV4 rdim=2
+par=par_X_E_DES_PV_DES_CR_energyLink rng=energyLink_base_add!AW3:AY4 rdim=2
+par=par_X_E_NS_EGrid_DES_CR_energyLink rng=energyLink_base_add!AZ3:BB3 rdim=2
+par=par_X_C_DES_CR_NS_RGrid_energyLink rng=energyLink_base_add!BC3:BE3 rdim=2
+par=par_X_E_DES_CHP_DES_CR_energyLink rng=energyLink_base_add!BF3:BH3 rdim=2
+par=par_X_W_NS_WGrid_DES_CR_energyLink rng=energyLink_base_add!BO3:BQ3 rdim=2
+par=par_X_W_DES_ST_DES_CR_energyLink rng=energyLink_base_add!BL3:BN3 rdim=2
+par=par_X_DES_CHP_W_DES_CR_energyLink rng=energyLink_base_add!BI3:BK3 rdim=2
+par=par_X_W_DES_TS_DES_CR_energyLink rng=energyLink_base_add!BR3:BT3 rdim=2
+
+par=par_X_W_NS_WGrid_DES_SC_energyLink rng=energyLink_base_add!CA3:CC3 rdim=2
+par=par_X_W_DES_ST_DES_SC_energyLink rng=energyLink_base_add!BX3:BZ3 rdim=2
+par=par_X_W_DES_CHP_DES_SC_energyLink rng=energyLink_base_add!BU3:BW3 rdim=2
+par=par_X_W_DES_TS_DES_SC_energyLink rng=energyLink_base_add!CD3:CF3 rdim=2
+
+par=par_X_W_DES_NGB_DES_SC_energyLink rng=energyLink_base_add!CM3:CO3 rdim=2
+par=par_X_W_DES_EB_DES_SC_energyLink rng=energyLink_base_add!CP3:CR3 rdim=2
+par=par_X_W_DES_HP_DES_SC_energyLink rng=energyLink_base_add!CS3:CU3 rdim=2
+
+par=par_X_C_DES_SC_NS_CGrid_energyLink rng=energyLink_base_add!CJ3:CL3 rdim=2
+par=par_X_C_DES_SC_DS_CLoad_energyLink rng=energyLink_base_add!CG3:CI3 rdim=2
+
+par=par_X_E_DES_fromES_DES_toES_energyLink rng=energyLink_base_add!DH3:DJ6 rdim=2
+
+par=par_X_CL_SS_EY_DES_CLS_energyLink rng=energyLink_base_CL!A3:C3 rdim=2
+par=par_X_CL_SS_EY_DS_CLLoad_energyLink rng=energyLink_base_CL!D3:F3 rdim=2
+
+par=par_X_CL_DES_CLS_DS_CLLoad_energyLink rng=energyLink_base_CL!G3:I3 rdim=2
+par=par_X_CL_DES_fromCLS_DES_toCLS_energyLink rng=energyLink_base_CL!J3:L3 rdim=2
+par=par_X_CL_SS_EY_MS_CLMarket_energyLink rng=energyLink_base_CL!M3:O3 rdim=2
+
+par=par_X_CL_DES_EY_DES_CLS_energyLink rng=energyLink_base_CL!P3:R3 rdim=2
+par=par_X_CL_DES_EY_DS_CLLoad_energyLink rng=energyLink_base_CL!S3:U3 rdim=2
+*Leistungsmessung Kunden
+*****************************************************
+par=par_X_power_model rng=power_measurement!H3:I8 rdim=1
+par=par_X_power_max rng=power_measurement!J3:K8 rdim=1
+
+*PSS-powerLink
+*****************************************************
+par=par_X_E_DES_ES_powerLinkE rng=DES_powerLink_powerE!A3:C4 rdim=2
+par=par_X_W_DES_EB_powerLinkE rng=DES_powerLink_powerE!D3:F3 rdim=2
+par=par_X_W_DES_HP_powerLinkE rng=DES_powerLink_powerE!G3:I3 rdim=2
+par=par_X_E_DES_PV_powerLinkE rng=DES_powerLink_powerE!J3:L4 rdim=2
+par=par_X_DES_CHP_powerLinkE rng=DES_powerLink_powerE!S3:U3 rdim=2
+par=par_X_C_DES_CR_powerLinkE rng=DES_powerLink_powerE!V3:X3 rdim=2
+
+par=par_X_E_MS_E_powerLinkE rng=DES_powerLink_powerE!M3:O3 rdim=2
+par=par_X_MS_R_powerLinkE rng=DES_powerLink_powerE!P3:R10 rdim=2
+
+par=par_X_W_DES_EB_powerLinkW rng=DES_powerLink_powerW!A3:C3 rdim=2
+par=par_X_W_DES_NGB_powerLinkW rng=DES_powerLink_powerW!D3:F3 rdim=2
+par=par_X_W_DES_HP_powerLinkW rng=DES_powerLink_powerW!G3:I3 rdim=2
+par=par_X_W_DES_TS_powerLinkW rng=DES_powerLink_powerW!J3:L3 rdim=2
+par=par_X_W_DES_ST_powerLinkW rng=DES_powerLink_powerW!P3:R3 rdim=2
+par=par_X_DES_CHP_powerLinkW rng=DES_powerLink_powerW!M3:O3 rdim=2
+par=par_X_C_DES_SC_powerLinkW rng=DES_powerLink_powerW!S3:U3 rdim=2
+
+par=par_X_W_DES_NGB_powerLinkG rng=DES_powerLink_powerG!A3:C3 rdim=2
+par=par_X_G_MS_G_powerLinkG rng=DES_powerLink_powerG!D3:F3 rdim=2
+par=par_X_DES_CHP_powerLinkG rng=DES_powerLink_powerG!G3:I3 rdim=2
+
+par=par_X_DS_E_powerLinkE rng=DS_powerLink_powerE!A3:C3 rdim=2
+par=par_X_DS_W_powerLinkW rng=DS_powerLink_powerW!A3:C3 rdim=2
+par=par_X_DS_G_powerLinkG rng=DS_powerLink_powerG!A3:C3 rdim=2
+
+par=par_DF_powerLinkE rng=powerLink_DF!A3:B3 rdim=1
+par=par_P_powerLinkE_max rng=powerLink_DF!I3:J3 rdim=1
+par=par_DF_powerLinkW rng=powerLink_DF!C3:D3 rdim=1
+par=par_DF_powerLinkG rng=powerLink_DF!E3:F3 rdim=1
+par=par_DF_powerLinkH rng=powerLink_DF!G3:H3 rdim=1
+
+par=par_P_powerLinkE_lowerbound rng=powerLink_boundary!A3:B3 rdim=1
+par=par_Q_powerLinkW_lowerbound rng=powerLink_boundary!C3:D3 rdim=1
+par=par_G_powerLinkG_lowerbound rng=powerLink_boundary!E3:F3 rdim=1
+par=par_H_powerLinkH_lowerbound rng=powerLink_boundary!T3:U3 rdim=1
+par=par_X_powerLinkE_lowerbound_absolute rng=powerLink_boundary!H3:I3 rdim=1
+par=par_X_powerLinkW_lowerbound_absolute rng=powerLink_boundary!J3:K3 rdim=1
+par=par_X_powerLinkG_lowerbound_absolute rng=powerLink_boundary!L3:M3 rdim=1
+par=par_X_powerLinkH_lowerbound_absolute rng=powerLink_boundary!V3:W3 rdim=1
+par=par_X_powerLinkE_lowerbound_forecast rng=powerLink_boundary!N3:O3 rdim=1
+par=par_X_powerLinkW_lowerbound_forecast rng=powerLink_boundary!P3:Q3 rdim=1
+par=par_X_powerLinkG_lowerbound_forecast rng=powerLink_boundary!R3:S3 rdim=1
+par=par_X_powerLinkH_lowerbound_forecast rng=powerLink_boundary!X3:Y3 rdim=1
+par=sca_P_MS_powerLink_SwissGrid_lowerbound rng=powerLink_boundary!G3:G3 rdim=0
+
+
+
+*Optimierungshoheit BM
+*****************************************************
+par=par_OH_Side_BM rng=OH_BM!A3:C37 rdim=2
+
+*Optimierungshoheit Dezentrale Technologien
+*****************************************************
+par=par_OH_DES_ES_side rng=OH_DES!A3:C18 rdim=2
+par=par_OH_DES_TS_side rng=OH_DES!D3:F10 rdim=2
+par=par_OH_DES_CS_side rng=OH_DES!Y3:AA10 rdim=2
+par=par_OH_DES_NGB_side rng=OH_DES!J3:L10 rdim=2
+par=par_OH_DES_EB_side rng=OH_DES!M3:O10 rdim=2
+par=par_OH_DES_PV_side rng=OH_DES!G3:I18 rdim=2
+par=par_OH_DES_HP_side rng=OH_DES!P3:R10 rdim=2
+par=par_OH_DES_CHP_side rng=OH_DES!S3:U10 rdim=2
+par=par_OH_DES_ST_side rng=OH_DES!V3:X10 rdim=2
+par=par_OH_DES_CR_side rng=OH_DES!AB3:AD10 rdim=2
+par=par_OH_DES_SC_side rng=OH_DES!AE3:AG10 rdim=2
+par=par_OH_DES_HS_side rng=OH_DES!AH3:AJ10 rdim=2
+par=par_OH_DES_FC_side rng=OH_DES!AK3:AM10 rdim=2
+par=par_OH_DES_EY_side rng=OH_DES!AN3:AP10 rdim=2
+par=par_OH_DES_GS_side rng=OH_DES!AQ3:AS10 rdim=2
+par=par_OH_DES_CLS_side rng=OH_DES!AT3:AV10 rdim=2
+
+*Optimierungshoheit Lasten
+*****************************************************
+par=par_OH_DS_EL_side rng=OH_DS!A3:C10 rdim=2
+par=par_OH_DS_WL_side rng=OH_DS!D3:F10 rdim=2
+par=par_OH_DS_GL_side rng=OH_DS!G3:I10 rdim=2
+par=par_OH_DS_CL_side rng=OH_DS!J3:L10 rdim=2
+par=par_OH_DS_HL_side rng=OH_DS!M3:O10 rdim=2
+par=par_OH_DS_CLL_side rng=OH_DS!P3:R10 rdim=2
+
+*Bilanzierungshoheit Lasten
+*****************************************************
+par=par_COH_DS_EL_side rng=COH_DS!A3:C10 rdim=2
+par=par_COH_DS_WL_side rng=COH_DS!D3:F10 rdim=2
+par=par_COH_DS_GL_side rng=COH_DS!G3:I10 rdim=2
+par=par_COH_DS_CL_side rng=COH_DS!J3:L10 rdim=2
+par=par_COH_DS_HL_side rng=COH_DS!M3:O10 rdim=2
+par=par_COH_DS_CLL_side rng=COH_DS!P3:R10 rdim=2
+
+*Optimierungshoheit Zentrale Technologien
+*****************************************************
+par=par_OH_SS_WT_side rng=OH_SS!A3:C7 rdim=2
+par=par_OH_SS_CHP_side rng=OH_SS!D3:F7 rdim=2
+par=par_OH_SS_PHS_side rng=OH_SS!G3:I7 rdim=2
+par=par_OH_SS_RH_side rng=OH_SS!J3:L7 rdim=2
+par=par_OH_SS_PV_side rng=OH_SS!M3:O7 rdim=2
+par=par_OH_SS_RC_side rng=OH_SS!P3:R7 rdim=2
+par=par_OH_SS_TPS_side rng=OH_SS!S3:U7 rdim=2
+par=par_OH_SS_BGP_side rng=OH_SS!V3:X7 rdim=2
+par=par_OH_SS_TC_side rng=OH_SS!Y3:AA7 rdim=2
+par=par_OH_SS_ETB_side rng=OH_SS!AB3:AD7 rdim=2
+par=par_OH_SS_PLB_side rng=OH_SS!AE3:AG7 rdim=2
+par=par_OH_SS_FC_side rng=OH_SS!AH3:AJ7 rdim=2
+par=par_OH_SS_EY_side rng=OH_SS!AK3:AM7 rdim=2
+par=par_OH_SS_MT_side rng=OH_SS!AN3:AP7 rdim=2
+
+*Bilanzierungshoheit Zentrale Technologien
+*****************************************************
+par=par_COH_SS_WT_side rng=COH_SS!A3:C7 rdim=2
+par=par_COH_SS_CHP_side rng=COH_SS!D3:F7 rdim=2
+par=par_COH_SS_PHS_side rng=COH_SS!G3:I7 rdim=2
+par=par_COH_SS_RH_side rng=COH_SS!J3:L7 rdim=2
+par=par_COH_SS_PV_side rng=COH_SS!M3:O7 rdim=2
+par=par_COH_SS_RC_side rng=COH_SS!P3:R7 rdim=2
+par=par_COH_SS_TPS_side rng=COH_SS!S3:U7 rdim=2
+par=par_COH_SS_BGP_side rng=COH_SS!V3:X7 rdim=2
+par=par_COH_SS_TC_side rng=COH_SS!Y3:AA7 rdim=2
+par=par_COH_SS_ETB_side rng=COH_SS!AB3:AD7 rdim=2
+par=par_COH_SS_PLB_side rng=COH_SS!AE3:AG7 rdim=2
+par=par_COH_SS_FC_side rng=COH_SS!AH3:AJ7 rdim=2
+par=par_COH_SS_EY_side rng=COH_SS!AK3:AM7 rdim=2
+par=par_COH_SS_MT_side rng=COH_SS!AN3:AP7 rdim=2
+
+
+*Optimierungshoheit Märkte
+*****************************************************
+par=par_OH_MS_market_side rng=OH_MS!A3:C122 rdim=2
+
+*Bilanzierungshoheit Märkte
+*****************************************************
+par=par_COH_MS_market_side rng=COH_MS!A3:C122 rdim=2
+
+*Optimierungshoheit Netze
+*****************************************************
+par=par_OH_NS_grid_side rng=OH_NS!A3:C37 rdim=2
+
+*Bilanzierungshoheit Netze
+*****************************************************
+par=par_COH_NS_grid_side rng=COH_NS!A3:C37 rdim=2
+
+*Optimierungshoheit Leistungsmessung
+*****************************************************
+par=par_OH_DS_powerE_side rng=OH_power!A3:C10 rdim=2
+par=par_OH_DS_powerW_side rng=OH_power!D3:F10 rdim=2
+par=par_OH_DS_powerG_side rng=OH_power!G3:I10 rdim=2
+par=par_OH_DS_powerH_side rng=OH_power!J3:L10 rdim=2
+
+*Optimierungshoheit Kosten Dezentrale Technologien
+*****************************************************
+par=par_COH_DES_ES_side rng=COH_DES!A3:C18 rdim=2
+par=par_COH_DES_TS_side rng=COH_DES!D3:F10 rdim=2
+par=par_COH_DES_CS_side rng=COH_DES!Y3:AA10 rdim=2
+par=par_COH_DES_NGB_side rng=COH_DES!J3:L10 rdim=2
+par=par_COH_DES_EB_side rng=COH_DES!M3:O10 rdim=2
+par=par_COH_DES_PV_side rng=COH_DES!G3:I18 rdim=2
+par=par_COH_DES_HP_side rng=COH_DES!P3:R10 rdim=2
+par=par_COH_DES_CHP_side rng=COH_DES!S3:U10 rdim=2
+par=par_COH_DES_ST_side rng=COH_DES!V3:X10 rdim=2
+par=par_COH_DES_CR_side rng=COH_DES!AB3:AD10 rdim=2
+par=par_COH_DES_SC_side rng=COH_DES!AE3:AG10 rdim=2
+par=par_COH_DES_HS_side rng=COH_DES!AH3:AJ10 rdim=2
+par=par_COH_DES_FC_side rng=COH_DES!AK3:AM10 rdim=2
+par=par_COH_DES_EY_side rng=COH_DES!AN3:AP10 rdim=2
+par=par_COH_DES_GS_side rng=COH_DES!AQ3:AS10 rdim=2
+par=par_COH_DES_CLS_side rng=COH_DES!AT3:AV10 rdim=2
+
+*Optimierungshoheit Sektoren
+*****************************************************
+par=par_SOH_pss_sector rng=sectoren_economical!A3:C1316 rdim=2
+
+
+*Geschäftsmodell_PVdirect
+*****************************************************
+par=par_X_BM_PVdirect_DS_E rng=BM_PVdirect!A3:B3 rdim=1
+par=par_X_BM_PVdirect_DES_PV rng=BM_PVdirect!C3:D4 rdim=1
+par=par_X_BM_PVdirect_DES_CHP rng=BM_PVdirect!Z3:AA3 rdim=1
+par=par_X_BM_PVdirect_DES_HP rng=BM_PVdirect!E3:F3 rdim=1
+
+par=par_F_E_BM_PVdirect_energy rng=BM_PVdirect!O3:R147170 rdim=3
+par=par_F_E_BM_PVdirect_energyinfeed rng=BM_PVdirect!S3:V147170 rdim=3
+
+par=sca_X_MietDirekt rng=BM_PVdirect!W3:W3 rdim=0
+par=sca_X_RegDirekt rng=BM_PVdirect!X3:X3 rdim=0
+par=sca_X_NatDirekt rng=BM_PVdirect!Y3:Y3 rdim=0
+
+par=par_F_SMS_E_contract_feedin_PVdirect rng=BM_PVdirect!G3:H674 rdim=1
+par=par_F_SMS_E_contract_PVdirect rng=BM_PVdirect!I3:J674 rdim=1
+par=par_F_NS_E_grid_PVdirect rng=BM_PVdirect!I3:J674 rdim=1
+par=par_F_PS_E_levy_PVdirect rng=BM_PVdirect!M3:N674 rdim=1
+
+*Geschäftsmodell_Sonnentank
+*****************************************************
+par=par_X_BM_Sonnentank_DES_ES rng=BM_Sonnentank!A3:B4 rdim=1
+par=par_X_BM_Sonnentank_DES_PV rng=BM_Sonnentank!C3:D4 rdim=1
+par=par_X_BM_Sonnentank_DS_E rng=BM_Sonnentank!E3:F3 rdim=1
+
+par=sca_X_BM_Sonnentank_NS_disclosure rng=BM_Sonnentank!AC3:AC3 rdim=0
+par=sca_X_BM_Sonnentank_PS_disclosure rng=BM_Sonnentank!AD3:AD3 rdim=0
+
+par=par_F_E_BM_Sonnentank_energy rng=BM_Sonnentank!Q3:T147170 rdim=3
+par=par_F_E_BM_Sonnentank_energyinfeed rng=BM_Sonnentank!U3:X147170 rdim=3
+par=par_F_E_BM_Sonnentank_fee rng=BM_Sonnentank!Y3:Z5 rdim=1
+
+par=par_F_SMS_E_contract_Sonnentank_charge rng=BM_Sonnentank!G3:H674 rdim=1
+par=par_F_SMS_E_contract_Sonnentank_discharge rng=BM_Sonnentank!I3:J674 rdim=1
+par=par_F_NS_E_grid_Sonnentank_charge rng=BM_Sonnentank!K3:L674 rdim=1
+par=par_F_NS_E_grid_Sonnentank_discharge rng=BM_Sonnentank!M3:N674 rdim=1
+par=sca_F_SMS_E_fee_Sonnentank rng=BM_Sonnentank!P3:P3 rdim=0
+par=sca_F_NS_E_fee_Sonnentank rng=BM_Sonnentank!AA3:AA3 rdim=0
+par=sca_F_PS_E_fee_Sonnentank rng=BM_Sonnentank!AB3:AB3 rdim=0
+
+
+*Geschäftsmodell_Netzspeicher
+*****************************************************
+par=par_X_BM_NaS_DES_PV rng=BM_NaS!A3:B4 rdim=1
+par=par_X_BM_NaS_DES_ES rng=BM_NaS!C3:D4 rdim=1
+par=par_X_BM_NaS_DS_E rng=BM_NaS!E3:F3 rdim=1
+
+
+par=par_F_E_BM_NaS_energy rng=BM_NaS!O3:R147170 rdim=3
+par=par_F_E_BM_NaS_energyinfeed rng=BM_NaS!S3:V147170 rdim=3
+
+par=par_F_SMS_E_contract_NaS_charge rng=BM_NaS!G3:H674 rdim=1
+par=par_F_SMS_E_contract_NaS_discharge rng=BM_NaS!I3:J674 rdim=1
+par=par_F_NS_E_grid_NaS_charge rng=BM_NaS!K3:L674 rdim=1
+par=par_F_NS_E_grid_NaS_discharge rng=BM_NaS!M3:N674 rdim=1
+
+***input_ds***
+
+*DS_power
+******************************************************
+par=par_S_DS rng=DS!G3:H3 rdim=1
+par=par_X_DS_business rng=DS!DM3:DN3 rdim=1
+par=par_S_DS_growth rng=DS!CI3:CJ3 rdim=1
+par=par_S_DS_growth_absolute rng=DS!CK3:CM22 rdim=2 
+
+par=par_L_DS_E rng=DS!A3:C674 rdim=2
+par=par_L_DS_E_self rng=DS!DC3:DE674 rdim=2
+par=par_X_DS_E_self rng=DS!DF3:DG3 rdim=1
+par=par_DSM_DS_E_Cdown rng=DS!DU3:DV3 rdim=1
+par=par_DSM_DS_E_Cup rng=DS!DW3:DX3 rdim=1
+par=par_DSM_DS_E_t rng=DS!DY3:DZ3 rdim=1
+
+par=par_L_DS_W rng=DS!D3:F674 rdim=2
+par=par_L_DS_W_self rng=DS!DH3:DJ674 rdim=2
+par=par_X_DS_W_self rng=DS!DK3:DL3 rdim=1
+
+par=par_L_DS_G rng=DS!CV3:CX674 rdim=2
+
+par=par_L_DS_C rng=DS!EA3:EC674 rdim=2
+par=par_L_DS_C_self rng=DS!EF3:EH674 rdim=2
+par=par_X_DS_C_self rng=DS!EI3:EJ3 rdim=1
+
+par=par_L_DS_H rng=DS!EM3:EO674 rdim=2
+par=par_DSM_DS_H_Cdown rng=DS!EY3:EZ3 rdim=1
+par=par_DSM_DS_H_Cup rng=DS!FA3:FB3 rdim=1
+par=par_DSM_DS_H_t rng=DS!FC3:FD3 rdim=1
+
+par=par_L_DS_CL rng=DS!FE3:FG674 rdim=2
+par=par_DSM_DS_CL_Cdown rng=DS!FQ3:FR3 rdim=1
+par=par_DSM_DS_CL_Cup rng=DS!FS3:FT3 rdim=1
+par=par_DSM_DS_CL_t rng=DS!FU3:FV3 rdim=1
+
+par=par_L_DS_E_avg rng=DS!CA3:CB3 rdim=1
+par=par_L_DS_W_avg rng=DS!CE3:CF3 rdim=1
+par=par_L_DS_G_avg rng=DS!DA3:DB3 rdim=1
+par=par_L_DS_C_avg rng=DS!ED3:EE3 rdim=1
+par=par_L_DS_H_avg rng=DS!EP3:EQ3 rdim=1
+par=par_L_DS_CL_avg rng=DS!FH3:FI3 rdim=1
+
+***input_MS***
+*MS_power
+
+
+*MS_eco
+par=par_C_MS_E rng=MS!A3:B674 rdim=1
+par=sca_C_MS_P_SwissGrid rng=MS!AK3:AK3 rdim=0
+par=par_C_MS_E_SwissGrid rng=MS!AM3:AN674 rdim=1
+par=par_C_MS_CO2 rng=MS!S3:T674 rdim=1
+par=par_C_MS_fuel rng=MS!U3:V674 rdim=1
+par=sca_C_MS_B rng=MS!AL3:AL3 rdim=0
+par=par_C_MS_GC rng=MS!W3:X674 rdim=1
+par=sca_i_DES rng=MS!Y3:Y3 rdim=0
+par=sca_exchange_MS rng=MS!Z3:Z3 rdim=0
+
+par=par_C_MS_O rng=MS_O!A3:B674 rdim=1
+par=par_C_MS_W rng=MS_W!A3:B674 rdim=1
+par=par_C_MS_W_sale rng=MS_W!E3:F674 rdim=1
+par=par_C_MS_RF rng=MS_RF!A3:B674 rdim=1
+par=par_C_MS_B_s rng=MS_B!A3:B674 rdim=1
+par=par_C_MS_B_g rng=MS_B!A3:B674 rdim=1
+par=par_C_MS_B_l rng=MS_B!A3:B674 rdim=1
+par=par_C_MS_T rng=MS_T!A3:B674 rdim=1
+par=par_C_MS_HC rng=MS_HC!A3:B674 rdim=1
+par=par_C_MS_L rng=MS_L!A3:B674 rdim=1
+par=par_C_MS_Cool rng=MS_C!A3:B674 rdim=1
+par=par_C_MS_Hydro rng=MS_H!A3:B674 rdim=1
+par=par_C_MS_CL rng=MS_CL!A3:B674 rdim=1
+
+par=par_R_MS_PR_pri rng=MS_R!A3:B674 rdim=1
+par=par_R_MS_PR_sec rng=MS_R!C3:D674 rdim=1
+par=par_R_MS_PR_ter rng=MS_R!E3:F674 rdim=1
+par=par_R_MS_NR_pri rng=MS_R!G3:H674 rdim=1
+par=par_R_MS_NR_sec rng=MS_R!I3:J674 rdim=1
+par=par_R_MS_NR_ter rng=MS_R!K3:L674 rdim=1
+
+par=par_R_MS_PR_fx rng=MS_F!A3:B674 rdim=1
+par=par_R_MS_NR_fx rng=MS_F!C3:D674 rdim=1
+
+par=par_P_MS_PR_fx_min rng=MS_F!E3:F674 rdim=1
+par=par_P_MS_NR_fx_min rng=MS_F!G3:H674 rdim=1
+
+par=par_P_MS_PR_fx_max rng=MS_F!I3:J674 rdim=1
+par=par_P_MS_NR_fx_max rng=MS_F!K3:L674 rdim=1
+
+par=sca_H_MS_PR_fx_min rng=MS_F!M3:M3 rdim=0
+par=sca_H_MS_NR_fx_min rng=MS_F!N3:N3 rdim=0
+
+par=sca_P_MS_PR_pri_min rng=MS_R!Y3:Y3 rdim=0
+par=sca_P_MS_PR_sec_min rng=MS_R!Z3:Z3 rdim=0
+par=sca_P_MS_PR_ter_min rng=MS_R!AA3:AA3 rdim=0
+par=sca_P_MS_NR_pri_min rng=MS_R!AB3:AB3 rdim=0
+par=sca_P_MS_NR_sec_min rng=MS_R!AC3:AC3 rdim=0
+par=sca_P_MS_NR_ter_min rng=MS_R!AD3:AD3 rdim=0
+
+par=sca_H_MS_PR_pri_min rng=MS_R!AE3:AE3 rdim=0
+par=sca_H_MS_PR_sec_min rng=MS_R!AF3:AF3 rdim=0
+par=sca_H_MS_PR_ter_min rng=MS_R!AG3:AG3 rdim=0
+par=sca_H_MS_NR_pri_min rng=MS_R!AH3:AH3 rdim=0
+par=sca_H_MS_NR_sec_min rng=MS_R!AI3:AI3 rdim=0
+par=sca_H_MS_NR_ter_min rng=MS_R!AJ3:AJ3 rdim=0
+
+par=par_P_MS_PR_pri_max rng=MS_R!M3:N674 rdim=1
+par=par_P_MS_PR_sec_max rng=MS_R!O3:P674 rdim=1
+par=par_P_MS_PR_ter_max rng=MS_R!Q3:R674 rdim=1
+par=par_P_MS_NR_pri_max rng=MS_R!S3:T674 rdim=1
+par=par_P_MS_NR_sec_max rng=MS_R!U3:V674 rdim=1
+par=par_P_MS_NR_ter_max rng=MS_R!W3:X674 rdim=1
+
+par=sca_X_MS_pri_sim rng=MS_R!AQ3:AQ3 rdim=0
+
+par=sca_X_MS_CHF_R_fx rng=MS_R!AR3:AR3 rdim=0
+par=sca_X_MS_EUR_R_fx  rng=MS_R!AS3:AS3 rdim=0
+par=sca_X_MS_CHF_R_pri rng=MS_R!AK3:AK3 rdim=0
+par=sca_X_MS_EUR_R_pri  rng=MS_R!AL3:AL3 rdim=0
+par=sca_X_MS_CHF_R_sec rng=MS_R!AM3:AM3 rdim=0
+par=sca_X_MS_EUR_R_sec  rng=MS_R!AN3:AN3 rdim=0
+par=sca_X_MS_CHF_R_ter rng=MS_R!AO3:AO3 rdim=0
+par=sca_X_MS_EUR_R_ter  rng=MS_R!AP3:AP3 rdim=0
+
+par=sca_X_MS_CHF_C_E rng=MS!AA3:AA3 rdim=0
+par=sca_X_MS_EUR_C_E rng=MS!AB3:AB3 rdim=0
+par=sca_X_MS_CHF_C_fuel rng=MS!AC3:AC3 rdim=0
+par=sca_X_MS_EUR_C_fuel rng=MS!AD3:AD3 rdim=0
+par=sca_X_MS_CHF_C_O rng=MS_O!C3:C3 rdim=0
+par=sca_X_MS_EUR_C_O rng=MS_O!D3:D3 rdim=0
+par=sca_X_MS_CHF_C_W rng=MS_W!C3:C3 rdim=0
+par=sca_X_MS_EUR_C_W rng=MS_W!D3:D3 rdim=0
+par=sca_X_MS_CHF_C_RF rng=MS_RF!C3:C3 rdim=0
+par=sca_X_MS_EUR_C_RF rng=MS_RF!D3:D3 rdim=0
+par=sca_X_MS_CHF_C_B rng=MS_B!C3:C3 rdim=0
+par=sca_X_MS_EUR_C_B rng=MS_B!D3:D3 rdim=0
+par=sca_X_MS_CHF_C_T rng=MS_T!C3:C3 rdim=0
+par=sca_X_MS_EUR_C_T rng=MS_T!D3:D3 rdim=0
+par=sca_X_MS_CHF_C_HC rng=MS_HC!C3:C3 rdim=0
+par=sca_X_MS_EUR_C_HC rng=MS_HC!D3:D3 rdim=0
+par=sca_X_MS_CHF_C_L rng=MS_L!C3:C3 rdim=0
+par=sca_X_MS_EUR_C_L rng=MS_L!D3:D3 rdim=0
+par=sca_X_MS_CHF_C_Cool rng=MS_C!C3:C3 rdim=0
+par=sca_X_MS_EUR_C_Cool rng=MS_C!D3:D3 rdim=0
+par=sca_X_MS_CHF_C_Hydro rng=MS_H!C3:C3 rdim=0
+par=sca_X_MS_EUR_C_Hydro rng=MS_H!D3:D3 rdim=0
+par=sca_X_MS_CHF_C_CL rng=MS_CL!C3:C3 rdim=0
+par=sca_X_MS_EUR_C_CL rng=MS_CL!D3:D3 rdim=0
+
+par=sca_X_MS_CHF_C_CO2 rng=MS!AG3:AG3 rdim=0
+par=sca_X_MS_EUR_C_CO2 rng=MS!AI3:AI3 rdim=0
+par=sca_X_MS_CHF_C_GC rng=MS!AI3:AI3 rdim=0
+par=sca_X_MS_EUR_C_GC rng=MS!AJ3:AJ3 rdim=0
+par=sca_Emis_MS_E_CO2 rng=MS!AO3:AO3 rdim=0
+par=sca_Emis_MS_G_CO2 rng=MS!AP3:AP3 rdim=0
+par=sca_Emis_MS_B_CO2 rng=MS_B!M3:M3 rdim=0
+par=sca_Emis_MS_RF_CO2 rng=MS_RF!E3:E3 rdim=0
+par=sca_Emis_MS_W_CO2 rng=MS_W!G3:G3 rdim=0
+par=sca_Emis_MS_T_CO2 rng=MS_T!E3:E3 rdim=0
+par=sca_Emis_MS_O_CO2 rng=MS_O!E3:E3 rdim=0
+par=sca_Emis_MS_HC_CO2 rng=MS_HC!E3:E3 rdim=0
+par=sca_Emis_MS_L_CO2 rng=MS_L!E3:E3 rdim=0
+
+*input_pss
+par=par_C_pss_relativeStatus rng=pss_economical!A3:B75 rdim=1
+par=par_C_pss_absoluteStatus rng=pss_economical!C3:D75 rdim=1
+par=par_C_pss_fixFlow rng=pss_economical!E3:F75 rdim=1
+par=par_C_pss_relativeFlow rng=pss_economical!I3:J75 rdim=1
+par=par_Emis_pss_CO2 rng=pss_economical!G3:H75 rdim=1
+
+par=par_X_pss_model rng=pss_technical!A3:B75 rdim=1
+par=par_X_pss_support rng=pss_technical!G3:H75 rdim=1
+par=par_X_pss_schedule rng=pss_technical!C3:D75 rdim=1
+par=par_Scale_pss_schedule rng=pss_technical!E3:F75 rdim=1
+
+*input_des
+*DES_power
+par=par_X_E_DES_ES_scaling rng=DES_ES!AK3:AL4 rdim=1
+par=par_X_W_DES_TS_scaling rng=DES_TS!AI3:AJ3 rdim=1
+par=par_X_C_DES_CS_scaling rng=DES_CS!AI3:AJ3 rdim=1
+par=par_X_W_DES_NGB_scaling rng=DES_NGB!W3:X3 rdim=1
+par=par_X_W_DES_EB_scaling rng=DES_EB!Y3:Z3 rdim=1
+par=par_X_E_DES_PV_scaling rng=DES_PV!Y3:Z4 rdim=1
+par=par_X_W_DES_HP_scaling rng=DES_HP!Y3:Z3 rdim=1
+par=par_X_DES_CHP_scaling rng=DES_CHP!Z3:AA3 rdim=1
+par=par_X_W_DES_ST_scaling rng=DES_ST!AC3:AD3 rdim=1
+par=par_X_C_DES_CR_scaling rng=DES_CR!Y3:Z3 rdim=1
+par=par_X_C_DES_SC_scaling rng=DES_SC!Y3:Z3 rdim=1
+par=par_X_H_DES_HS_scaling rng=DES_HS!AI3:AJ3 rdim=1
+par=par_X_CL_DES_CLS_scaling rng=DES_CLS!AI3:AJ3 rdim=1
+par=par_X_G_DES_GS_scaling rng=DES_GS!AI3:AJ3 rdim=1
+par=par_X_H_DES_EY_scaling rng=DES_EY!W3:X3 rdim=1
+par=par_X_H_DES_FC_scaling rng=DES_FC!W3:X3 rdim=1
+
+par=par_X_DS_E_scaling rng=DS!CR3:CS3 rdim=1
+par=par_X_DS_W_scaling rng=DS!CT3:CU3 rdim=1
+par=par_X_DS_G_scaling rng=DS!CY3:CZ3 rdim=1
+par=par_X_DS_C_scaling rng=DS!EK3:EL3 rdim=1
+par=par_X_DS_H_scaling rng=DS!EW3:EX3 rdim=1
+par=par_X_DS_CL_scaling rng=DS!FO3:FP3 rdim=1
+
+par=par_SOC_DES_ES_cap rng=DES_ES!AE3:AF4 rdim=1
+par=par_SOC_DES_ES_max rng=DES_ES!A3:B4 rdim=1
+par=par_SOC_DES_ES_min rng=DES_ES!C3:D4 rdim=1
+par=par_P_DES_ES_charge_max rng=DES_ES!E3:F4 rdim=1
+par=par_P_DES_ES_discharge_max rng=DES_ES!G3:H4 rdim=1
+par=par_Eta_DES_ES_charge rng=DES_ES!I3:J4 rdim=1
+par=par_Eta_DES_ES_discharge rng=DES_ES!K3:L4 rdim=1
+par=par_Eta_DES_ES_selfdischarge rng=DES_ES!AO3:AP4 rdim=1
+par=par_X_E_DES_ES_res rng=DES_ES!Y3:Z4 rdim=1
+par=par_Wear_DES_ES rng=DES_ES!AA3:AB4 rdim=1
+par=par_Learning_DES_ES rng=DES_ES!AC3:AD4 rdim=1
+par=par_X_E_DES_ES_selfgen rng=DES_ES!AG3:AH4 rdim=1
+par=par_X_E_DES_ES_sim rng=DES_ES!AS3:AT4 rdim=1
+par=par_SOC_DES_ES_utilpercent rng=DES_ES!AU3:AW1346 rdim=2
+par=par_P_DES_ES_charge_utilpercent rng=DES_ES!AX3:AZ1346 rdim=2
+par=par_P_DES_ES_discharge_utilpercent rng=DES_ES!BA3:BC1346 rdim=2
+
+par=par_SOC_DES_TS_cap rng=DES_TS!AE3:AF3 rdim=1
+par=par_SOC_DES_TS_max rng=DES_TS!A3:B3 rdim=1
+par=par_SOC_DES_TS_min rng=DES_TS!C3:D3 rdim=1
+par=par_Q_DES_TS_charge_max rng=DES_TS!E3:F3 rdim=1
+par=par_Q_DES_TS_discharge_max rng=DES_TS!G3:H3 rdim=1
+par=par_Eta_DES_TS_charge rng=DES_TS!I3:J3 rdim=1
+par=par_Eta_DES_TS_discharge rng=DES_TS!K3:L3 rdim=1
+par=par_Eta_DES_TS_selfdischarge rng=DES_TS!M3:N3 rdim=1
+par=par_Wear_DES_TS rng=DES_TS!AA3:AB3 rdim=1
+par=par_Learning_DES_TS rng=DES_TS!AC3:AD3 rdim=1
+par=par_SOC_DES_TS_utilpercent rng=DES_TS!AO3:AQ674 rdim=2
+par=par_Q_DES_TS_charge_utilpercent rng=DES_TS!AR3:AT674 rdim=2
+par=par_Q_DES_TS_discharge_utilpercent rng=DES_TS!AU3:AW674 rdim=2
+
+par=par_SOC_DES_HS_cap rng=DES_HS!AE3:AF3 rdim=1
+par=par_SOC_DES_HS_max rng=DES_HS!A3:B3 rdim=1
+par=par_SOC_DES_HS_min rng=DES_HS!C3:D3 rdim=1
+par=par_P_DES_HS_charge_max rng=DES_HS!E3:F3 rdim=1
+par=par_P_DES_HS_discharge_max rng=DES_HS!G3:H3 rdim=1
+par=par_Eta_DES_HS_charge rng=DES_HS!I3:J3 rdim=1
+par=par_Eta_DES_HS_discharge rng=DES_HS!K3:L3 rdim=1
+par=par_Eta_DES_HS_selfdischarge rng=DES_HS!M3:N3 rdim=1
+par=par_Wear_DES_HS rng=DES_HS!AA3:AB3 rdim=1
+par=par_Learning_DES_HS rng=DES_HS!AC3:AD3 rdim=1
+par=par_SOC_DES_HS_utilpercent rng=DES_HS!AO3:AQ674 rdim=2
+par=par_P_DES_HS_charge_utilpercent rng=DES_HS!AR3:AT674 rdim=2
+par=par_P_DES_HS_discharge_utilpercent rng=DES_HS!AU3:AW674 rdim=2
+
+par=par_SOC_DES_CLS_cap rng=DES_CLS!AE3:AF3 rdim=1
+par=par_SOC_DES_CLS_max rng=DES_CLS!A3:B3 rdim=1
+par=par_SOC_DES_CLS_min rng=DES_CLS!C3:D3 rdim=1
+par=par_P_DES_CLS_charge_max rng=DES_CLS!E3:F3 rdim=1
+par=par_P_DES_CLS_discharge_max rng=DES_CLS!G3:H3 rdim=1
+par=par_Eta_DES_CLS_charge rng=DES_CLS!I3:J3 rdim=1
+par=par_Eta_DES_CLS_discharge rng=DES_CLS!K3:L3 rdim=1
+par=par_Eta_DES_CLS_selfdischarge rng=DES_CLS!M3:N3 rdim=1
+par=par_Wear_DES_CLS rng=DES_CLS!AA3:AB3 rdim=1
+par=par_Learning_DES_CLS rng=DES_CLS!AC3:AD3 rdim=1
+par=par_SOC_DES_CLS_utilpercent rng=DES_CLS!AO3:AQ674 rdim=2
+par=par_P_DES_CLS_charge_utilpercent rng=DES_CLS!AR3:AT674 rdim=2
+par=par_P_DES_CLS_discharge_utilpercent rng=DES_CLS!AU3:AW674 rdim=2
+par=par_X_CL_DES_CLS_tank rng=DES_CLS!AX3:AY3 rdim=1
+
+par=par_SOC_DES_GS_cap rng=DES_GS!AE3:AF3 rdim=1
+par=par_SOC_DES_GS_max rng=DES_GS!A3:B3 rdim=1
+par=par_SOC_DES_GS_min rng=DES_GS!C3:D3 rdim=1
+par=par_P_DES_GS_charge_max rng=DES_GS!E3:F3 rdim=1
+par=par_P_DES_GS_discharge_max rng=DES_GS!G3:H3 rdim=1
+par=par_Eta_DES_GS_charge rng=DES_GS!I3:J3 rdim=1
+par=par_Eta_DES_GS_discharge rng=DES_GS!K3:L3 rdim=1
+par=par_Eta_DES_GS_selfdischarge rng=DES_GS!M3:N3 rdim=1
+par=par_Wear_DES_GS rng=DES_GS!AA3:AB3 rdim=1
+par=par_Learning_DES_GS rng=DES_GS!AC3:AD3 rdim=1
+par=par_SOC_DES_GS_utilpercent rng=DES_GS!AO3:AQ674 rdim=2
+par=par_P_DES_GS_charge_utilpercent rng=DES_GS!AR3:AT674 rdim=2
+par=par_P_DES_GS_discharge_utilpercent rng=DES_GS!AU3:AW674 rdim=2
+
+par=par_SOC_DES_CS_cap rng=DES_CS!AE3:AF3 rdim=1
+par=par_SOC_DES_CS_max rng=DES_CS!A3:B3 rdim=1
+par=par_SOC_DES_CS_min rng=DES_CS!C3:D3 rdim=1
+par=par_Q_DES_CS_charge_max rng=DES_CS!E3:F3 rdim=1
+par=par_Q_DES_CS_discharge_max rng=DES_CS!G3:H3 rdim=1
+par=par_Eta_DES_CS_charge rng=DES_CS!I3:J3 rdim=1
+par=par_Eta_DES_CS_discharge rng=DES_CS!K3:L3 rdim=1
+par=par_Eta_DES_CS_selfdischarge rng=DES_CS!M3:N3 rdim=1
+par=par_Wear_DES_CS rng=DES_CS!AA3:AB3 rdim=1
+par=par_Learning_DES_CS rng=DES_CS!AC3:AD3 rdim=1
+
+par=par_Q_DES_NGB_max rng=DES_NGB!A3:B3 rdim=1
+par=par_Eta_DES_NGB rng=DES_NGB!C3:D3 rdim=1
+par=par_Wear_DES_NGB rng=DES_NGB!Q3:R3 rdim=1
+par=par_Learning_DES_NGB rng=DES_NGB!S3:T3 rdim=1
+par=par_Q_DES_NGB_utilpercent rng=DES_NGB!AC3:AE674 rdim=2
+
+par=par_P_DES_FC_max rng=DES_FC!A3:B3 rdim=1
+par=par_Eta_DES_FC rng=DES_FC!C3:D3 rdim=1
+par=par_Wear_DES_FC rng=DES_FC!Q3:R3 rdim=1
+par=par_Learning_DES_FC rng=DES_FC!S3:T3 rdim=1
+
+par=par_P_DES_EY_max rng=DES_EY!A3:B3 rdim=1
+par=par_Eta_DES_EY rng=DES_EY!C3:D3 rdim=1
+par=par_Wear_DES_EY rng=DES_EY!Q3:R3 rdim=1
+par=par_Learning_DES_EY rng=DES_EY!S3:T3 rdim=1
+par=par_Sigma_DES_EY rng=DES_EY!AC3:AD3 rdim=1
+par=par_P_DES_EY_min rng=DES_EY!AE3:AF3 rdim=1
+par=par_P_DES_EY_ru_general rng=DES_EY_model!Q3:R3 rdim=1
+par=par_P_DES_EY_ru_start rng=DES_EY_model!S3:T3 rdim=1
+par=par_P_DES_EY_rd_general rng=DES_EY_model!U3:V3 rdim=1
+par=par_P_DES_EY_rd_stop rng=DES_EY_model!W3:X3 rdim=1
+par=par_Lambda_DES_EY_heatlosses rng=DES_EY_model!K3:L3 rdim=1
+par=par_H_DES_EY_minon rng=DES_EY_model!M3:N3 rdim=1
+par=par_H_DES_EY_maxon rng=DES_EY_model!AN3:AO3 rdim=1
+par=par_H_DES_EY_minoff rng=DES_EY_model!AN3:AO3 rdim=1
+par=par_X_E_DES_EY_avail rng=DES_EY_model!AP3:AR674 rdim=2
+
+par=par_Q_DES_EB_max rng=DES_EB!A3:B3 rdim=1
+par=par_Eta_DES_EB rng=DES_EB!C3:D3 rdim=1
+par=par_X_W_DES_EB_res rng=DES_EB!Q3:R3 rdim=1
+par=par_Wear_DES_EB rng=DES_EB!S3:T3 rdim=1
+par=par_Learning_DES_EB rng=DES_EB!U3:V3 rdim=1
+par=par_P_DES_EB_utilpercent rng=DES_EB!AE3:AG674 rdim=2
+
+par=par_Q_DES_CR_max rng=DES_CR!A3:B3 rdim=1
+par=par_Eta_DES_CR rng=DES_CR!C3:D3 rdim=1
+par=par_X_C_DES_CR_res rng=DES_CR!Q3:R3 rdim=1
+par=par_Wear_DES_CR rng=DES_CR!S3:T3 rdim=1
+par=par_Learning_DES_CR rng=DES_CR!U3:V3 rdim=1
+
+par=par_Q_DES_SC_max rng=DES_SC!A3:B3 rdim=1
+par=par_Eta_DES_SC rng=DES_SC!C3:D3 rdim=1
+par=par_X_C_DES_SC_res rng=DES_SC!Q3:R3 rdim=1
+par=par_Wear_DES_SC rng=DES_SC!S3:T3 rdim=1
+par=par_Learning_DES_SC rng=DES_SC!U3:V3 rdim=1
+
+par=par_A_DES_PV rng=DES_PV!B3:C4 rdim=1
+par=par_Eta_DES_PV rng=DES_PV!D3:E4 rdim=1
+par=par_Wear_DES_PV rng=DES_PV!R3:S4 rdim=1
+par=par_Learning_DES_PV rng=DES_PV!T3:U4 rdim=1
+
+par=par_A_DES_ST rng=DES_ST!B3:C3 rdim=1
+par=par_Eta_DES_ST rng=DES_ST!D3:E3 rdim=1
+par=par_Wear_DES_ST rng=DES_ST!R3:S3 rdim=1
+par=par_Learning_DES_ST rng=DES_ST!T3:U3 rdim=1
+
+par=par_Q_DES_HP_max rng=DES_HP!A3:B3 rdim=1
+par=par_Eta_DES_HR rng=DES_HP!C3:D3 rdim=1
+par=par_X_W_DES_HP_res rng=DES_HP!Q3:R3 rdim=1
+par=par_Wear_DES_HP rng=DES_HP!S3:T3 rdim=1
+par=par_Learning_DES_HP rng=DES_HP!U3:V3 rdim=1
+par=par_Q_DES_HP_utilpercent rng=DES_HP!AK3:AM674 rdim=2
+
+par=par_P_DES_CHP_max rng=DES_CHP!C3:D3 rdim=1
+par=par_P_DES_CHP_min rng=DES_CHP!E3:F3 rdim=1
+par=par_Eta_DES_CHP rng=DES_CHP!A3:B3 rdim=1
+par=par_Wear_DES_CHP rng=DES_CHP!S3:T3 rdim=1
+par=par_Learning_DES_CHP rng=DES_CHP!U3:V3 rdim=1
+par=par_Sigma_DES_CHP rng=DES_CHP!AD3:AE3 rdim=1
+par=par_P_DES_CHP_utilpercent rng=DES_CHP!AH3:AJ674 rdim=2
+par=par_P_DES_CHP_ru_general rng=DES_CHP_model!Q3:R3 rdim=1
+par=par_P_DES_CHP_ru_start rng=DES_CHP_model!S3:T3 rdim=1
+par=par_P_DES_CHP_rd_general rng=DES_CHP_model!U3:V3 rdim=1
+par=par_P_DES_CHP_rd_stop rng=DES_CHP_model!W3:X3 rdim=1
+par=par_Lambda_DES_CHP_heatlosses rng=DES_CHP_model!K3:L3 rdim=1
+par=par_H_DES_CHP_minon rng=DES_CHP_model!M3:N3 rdim=1
+par=par_H_DES_CHP_maxon rng=DES_CHP_model!AN3:AO3 rdim=1
+par=par_H_DES_CHP_minoff rng=DES_CHP_model!AN3:AO3 rdim=1
+par=par_X_E_DES_CHP_avail rng=DES_CHP_model!AP3:AR674 rdim=2
+
+
+*DES_eco
+par=par_Life_DES_ES rng=DES_ES!S3:T4 rdim=1
+par=par_C_DES_ES_Cap rng=DES_ES!U3:V4 rdim=1
+par=par_Ctrend_DES_ES_Cap rng=DES_ES!AM3:AN4 rdim=1
+par=par_Alpha_DES_ES_Ins rng=DES_ES!M3:N4 rdim=1
+par=par_Alpha_DES_ES_OuM rng=DES_ES!O3:P4 rdim=1
+par=par_Inc_DES_ES rng=DES_ES!W3:X4 rdim=1
+par=par_Inc_PS_ES rng=DES_ES!AI3:AJ4 rdim=1
+
+par=par_Life_DES_TS rng=DES_TS!S3:T3 rdim=1		
+par=par_C_DES_TS_Cap rng=DES_TS!U3:V3 rdim=1
+par=par_Ctrend_DES_TS_Cap rng=DES_TS!AK3:AL3 rdim=1		
+par=par_Alpha_DES_TS_Ins rng=DES_TS!W3:X3 rdim=1		
+par=par_Alpha_DES_TS_OuM rng=DES_TS!O3:P3 rdim=1		
+par=par_Inc_DES_TS rng=DES_TS!Y3:Z3 rdim=1
+par=par_Inc_PS_TS rng=DES_TS!AG3:AH3 rdim=1
+
+par=par_Life_DES_HS rng=DES_HS!S3:T3 rdim=1		
+par=par_C_DES_HS_Cap rng=DES_HS!U3:V3 rdim=1
+par=par_Ctrend_DES_HS_Cap rng=DES_HS!AK3:AL3 rdim=1		
+par=par_Alpha_DES_HS_Ins rng=DES_HS!W3:X3 rdim=1		
+par=par_Alpha_DES_HS_OuM rng=DES_HS!O3:P3 rdim=1		
+par=par_Inc_DES_HS rng=DES_HS!Y3:Z3 rdim=1
+par=par_Inc_PS_HS rng=DES_HS!AG3:AH3 rdim=1	
+
+par=par_Life_DES_CLS rng=DES_CLS!S3:T3 rdim=1		
+par=par_C_DES_CLS_Cap rng=DES_CLS!U3:V3 rdim=1
+par=par_Ctrend_DES_CLS_Cap rng=DES_CLS!AK3:AL3 rdim=1		
+par=par_Alpha_DES_CLS_Ins rng=DES_CLS!W3:X3 rdim=1		
+par=par_Alpha_DES_CLS_OuM rng=DES_CLS!O3:P3 rdim=1		
+par=par_Inc_DES_CLS rng=DES_CLS!Y3:Z3 rdim=1
+par=par_Inc_PS_CLS rng=DES_CLS!AG3:AH3 rdim=1		
+
+par=par_Life_DES_GS rng=DES_GS!S3:T3 rdim=1		
+par=par_C_DES_GS_Cap rng=DES_GS!U3:V3 rdim=1
+par=par_Ctrend_DES_GS_Cap rng=DES_GS!AK3:AL3 rdim=1		
+par=par_Alpha_DES_GS_Ins rng=DES_GS!W3:X3 rdim=1		
+par=par_Alpha_DES_GS_OuM rng=DES_GS!O3:P3 rdim=1		
+par=par_Inc_DES_GS rng=DES_GS!Y3:Z3 rdim=1
+par=par_Inc_PS_GS rng=DES_GS!AG3:AH3 rdim=1		
+
+par=par_Life_DES_CS rng=DES_CS!S3:T3 rdim=1		
+par=par_C_DES_CS_Cap rng=DES_CS!U3:V3 rdim=1
+par=par_Ctrend_DES_CS_Cap rng=DES_CS!AK3:AL3 rdim=1		
+par=par_Alpha_DES_CS_Ins rng=DES_CS!W3:X3 rdim=1		
+par=par_Alpha_DES_CS_OuM rng=DES_CS!O3:P3 rdim=1		
+par=par_Inc_DES_CS rng=DES_CS!Y3:Z3 rdim=1
+par=par_Inc_PS_CS rng=DES_CS!AG3:AH3 rdim=1
+
+par=par_Life_DES_PV rng=DES_PV!F3:G4 rdim=1 
+par=par_C_DES_PV_Cap rng=DES_PV!H3:I4 rdim=1
+par=par_Ctrend_DES_PV_Cap rng=DES_PV!AA3:AB4 rdim=1
+par=par_Alpha_DES_PV_Ins rng=DES_PV!J3:K4 rdim=1
+par=par_Alpha_DES_PV_OuM rng=DES_PV!L3:M4 rdim=1
+par=par_Inc_DES_PV rng=DES_PV!P3:Q4 rdim=1
+par=par_Inc_PS_PV rng=DES_PV!W3:X4 rdim=1
+par=sca_Inc_MS_PV_SG rng=DES_PV!V3:V4 rdim=0
+
+par=par_Life_DES_ST rng=DES_ST!F3:G3 rdim=1 
+par=par_C_DES_ST_Cap rng=DES_ST!H3:I3 rdim=1
+par=par_Ctrend_DES_ST_Cap rng=DES_ST!AA3:AB3 rdim=1
+par=par_Alpha_DES_ST_Ins rng=DES_ST!J3:K3 rdim=1
+par=par_Alpha_DES_ST_OuM rng=DES_ST!L3:M3 rdim=1
+par=par_Inc_DES_ST rng=DES_ST!P3:Q3 rdim=1
+par=par_Inc_PS_ST rng=DES_ST!W3:X3 rdim=1
+par=sca_Inc_MS_ST_SG rng=DES_ST!V3:V3 rdim=0
+
+par=par_Life_DES_CHP rng=DES_CHP!G3:H3 rdim=1 
+par=par_C_DES_CHP_Cap rng=DES_CHP!I3:J3 rdim=1
+par=par_Ctrend_DES_CHP_Cap rng=DES_CHP!AB3:AC3 rdim=1
+par=par_Alpha_DES_CHP_Ins rng=DES_CHP!K3:L3 rdim=1
+par=par_Alpha_DES_CHP_OuM rng=DES_CHP!M3:N3 rdim=1
+par=par_Inc_DES_CHP rng=DES_CHP!O3:P3 rdim=1
+par=par_Inc_PS_CHP rng=DES_CHP!Q3:R3 rdim=1
+par=sca_Inc_MS_CHP_SG rng=DES_CHP!W3:W3 rdim=0
+
+par=par_Life_DES_HP rng=DES_HP!E3:F3 rdim=1
+par=par_C_DES_HP_Cap rng=DES_HP!G3:H3 rdim=1
+par=par_Ctrend_DES_HP_Cap rng=DES_HP!AA3:AB3 rdim=1
+par=par_Alpha_DES_HP_Ins rng=DES_HP!I3:J3 rdim=1
+par=par_Alpha_DES_HP_OuM rng=DES_HP!K3:L3 rdim=1
+par=par_Inc_DES_HP rng=DES_HP!O3:P3 rdim=1
+par=par_Inc_PS_HP rng=DES_HP!W3:X3 rdim=1
+par=par_T_DES_HP rng=DES_HP!AH3:AJ674 rdim=2
+
+par=par_Life_DES_NGB rng=DES_NGB!E3:F3 rdim=1
+par=par_C_DES_NGB_Cap rng=DES_NGB!G3:H3 rdim=1
+par=par_Ctrend_DES_NGB_Cap rng=DES_NGB!Y3:Z3 rdim=1
+par=par_Alpha_DES_NGB_Ins rng=DES_NGB!I3:J3 rdim=1
+par=par_Alpha_DES_NGB_OuM rng=DES_NGB!K3:L3 rdim=1
+par=par_Inc_DES_NGB rng=DES_NGB!O3:P3 rdim=1
+par=par_Inc_PS_NGB rng=DES_NGB!U3:V3 rdim=1
+
+par=par_Life_DES_EY rng=DES_EY!E3:F3 rdim=1
+par=par_C_DES_EY_Cap rng=DES_EY!G3:H3 rdim=1
+par=par_Ctrend_DES_EY_Cap rng=DES_EY!Y3:Z3 rdim=1
+par=par_Alpha_DES_EY_Ins rng=DES_EY!I3:J3 rdim=1
+par=par_Alpha_DES_EY_OuM rng=DES_EY!K3:L3 rdim=1
+par=par_Inc_DES_EY rng=DES_EY!O3:P3 rdim=1
+par=par_Inc_PS_EY rng=DES_EY!U3:V3 rdim=1
+
+par=par_Life_DES_FC rng=DES_FC!E3:F3 rdim=1
+par=par_C_DES_FC_Cap rng=DES_FC!G3:H3 rdim=1
+par=par_Ctrend_DES_FC_Cap rng=DES_FC!Y3:Z3 rdim=1
+par=par_Alpha_DES_FC_Ins rng=DES_FC!I3:J3 rdim=1
+par=par_Alpha_DES_FC_OuM rng=DES_FC!K3:L3 rdim=1
+par=par_Inc_DES_FC rng=DES_FC!O3:P3 rdim=1
+par=par_Inc_PS_FC rng=DES_FC!U3:V3 rdim=1
+
+par=par_Life_DES_EB rng=DES_EB!E3:F3 rdim=1
+par=par_C_DES_EB_Cap rng=DES_EB!G3:H3 rdim=1
+par=par_Ctrend_DES_EB_Cap rng=DES_EB!AA3:AB3 rdim=1
+par=par_Alpha_DES_EB_Ins rng=DES_EB!I3:J3 rdim=1
+par=par_Alpha_DES_EB_OuM rng=DES_EB!K3:L3 rdim=1
+par=par_Inc_DES_EB rng=DES_EB!O3:P3 rdim=1
+par=par_Inc_PS_EB rng=DES_EB!W3:X3 rdim=1
+
+par=par_Life_DES_CR rng=DES_CR!E3:F3 rdim=1
+par=par_C_DES_CR_Cap rng=DES_CR!G3:H3 rdim=1
+par=par_Ctrend_DES_CR_Cap rng=DES_CR!AA3:AB3 rdim=1
+par=par_Alpha_DES_CR_Ins rng=DES_CR!I3:J3 rdim=1
+par=par_Alpha_DES_CR_OuM rng=DES_CR!K3:L3 rdim=1
+par=par_Inc_DES_CR rng=DES_CR!O3:P3 rdim=1
+par=par_Inc_PS_CR rng=DES_CR!W3:X3 rdim=1
+
+par=par_Life_DES_SC rng=DES_SC!E3:F3 rdim=1
+par=par_C_DES_SC_Cap rng=DES_SC!G3:H3 rdim=1
+par=par_Ctrend_DES_SC_Cap rng=DES_SC!AA3:AB3 rdim=1
+par=par_Alpha_DES_SC_Ins rng=DES_SC!I3:J3 rdim=1
+par=par_Alpha_DES_SC_OuM rng=DES_SC!K3:L3 rdim=1
+par=par_Inc_DES_SC rng=DES_SC!O3:P3 rdim=1
+par=par_Inc_PS_SC rng=DES_SC!W3:X3 rdim=1
+
+***imput_ss***
+*SS_power
+
+par=par_E_SS_WT_schedule rng=SS_WT!A3:C674 rdim=2
+par=par_E_SS_WT_respos_schedule rng=SS_WT!F3:H674 rdim=2
+par=par_E_SS_WT_resneg_schedule rng=SS_WT!I3:K674 rdim=2
+
+par=par_P_SS_WT_max rng=SS_WT_model!C3:D3 rdim=1
+par=par_CP_SS_WT_max rng=SS_WT_model!E3:F3 rdim=1
+par=par_Eta_SS_WT_generator rng=SS_WT_model!G3:H3 rdim=1
+par=par_Eta_SS_WT_drivetrain rng=SS_WT_model!I3:J3 rdim=1
+par=par_R_SS_WT_diameter rng=SS_WT_model!K3:L3 rdim=1
+par=par_Hub_SS_WT_height rng=SS_WT_model!M3:N3 rdim=1
+par=par_Rho_SS_WT_height rng=SS_WT_model!O3:P3 rdim=1
+par=par_V_SS_WT_max rng=SS_WT_model!Q3:R3 rdim=1
+par=par_V_SS_WT_up rng=SS_WT_model!S3:T3 rdim=1
+par=par_V_SS_WT_down rng=SS_WT_model!U3:V3 rdim=1
+par=par_X_E_SS_WT_avail rng=SS_WT_model!W3:Y674 rdim=2
+
+par=par_E_SS_PV_schedule rng=SS_PV!A3:C674 rdim=2
+
+par=par_P_SS_PV_max rng=SS_PV_model!L3:M3 rdim=1
+par=par_A_SS_PV rng=SS_PV_model!B3:C3 rdim=1
+par=par_Eta_SS_PV_module rng=SS_PV_model!D3:E3 rdim=1
+par=par_Eta_SS_PV_optic rng=SS_PV_model!F3:G3 rdim=1
+par=par_Emiss_SS_PV rng=SS_PV_model!J3:K3 rdim=1
+par=par_Eta_SS_PV_general rng=SS_PV_model!R3:S3 rdim=1
+par=par_Eta_SS_PV_euro rng=SS_PV_model!P3:Q3 rdim=1
+par=par_T_SS_PV_module_avg rng=SS_PV_model!T3:U3 rdim=1
+par=par_TC_SS_PV rng=SS_PV_model!H3:I3 rdim=1
+par=par_X_E_SS_PV_avail rng=SS_PV_model!X3:Z674 rdim=2
+
+par=par_E_SS_RH_schedule rng=SS_RH!A3:C674 rdim=2
+
+par=par_P_SS_RH_max rng=SS_RH_model!I3:J3 rdim=1
+par=par_WFH_SS_RH rng=SS_RH_model!A3:B3 rdim=1
+par=par_WMF_SS_RH rng=SS_RH_model!C3:D3 rdim=1
+par=par_Eta_SS_RH rng=SS_RH_model!E3:F3 rdim=1
+par=par_X_E_SS_RH_avail rng=SS_RH_model!K3:M674 rdim=2
+
+par=par_E_SS_CHP_schedule rng=SS_CHP!A3:C674 rdim=2
+par=par_W_SS_CHP_schedule rng=SS_CHP!D3:F674 rdim=2
+par=par_E_SS_CHP_respos_schedule rng=SS_CHP!G3:I674 rdim=2
+par=par_E_SS_CHP_resneg_schedule rng=SS_CHP!J3:L674 rdim=2
+par=par_L_SS_CHP_fuel_schedule rng=SS_CHP!O3:Q674 rdim=2
+
+par=par_P_SS_CHP_max rng=SS_CHP_model!C3:D3 rdim=1
+par=par_P_SS_CHP_min rng=SS_CHP_model!E3:F3 rdim=1
+par=par_Q_SS_CHP_max rng=SS_CHP_model!AC3:AD3 rdim=1
+par=par_P_SS_CHP_ru_general rng=SS_CHP_model!Q3:R3 rdim=1
+par=par_P_SS_CHP_ru_start rng=SS_CHP_model!S3:T3 rdim=1
+par=par_P_SS_CHP_rd_general rng=SS_CHP_model!U3:V3 rdim=1
+par=par_P_SS_CHP_rd_stop rng=SS_CHP_model!W3:X3 rdim=1
+par=par_Eta_SS_CHP_max rng=SS_CHP_model!G3:H3 rdim=1
+par=par_Eta_SS_CHP_min rng=SS_CHP_model!I3:J3 rdim=1
+par=par_Lambda_SS_CHP_heatlosses rng=SS_CHP_model!K3:L3 rdim=1
+par=par_H_SS_CHP_minon rng=SS_CHP_model!M3:N3 rdim=1
+par=par_H_SS_CHP_maxon rng=SS_CHP_model!AN3:AO3 rdim=1
+par=par_H_SS_CHP_minoff rng=SS_CHP_model!AN3:AO3 rdim=1
+par=par_T_SS_CHP_feed rng=SS_CHP_model!AE3:AG674 rdim=2
+par=par_T_SS_CHP_return rng=SS_CHP_model!AH3:AJ674 rdim=2
+par=par_T_SS_CHP_cooling rng=SS_CHP_model!AK3:AM674 rdim=2
+par=par_X_E_SS_CHP_condensing rng=SS_CHP_model!Y3:Z3 rdim=1
+par=par_X_E_SS_CHP_pressure rng=SS_CHP_model!AA3:AB3 rdim=1
+par=par_X_E_SS_CHP_avail rng=SS_CHP_model!AP3:AR674 rdim=2
+par=par_X_E_SS_CHP_LSW rng=SS_CHP_model!AS3:AT3 rdim=1
+
+par=par_P_SS_EY_max rng=SS_EY_model!C3:D3 rdim=1
+par=par_P_SS_EY_min rng=SS_EY_model!E3:F3 rdim=1
+par=par_Q_SS_EY_max rng=SS_EY_model!AC3:AD3 rdim=1
+par=par_P_SS_EY_ru_general rng=SS_EY_model!Q3:R3 rdim=1
+par=par_P_SS_EY_ru_start rng=SS_EY_model!S3:T3 rdim=1
+par=par_P_SS_EY_rd_general rng=SS_EY_model!U3:V3 rdim=1
+par=par_P_SS_EY_rd_stop rng=SS_EY_model!W3:X3 rdim=1
+par=par_Eta_SS_EY_max rng=SS_EY_model!G3:H3 rdim=1
+par=par_Eta_SS_EY_min rng=SS_EY_model!I3:J3 rdim=1
+par=par_Lambda_SS_EY_heatlosses rng=SS_EY_model!K3:L3 rdim=1
+par=par_H_SS_EY_minon rng=SS_EY_model!M3:N3 rdim=1
+par=par_H_SS_EY_maxon rng=SS_EY_model!AN3:AO3 rdim=1
+par=par_H_SS_EY_minoff rng=SS_EY_model!AN3:AO3 rdim=1
+par=par_T_SS_EY_feed rng=SS_EY_model!AE3:AG674 rdim=2
+par=par_T_SS_EY_return rng=SS_EY_model!AH3:AJ674 rdim=2
+par=par_T_SS_EY_cooling rng=SS_EY_model!AK3:AM674 rdim=2
+par=par_X_E_SS_EY_condensing rng=SS_EY_model!Y3:Z3 rdim=1
+par=par_X_E_SS_EY_pressure rng=SS_EY_model!AA3:AB3 rdim=1
+par=par_X_E_SS_EY_avail rng=SS_EY_model!AP3:AR674 rdim=2
+par=par_X_E_SS_EY_LSW rng=SS_EY_model!AS3:AT3 rdim=1
+par=par_RF_SS_EY rng=SS_EY_model!AY3:BA674 rdim=2
+par=par_Ratio_SS_EY rng=SS_EY_model!AW3:AX3 rdim=1
+par=par_SOC_SS_EY_initial rng=SS_EY_model!BB3:BC3 rdim=1
+
+
+par=par_E_SS_RC_schedule rng=SS_RC!A3:C674 rdim=2
+par=par_W_SS_RC_schedule rng=SS_RC!D3:F674 rdim=2
+par=par_E_SS_RC_respos_schedule rng=SS_RC!G3:I674 rdim=2
+par=par_E_SS_RC_resneg_schedule rng=SS_RC!J3:L674 rdim=2
+par=par_L_SS_RC_fuel_schedule rng=SS_RC!O3:Q674 rdim=2
+
+par=par_P_SS_RC_max rng=SS_RC_model!C3:D3 rdim=1
+par=par_P_SS_RC_min rng=SS_RC_model!E3:F3 rdim=1
+par=par_Q_SS_RC_max rng=SS_RC_model!AC3:AD3 rdim=1
+par=par_P_SS_RC_ru_general rng=SS_RC_model!Q3:R3 rdim=1
+par=par_P_SS_RC_ru_start rng=SS_RC_model!S3:T3 rdim=1
+par=par_P_SS_RC_rd_general rng=SS_RC_model!U3:V3 rdim=1
+par=par_P_SS_RC_rd_stop rng=SS_RC_model!W3:X3 rdim=1
+par=par_Eta_SS_RC_max rng=SS_RC_model!G3:H3 rdim=1
+par=par_Eta_SS_RC_min rng=SS_RC_model!I3:J3 rdim=1
+par=par_Lambda_SS_RC_heatlosses rng=SS_RC_model!K3:L3 rdim=1
+par=par_H_SS_RC_minon rng=SS_RC_model!M3:N3 rdim=1
+par=par_H_SS_RC_maxon rng=SS_RC_model!AN3:AO3 rdim=1
+par=par_H_SS_RC_minoff rng=SS_RC_model!AN3:AO3 rdim=1
+par=par_T_SS_RC_feed rng=SS_RC_model!AE3:AG674 rdim=2
+par=par_T_SS_RC_return rng=SS_RC_model!AH3:AJ674 rdim=2
+par=par_T_SS_RC_cooling rng=SS_RC_model!AK3:AM674 rdim=2
+par=par_X_W_SS_RC_condensing rng=SS_RC_model!Y3:Z3 rdim=1
+par=par_X_W_SS_RC_pressure rng=SS_RC_model!AA3:AB3 rdim=1
+par=par_X_W_SS_RC_avail rng=SS_RC_model!AP3:AR674 rdim=2
+par=par_RF_SS_RC rng=SS_RC_model!AU3:AW674 rdim=2
+par=par_Ratio_SS_RC rng=SS_RC_model!AS3:AT3 rdim=1
+par=par_SOC_SS_RC_initial rng=SS_RC_model!AX3:AY3 rdim=1
+
+par=par_Q_SS_ETB_max rng=SS_ETB_model!C3:D3 rdim=1
+par=par_Q_SS_ETB_min rng=SS_ETB_model!E3:F3 rdim=1
+par=par_Eta_SS_ETB rng=SS_ETB_model!G3:H3 rdim=1
+
+par=par_P_SS_FC_max rng=SS_FC_model!C3:D3 rdim=1
+par=par_P_SS_FC_min rng=SS_FC_model!E3:F3 rdim=1
+par=par_Eta_SS_FC rng=SS_FC_model!G3:H3 rdim=1
+
+par=par_P_SS_MT_max rng=SS_MT_model!C3:D3 rdim=1
+par=par_P_SS_MT_min rng=SS_MT_model!E3:F3 rdim=1
+par=par_Eta_SS_MT rng=SS_MT_model!G3:H3 rdim=1
+
+par=par_SOC_SS_PHS_cap rng=SS_PHS!AC3:AD3 rdim=1
+par=par_SOC_SS_PHS_max rng=SS_PHS!A3:B3 rdim=1
+par=par_SOC_SS_PHS_min rng=SS_PHS!C3:D3 rdim=1
+par=par_P_SS_PHS_pump_max rng=SS_PHS!E3:F3 rdim=1
+par=par_P_SS_PHS_turbine_max rng=SS_PHS!G3:H3 rdim=1
+par=par_Eta_SS_PHS_pump rng=SS_PHS!I3:J3 rdim=1
+par=par_Eta_SS_PHS_turbine rng=SS_PHS!K3:L3 rdim=1
+par=par_X_E_SS_PHS_avail rng=SS_PHS!AE3:AG674 rdim=2
+par=par_X_E_SS_PHS_sim rng=SS_PHS!AH3:AI3 rdim=1
+
+par=par_E_SS_PHS_turbine_schedule rng=SS_PHS!O3:Q674 rdim=2
+par=par_E_SS_PHS_pump_schedule rng=SS_PHS!R3:T674 rdim=2
+par=par_E_SS_PHS_resneg_schedule rng=SS_PHS!X3:Z674 rdim=2
+par=par_E_SS_PHS_respos_schedule rng=SS_PHS!U3:W674 rdim=2
+
+par=par_E_SS_TPS_schedule rng=SS_TPS!C3:E674 rdim=2
+par=par_E_SS_TPS_respos_schedule rng=SS_TPS!F3:H674 rdim=2
+par=par_E_SS_TPS_resneg_schedule rng=SS_TPS!I3:K674 rdim=2
+par=par_L_SS_TPS_fuel_schedule rng=SS_TPS!L3:N674 rdim=2
+
+par=par_W_SS_PLB_schedule rng=SS_PLB!C3:E674 rdim=2
+par=par_L_SS_PLB_schedule rng=SS_PLB!F3:H674 rdim=2
+
+par=par_W_SS_TC_schedule rng=SS_TC!C3:E674 rdim=2
+
+par=par_W_SS_ETB_schedule rng=SS_ETB!C3:E674 rdim=2
+par=par_L_SS_ETB_E_schedule rng=SS_ETB!F3:H674 rdim=2
+par=par_E_SS_ETB_respos_schedule rng=SS_ETB!I3:K674 rdim=2
+par=par_E_SS_ETB_resneg_schedule rng=SS_ETB!L3:N674 rdim=2
+
+par=par_E_SS_BGP_schedule rng=SS_BGP!C3:E674 rdim=2
+par=par_W_SS_BGP_schedule rng=SS_BGP!C3:E674 rdim=2
+par=par_E_SS_BGP_respos_schedule rng=SS_BGP!I3:K674 rdim=2
+par=par_E_SS_BGP_resneg_schedule rng=SS_BGP!L3:N674 rdim=2
+par=par_L_SS_BGP_fuel_schedule rng=SS_BGP!O3:Q674 rdim=2
+
+par=par_P_SS_TPS_max rng=SS_TPS_model!C3:D3 rdim=1
+par=par_P_SS_TPS_min rng=SS_TPS_model!E3:F3 rdim=1
+par=par_Q_SS_TPS_max rng=SS_TPS_model!AC3:AD3 rdim=1
+par=par_P_SS_TPS_ru_general rng=SS_TPS_model!Q3:R3 rdim=1
+par=par_P_SS_TPS_ru_start rng=SS_TPS_model!S3:T3 rdim=1
+par=par_P_SS_TPS_rd_general rng=SS_TPS_model!U3:V3 rdim=1
+par=par_P_SS_TPS_rd_stop rng=SS_TPS_model!W3:X3 rdim=1
+par=par_Eta_SS_TPS_max rng=SS_TPS_model!G3:H3 rdim=1
+par=par_Eta_SS_TPS_min rng=SS_TPS_model!I3:J3 rdim=1
+par=par_Lambda_SS_TPS_heatlosses rng=SS_TPS_model!K3:L3 rdim=1
+par=par_H_SS_TPS_minon rng=SS_TPS_model!M3:N3 rdim=1
+par=par_H_SS_TPS_maxon rng=SS_TPS_model!AN3:AO3 rdim=1
+par=par_H_SS_TPS_minoff rng=SS_TPS_model!AN3:AO3 rdim=1
+par=par_T_SS_TPS_feed rng=SS_TPS_model!AE3:AG674 rdim=2
+par=par_T_SS_TPS_return rng=SS_TPS_model!AH3:AJ674 rdim=2
+par=par_T_SS_TPS_cooling rng=SS_TPS_model!AK3:AM674 rdim=2
+par=par_X_E_SS_TPS_condensing rng=SS_TPS_model!Y3:Z3 rdim=1
+par=par_X_E_SS_TPS_pressure rng=SS_TPS_model!AA3:AB3 rdim=1
+par=par_X_E_SS_TPS_avail rng=SS_TPS_model!AP3:AR674 rdim=2
+
+par=par_Q_SS_PLB_max rng=SS_PLB_model!C3:D3 rdim=1
+par=par_Q_SS_PLB_min rng=SS_PLB_model!G3:H3 rdim=1
+par=par_Eta_SS_PLB rng=SS_PLB_model!E3:F3 rdim=1
+
+*SS_eco
+par=par_R_MS_disposal rng=SS_Eco!A3:B3 rdim=1
+par=par_Disposal_SS_RC rng=SS_Eco!C3:D3 rdim=1
+par=par_Emis_SS_CHP_CO2 rng=SS_Eco!E3:F3 rdim=1
+
+
+***input_fares***
+par=par_F_E_EGrid_energy rng=Fares_E_EGrid!A3:D147170 rdim=3
+par=par_F_W_WGrid_energy rng=Fares_W_WGrid!A3:D147170 rdim=3
+par=par_F_C_CGrid_energy rng=Fares_C_CGrid!A3:D147170 rdim=3
+par=par_F_G_GGrid_energy rng=Fares_G_GGrid!A3:D147170 rdim=3
+par=par_F_H_HGrid_energy rng=Fares_H_HGrid!A3:D147170 rdim=3
+
+par=par_F_G_GGrid_intenergy rng=Fares_G_GGrid!K3:N343394  rdim=3
+par=par_F_E_EGrid_intenergy rng=Fares_E_EGrid!S3:V343394  rdim=3
+par=par_F_W_WGrid_intenergy rng=Fares_W_WGrid!O3:R343394   rdim=3
+par=par_F_C_CGrid_intenergy rng=Fares_C_CGrid!O3:R343394   rdim=3
+par=par_F_H_HGrid_intenergy rng=Fares_H_HGrid!O3:R343394   rdim=3
+
+par=par_F_E_EGrid_capacity rng=Fares_E_EGrid!E3:G20 rdim=2
+par=par_F_W_WGrid_capacity rng=Fares_W_WGrid!E3:G20 rdim=2
+par=par_F_G_GGrid_capacity rng=Fares_G_GGrid!E3:G20 rdim=2
+par=par_F_C_CGrid_capacity rng=Fares_C_CGrid!E3:G20 rdim=2
+par=par_F_H_HGrid_capacity rng=Fares_H_HGrid!E3:G20 rdim=2
+
+par=par_F_E_EGrid_basic rng=Fares_E_EGrid!H3:J221 rdim=2
+par=par_F_W_WGrid_basic rng=Fares_W_WGrid!H3:J221 rdim=2
+par=par_F_G_GGrid_basic rng=Fares_G_GGrid!H3:J221 rdim=2
+par=par_F_C_CGrid_basic rng=Fares_C_CGrid!H3:J221 rdim=2
+par=par_F_H_HGrid_basic rng=Fares_H_HGrid!H3:J221 rdim=2
+
+par=par_F_E_EGrid_energyinfeed rng=Fares_E_EGrid!K3:N147170 rdim=3
+
+par=par_F_E_EGrid_intenergyinfeed rng=Fares_E_EGrid!O3:R343394 rdim=3
+par=par_F_W_WGrid_intenergyinfeed rng=Fares_W_WGrid!K3:N343394 rdim=3
+par=par_F_C_CGrid_intenergyinfeed rng=Fares_C_CGrid!K3:N343394 rdim=3
+par=par_F_H_HGrid_intenergyinfeed rng=Fares_H_HGrid!K3:N343394 rdim=3
+
+par=par_F_R_RGrid_pos rng=Fares_R_RGrid!A3:D147170 rdim=3
+par=par_F_R_RGrid_neg rng=Fares_R_RGrid!E3:H147170 rdim=3
+par=par_F_R_RGrid_intpos rng=Fares_R_RGrid!I3:L343394 rdim=3
+par=par_F_R_RGrid_intneg rng=Fares_R_RGrid!M3:P343394 rdim=3
+
+***input_es***
+*ES_power
+par=par_I_ES rng=ES!A3:B674 rdim=1
+par=par_T_ES rng=ES!C3:D674 rdim=1
+par=sca_MH_ES_T rng=ES!H3:H3 rdim=0
+par=par_V_ES rng=ES!E3:F674 rdim=1
+par=sca_MH_ES_V rng=ES!G3:G3 rdim=0
+par=sca_Z_ES_0 rng=ES!I3:I3 rdim=0
+
+***input_ps***
+*PS_eco
+par=par_Tax_PS_CO2 rng=PS_eco!A3:B674 rdim=1
+par=par_Inc_PS_E_fix rng=PS_eco!C3:D3 rdim=1
+par=sca_Tax_PS_vat rng=PS_eco!H3:H3 rdim=0
+par=sca_Tax_PS_royalties rng=PS_eco!I3:I3 rdim=0
+
+***input_grid***
+par=par_Eta_NS_WGrid rng=NS_Grid!A3:B3 rdim=1
+par=par_Eta_NS_CGrid rng=NS_Grid!C3:D3 rdim=1
+par=par_Eta_NS_HGrid rng=NS_Grid!K3:L3 rdim=1
+par=par_SOC_NS_PRGrid_cap rng=NS_Grid!E3:G674 rdim=2
+par=par_SOC_NS_NRGrid_cap rng=NS_Grid!H3:J674 rdim=2
+

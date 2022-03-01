@@ -1,0 +1,6 @@
+{
+	"id" : 1,
+	"name": "IRPopt",
+	"description" : "Optimierungsmodell für Geschäftsmodelle",
+	"type": "GDX"
+}

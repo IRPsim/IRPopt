@@ -1,0 +1,1357 @@
+[{:label "Systemübersicht"
+  :icon "fa fa-spinner"
+  :description "<h4>Sektorübergreifendes-Energiesystem:</h4>
+                <p>Für eine differenzierte Darstellung der Entitäten (Technologien, Märkte, Verbraucher)
+                   und der Energieflüsse (Strom, Wärme, Gas, Reserve) können in den Kästen auf der rechten 
+                   Seite die Symbole und Farben nach Wunsch zugeschaltet werden.</p>"
+  :graph {:edges {:tags [["X" "energyLink"]] 
+                  :groups [{:tags [["E"]] :label "Strom" :color "Grey"}
+                           {:tags [["W"]] :label "Wärme" :color "DodgerBlue"}
+                           {:tags [["G"]] :label "Gas"  :color "Purple"}
+						   {:tags [["C"]] :label "Kälte"  :color "DodgerBlue"}
+						   {:tags [["HC"]] :label "Steinkohle"  :color "DarkSlateGrey"}
+						   {:tags [["L"]] :label "Braunkohle"  :color "Brown"}
+						   {:tags [["B"]] :label "Biomasse"  :color "Green"}
+						   {:tags [["H"]] :label "Wasserstoff"  :color "Green"}
+						   {:tags [["CL"]] :label "Chlor"  :color "DarkGreen"}
+						   {:tags [["RF"]] :label "Kehrricht"  :color "GoldenRod"}
+						   {:tags [["O"]] :label "Öl"  :color "Black"}
+						   {:tags [["R"]] :label "Reserve"  :color "LimeGreen"}
+						   {:tags [["F"]] :label "Flexibilität"  :color "LimeGreen"}]
+                  :heading "Elementflüsse"}
+          :nodes {:set "set_pss"
+                  :hide-single? false ; optional, false wenn nicht gesetzt
+                  :where "par_X_pss_model" ; optional
+                  ;optional
+                  :color {:type :parameter 
+                          :tags [["OH"]] :heading "Optimierungshoheit"} 
+                  :border {:type :parameter 
+                           :tags [["COH"]] :heading "Bilanzierungshoheit"} ;optional
+                  :shape {:type :subsets
+                          :groups [{:tags [["DES" "NGB"]["DES" "EB"]["DES" "FC"]["DES" "EY"]["DES" "HP"]["DES" "CHP"]["DES" "PV"]["DES" "ST"]["DES" "CR"]["DES" "SC"]["DES" "GTP"]["DES" "ST"]["SS"]] :value "square" :label "Erzeuger"}
+                                   {:tags [["DS"]] :value "octagon" :label "Last"}
+                                   {:tags [["DES" "TS"]["DES" "ES"]["DES" "CS"]["DES" "GS"]["DES" "HS"]["DES" "CLS"]] :value "diamond" :label "Speicher"}
+                                   {:tags [["NS"]] :value "hexagon" :label "Netz"}
+                                   {:tags [["MS"]] :value "gear" :label "Markt"}]
+								   :heading "Komponentenart"} ;optional
+                  :icon {:type :subsets :heading "Komponentenausprägung"}}}} 
+					  
+ {:label "Land"
+  :description "Bitte wählen Sie aus, welche länderspezifischen Eigenschaften in der Optimierung berücksichtigt werden sollen."
+  :icon "fa fa-map-marker"
+  :tags [["delta"] ["X" "MS" "DE" "country"] ["X" "MS" "CH" "country"]]} 
+ {:set "set_side_cust" 
+  :label "Prosumer"
+ :description "In der Kundengruppen-Verwaltung können Sie bestehende Kundengruppen (Prosumer) bearbeiten und kopieren oder neue Kundengruppen anlegen (Klick auf [+]). Bitte legen Sie hier die Bezeichnung der Gruppe, deren Größe, ihr relatives oder absolutes jährliches Wachstum fest und definieren Sie, ob die Kundengruppe umsatzsteuerlich als Unternehmer gelten soll. Dies wird bei der Vergütung von eigenerzeugtem Strom berücksichtigt."
+ 
+  :icon "fa fa-users"
+  :tags [["Kundenanzahl" "DS"] ["X" "DS" "business"] ["S" "DS" "growth"]]}
+ 				  
+{:label "Komponenten"
+ :description "In den folgenden Unterkategorien können Sie die in der Optimierung enthaltenen Technologien (Verbraucher-, Speicher-, Erzeugungs-, Übertragungs- und Leistungsmessungstechnologien) konkretisieren. Zuvor definierte Datensätze lassen sich über das Datenbanksymbol aus der Stammdaten-Verwaltung laden."
+ :icon "fa fa-power-off"
+ :sections [{:label "Verbrauchertechnologien"
+             :set "set_load_DSLOA"
+             :tags [["X" "model"]]
+             :sections [{:set "set_load_DS_E"
+						 :tags [["X" "model"]]
+                          :sections [{:label "Elektrische Lasten" 
+                                      :tags [["X" "model"]["X" "DS" "E" "scaling"] ["L" "DS" "E"] ["DSM" "DS" "E" "Cdown"] ["DSM" "DS" "E" "Cup"] ["DSM" "DS" "E" "t"]["X" "DS" "E" "self"] ]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "DES" "PV" "DS" "ELoad" "energyLink"] ["X" "DES" "CHP" "DS" "ELoad" "energyLink"]  ["X" "DES" "ES" "DS" "ELoad" "energyLink"] ["X" "NS" "EGrid" "DS" "ELoad" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DS" "side"]]}
+												  {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DS" "side"]]}]}
+                                     {:label "Endkundentarife"
+                                      :tags [["X" "model"]["F" "E" "EGrid" "energy"] ["F" "E" "EGrid" "basic"]]}
+									 {:label "Geschäftsfeldtarife"
+                                      :tags [["X" "model"]["F" "E" "EGrid" "intenergy"]]}]}
+                         {:set "set_load_DS_W"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Wärme Lasten"
+                                      :tags [["X" "model"]["X" "model"]["X" "DS" "W" "scaling"] ["L" "W"]["X" "DS" "W" "self"]  ]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "DES" "NGB" "DS" "WLoad" "energyLink"] ["X" "DES" "EB" "DS" "WLoad" "energyLink"] ["X" "DES" "ST" "DS" "WLoad" "energyLink"]  ["X" "DES" "CHP" "DS" "WLoad" "energyLink"] ["X" "DES" "HP" "DS" "WLoad" "energyLink"] ["X" "DES" "TS" "DS" "WLoad" "energyLink"] ["X" "NS" "WGrid" "DS" "WLoad" "energyLink"]["X" "SS" "CHP" "DS" "W" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+											      :icon "glyphicon glyphicon-link"
+												  :tags [["X" "model"]["OH" "DS" "side"]]}
+												  {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DS" "side"]]}]}
+                                     {:label "Endkundentarife"
+                                      :tags [["X" "model"]["F" "W" "WGrid" "energy"] ["F" "W" "WGrid" "basic"]]}
+									 {:label "Geschäftsfeldtarife"
+                                      :tags [["X" "model"]["F" "W" "WGrid" "intenergy"]]}]}
+						 {:set "set_load_DS_G"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Erdgas Lasten"
+                                      :tags [["X" "model"]["X" "DS" "G" "scaling"] ["L" "G"] ]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "NS" "GGrid" "DS" "GLoad" "energyLink"]["X" "MS" "GMarket" "DS" "GLoad" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DS" "side"]]}
+												  {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DS" "side"]]}]}
+                                     {:label "Endkundentarife"
+                                      :tags [["X" "model"]["F" "G" "GGrid" "energy"] ["F" "G" "GGrid"  "basic"]]}
+									 {:label "Geschäftsfeldtarife"
+                                      :tags [["X" "model"]["F" "G" "GGrid" "intenergy"]]}]}
+						 {:set "set_load_DS_C"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Kälte Lasten"
+                                      :tags [["X" "model"]["X" "DS" "C" "scaling"] ["L" "C"] ]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "NS" "CGrid" "DS" "CLoad" "energyLink"]["X" "DES" "SC" "DS" "CLoad" "energyLink"]["X" "DES" "CR" "DS" "CLoad" "energyLink"]["X" "DES" "CS" "DS" "CLoad" "energyLink"]["X" "MS" "CMarket" "DS" "CLoad" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DS" "side"]]}
+												  {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DS" "side"]]}]}
+                                     {:label "Endkundentarife"
+                                      :tags [["X" "model"]["F" "C" "CGrid" "energy"] ["F" "C" "CGrid"  "basic"]]}
+									 {:label "Geschäftsfeldtarife"
+                                      :tags [["X" "model"]["F" "C" "CGrid" "intenergy"]]}]}
+						{:set "set_load_DS_CL"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Chlor Lasten"
+                                      :tags [["X" "model"]["X" "DS" "CL" "scaling"]["L" "CL"]["DSM" "DS" "CL" "Cdown"] ["DSM" "DS" "CL" "Cup"]["DSM" "DS" "CL" "t"] ]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "SS" "EY" "DS" "CLLoad" "energyLink"]["X" "DES" "EY" "DS" "CLLoad" "energyLink"]["X" "DES" "CLS" "DS" "CLLoad" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DS" "side"]]}
+												  {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DS" "side"]]}]}
+                                     {:label "Endkundentarife"
+                                      :tags [["X" "model"]["F" "H" "HGrid" "energy"] ["F" "H" "HGrid"  "basic"]]}
+									 {:label "Geschäftsfeldtarife"
+                                      :tags [["X" "model"]["F" "H" "HGrid" "intenergy"]]}]}
+									  
+						 {:set "set_load_DS_H"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Wasserstoff Lasten"
+                                      :tags [["X" "model"]["X" "DS" "H" "scaling"]["L" "H"]["DSM" "DS" "H" "Cdown"] ["DSM" "DS" "H" "Cup"]["DSM" "DS" "H" "t"] ]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "NS" "HGrid" "DS" "HLoad" "energyLink"]["X" "DES" "HS" "DS" "HLoad" "energyLink"]["X" "DES" "EY" "DS" "HLoad" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DS" "side"]]}
+												  {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DS" "side"]]}]}
+                                     {:label "Endkundentarife"
+                                      :tags [["X" "model"]["F" "H" "HGrid" "energy"] ["F" "H" "HGrid"  "basic"]]}
+									 {:label "Geschäftsfeldtarife"
+                                      :tags [["X" "model"]["F" "H" "HGrid" "intenergy"]]}]}]}
+  
+             {:label "Speichertechnologien"
+			 :set "set_tech_DESTO"
+			 :tags [["X" "model"]]
+              :sections [{:set "set_tech_DES_ES"
+			              :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["ES" "SOC"] ["X" "DES" "ES" "scaling"]["ES" "Eta"] ["ES" "Wear"] ["ES" "Learning"] ["ES" "Life"] ["ES" "Q"] ["ES" "P"]["X" "DES" "ES" "sim"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["ES" "DES" "C"] ["ES" "DES" "Ctrend" "Cap"]["ES" "Alpha"]["ES" "Inc"]["C" "pss" "relativeFlow"] ]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "DES" "PV" "DES" "ES" "energyLink"] ["X" "DES" "CHP" "DES" "ES" "energyLink"] ["X" "NS" "fromEGrid" "DES" "toES" "energyLink"] ["X" "DES" "fromES" "DES" "toES" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "fromES" "NS" "toEGrid" "energyLink"] ["X" "DES" "ES" "NS" "RGrid" "energyLink"]["X" "DES" "ES" "DES" "CR" "energyLink"] ["X" "DES" "fromES" "DES" "toES" "energyLink"] ["X" "DES" "ES" "DS" "ELoad" "energyLink"] ["X" "DES" "ES" "DES" "HP" "energyLink"] ["X" "DES" "ES" "DES" "EB" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									  {:label "Endkundentarife"
+									   :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "E" "EGrid" "energy"]["F" "E" "EGrid" "basic"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "E" "EGrid" "energyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "E" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}					  
+						 {:set "set_tech_DES_TS"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["TS" "SOC"] ["X" "DES" "TS" "scaling"] ["TS" "Eta"] ["TS" "Wear"] ["TS" "Learning"] ["TS" "Life"] ["TS" "Q"] ]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["TS" "DES" "C"] ["TS" "DES" "Ctrend" "Cap"] ["TS" "Alpha"] ["TS" "Inc"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "DES" "NGB" "DES" "TS" "energyLink"]["X" "DES" "EB" "DES" "TS" "energyLink"] ["X" "DES" "TS" "DES" "SC" "energyLink"]["X" "DES" "ST" "DES" "TS" "energyLink"]  ["X" "DES" "CHP" "DES" "TS" "energyLink"] ["X" "DES" "HP" "DES" "TS" "energyLink"] ["X" "NS" "fromWGrid" "DES" "toTS" "energyLink"] ["X" "SS" "CHP" "DES" "TS" "energyLink"] ["X" "SS" "RC" "DES" "TS" "energyLink"] ]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "fromTS" "NS" "toWGrid" "energyLink"] ["X" "DES" "TS" "DS" "WLoad" "energyLink"]["X" "DES" "TS" "DES" "SC" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+									  			  :tags [["X" "model"]["F" "W" "WGrid" "energy"]["F" "W" "WGrid" "basic"]]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "W" "WGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "W" "WGrid" "intenergyinfeed"]]}]}]}
+						 {:set "set_tech_DES_CS"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["CS" "SOC"] ["X" "DES" "CS" "scaling"] ["CS" "Eta"] ["CS" "Wear"] ["CS" "Learning"] ["CS" "Life"] ["CS" "Q"] ]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["CS" "DES" "C"] ["CS" "DES" "Ctrend" "Cap"] ["CS" "Alpha"] ["CS" "Inc"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "DES" "CR" "DES" "CS" "energyLink"]["X" "DES" "SC" "DES" "CS" "energyLink"] ["X" "NS" "CGrid" "DES" "CS" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "CS" "NS" "CGrid" "energyLink"] ["X" "DES" "CS" "DS" "CLoad" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+                                      :tags [["X" "model"]["F" "C" "CGrid" "energy"] ["F" "C" "CGrid" "basic"] ]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "C" "CGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "C" "CGrid" "intenergyinfeed"]]}]}]}
+												  
+						 {:set "set_tech_DES_GS"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["GS" "SOC"] ["X" "DES" "GS" "scaling"] ["GS" "Eta"] ["GS" "Wear"] ["GS" "Learning"] ["GS" "Life"] ["GS" "Q"] ]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["GS" "DES" "C"] ["GS" "DES" "Ctrend" "Cap"] ["GS" "Alpha"] ["GS" "Inc"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "DES" "CR" "DES" "GS" "energyLink"]["X" "DES" "SC" "DES" "GS" "energyLink"] ["X" "NS" "CGrid" "DES" "GS" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "GS" "NS" "CGrid" "energyLink"] ["X" "DES" "GS" "DS" "CLoad" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+                                      :tags [["X" "model"]["F" "C" "CGrid" "energy"] ["F" "C" "CGrid" "basic"] ]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "C" "CGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "C" "CGrid" "intenergyinfeed"]]}]}]}
+						{:set "set_tech_DES_CLS"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["CLS" "SOC"] ["X" "DES" "CLS" "scaling"] ["P" "DES" "CLS" "discharge"] ["P" "DES" "CLS" "charge"] ["CLS" "Eta"] ["CLS" "Wear"] ["CLS" "Learning"] ["CLS" "Life"] ["CLS" "Q"] ["CLS" "tank"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["CLS" "DES" "C"] ["CLS" "DES" "Ctrend" "Cap"] ["CLS" "Alpha"] ["CLS" "Inc"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "SS" "EY" "DES" "CLS" "energyLink"]["X" "DES" "EY" "DES" "CLS" "energyLink"]["X" "DES" "toCLS" "DES" "fromCLS" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "CLS" "DS" "CLLoad" "energyLink"]["X" "DES" "fromCLS" "DES" "toCLS" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+                                      :tags [["X" "model"]["F" "C" "CGrid" "energy"] ["F" "C" "CGrid" "basic"] ]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "C" "CGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "C" "CGrid" "intenergyinfeed"]]}]}]}
+						 {:set "set_tech_DES_HS"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["HS" "SOC"] ["X" "DES" "HS" "scaling"] ["P" "DES" "HS" "discharge"] ["P" "DES" "HS" "charge"]["HS" "Eta"] ["HS" "Wear"] ["HS" "Learning"] ["HS" "Life"] ["HS" "Q"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["HS" "DES" "C"] ["HS" "DES" "Ctrend" "Cap"] ["HS" "Alpha"] ["HS" "Inc"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "DES" "EY" "DES" "HS" "energyLink"]["X" "NS" "fromHGrid" "DES" "toHS" "energyLink"]["X" "MS" "HMarket" "DES" "HS" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "fromHS" "NS" "toHGrid" "energyLink"]["X" "DES" "HS" "MS" "HMarket" "energyLink"]["X" "DES" "HS" "DS" "HLoad" "energyLink"]["X" "DES" "HS" "DES" "FC" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+                                      :tags [["X" "model"]["F" "C" "CGrid" "energy"] ["F" "C" "CGrid" "basic"] ]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "C" "CGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "C" "CGrid" "intenergyinfeed"]]}]}]}]}
+												  
+			 {:label "Kleinerzeugungstechnologien"
+:set "set_tech_DEGEN"
+:tags [["X" "model"]]
+              :sections [{:set "set_tech_DES_NGB"
+			              :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["X" "DES" "NGB" "scaling"] ["NGB" "Eta"] ["NGB" "Wear"] ["NGB" "Learning"] ["NGB" "Life"] ["NGB" "Q"]["NGB" "utilpercent"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["NGB" "DES" "C"] ["NGB" "DES" "Ctrend" "Cap"] ["NGB" "Alpha"] ["NGB" "Inc"]["Emis" "pss" "CO2"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "NS" "GGrid" "DES" "NGB" "energyLink"] ["X" "MS" "GMarket" "DES" "NGB" "energyLink"] ["X" "MS" "OMarket" "DES" "NGB" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "NGB" "DS" "WLoad" "energyLink"] ["X" "DES" "NGB" "NS" "WGrid" "energyLink"]["X" "DES" "NGB" "DES" "TS" "energyLink"]["X" "H" "DES" "NGB" "NS" "HGrid" "energyLink"]["X" "H" "DES" "NGB" "DES" "HS" "energyLink"]["X" "H" "DES" "NGB" "DS" "H" "energyLink"]["X" "DES" "NGB" "DES" "SC" "energyLink"]]}]}
+									{:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+                                      :tags [["X" "model"]["F" "G" "GGrid" "energy"] ["F" "G" "GGrid"  "basic"]]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "G" "GGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "W" "WGrid" "intenergyinfeed"]]}]}]}
+						 {:set "set_tech_DES_EB"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["X" "DES" "EB" "scaling"] ["EB" "Eta"] ["EB" "Wear"] ["EB" "Learning"] ["EB" "Life"] ["EB" "Q"] ["EB" "utilpercent"]]}
+												 {:label "Ökonomisch"
+												 :tags [["X" "model"]["EB" "DES" "C"] ["EB" "DES" "Ctrend" "Cap"] ["EB" "Alpha"] ["EB" "Inc"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "NS" "EGrid" "DES" "EB" "energyLink"] ["X" "DES" "ES" "DES" "EB" "energyLink"] ["X" "DES" "CHP" "DES" "EB" "energyLink"] ["X" "DES" "PV" "DES" "EB" "energyLink"]["X" "SS" "CHP" "DES" "EB" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "EB" "NS" "WGrid" "energyLink"] ["X" "DES" "EB" "NS" "RGrid" "energyLink"] ["X" "DES" "EB" "DS" "WLoad" "energyLink"]["X" "DES" "EB" "DES" "SC" "energyLink"] ["X" "DES" "EB" "DES" "TS" "energyLink"]]}]}
+									  {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "E" "EGrid" "energy"]["F" "E" "EGrid" "basic"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "E" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+						 {:set "set_tech_DES_PV"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["X" "DES" "PV" "scaling"] ["PV" "Eta"] ["PV" "Wear"] ["PV" "Learning"] ["PV" "Life"] ["PV" "A"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["PV" "DES" "C"] ["PV" "DES" "Ctrend" "Cap"] ["PV" "Alpha"] ["PV" "Inc"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "PV" "DES" "ES" "energyLink"] ["X" "DES" "PV" "DS" "ELoad" "energyLink"] ["X" "DES" "PV" "DES" "CR" "energyLink"]["X" "DES" "PV" "DES" "EB" "energyLink"] ["X" "DES" "PV" "DES" "HP" "energyLink"] ["X" "DES" "PV" "NS" "EGrid" "energyLink"]["X" "DES" "PV" "NS" "RGrid" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "E" "EGrid" "energyinfeed"]["F" "E" "EGrid" "basic"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "neg"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "intneg"]]}]}]}
+					     {:set "set_tech_DES_ST"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["X" "DES" "ST" "scaling"] ["ST" "Eta"] ["ST" "Wear"] ["ST" "Learning"] ["ST" "Life"] ["ST" "A"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["ST" "DES" "C"] ["ST" "DES" "Ctrend" "Cap"] ["ST" "Alpha"] ["ST" "Inc"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "ST" "DS" "WLoad" "energyLink"] ["X" "DES" "ST" "DES" "TS" "energyLink"] ["X" "DES" "ST" "DES" "CR" "energyLink"]["X" "DES" "ST" "DES" "SC" "energyLink"]["X" "DES" "ST" "DES" "CS" "energyLink"]["X" "DES" "ST" "DES" "HP" "energyLink"] ["X" "DES" "ST" "NS" "EGrid" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+                                      :tags [["kein" "thermischer" "Einspeisetarif" "vorhanden"]]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "W" "WGrid" "intenergyinfeed"]]}]}]}
+						 {:set "set_tech_DES_HP"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["X" "DES" "HP" "scaling"] ["HR" "Eta"] ["HP" "Wear"] ["HP" "Learning"] ["HP" "Life"]["HP" "Q"]["HP" "COP"]["HP" "T"] ["HP" "utilpercent"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["HP" "DES" "C"] ["HP" "DES" "Ctrend" "Cap"] ["HP" "Alpha"] ["HP" "Inc"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "NS" "EGrid" "DES" "HP" "energyLink"] ["X" "DES" "ES" "DES" "HP" "energyLink"] ["X" "DES" "CHP" "DES" "HP" "energyLink"] ["X" "DES" "PV" "DES" "HP" "energyLink"]["X" "SS" "CHP" "DES" "HP" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "HP" "NS" "WGrid" "energyLink"]["X" "DES" "HP" "NS" "RGrid" "energyLink"]["X" "DES" "HP" "DS" "WLoad" "energyLink"]["X" "DES" "HP" "DES" "SC" "energyLink"] ["X" "DES" "HP" "DES" "TS" "energyLink"]["X" "DES" "HP" "DES" "SC" "energyLink"]]}]}
+									  {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "E" "EGrid" "energy"]["F" "E" "EGrid" "basic"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "E" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+						{:set "set_tech_DES_CHP"
+						 :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["X" "DES" "CHP" "scaling"] [ "P" "CHP" "max"] [ "P" "CHP" "min"]  ["CHP" "Eta"] ["CHP" "Wear"] ["CHP" "Sigma"] ["CHP" "Learning"] ["CHP" "Life"]["CHP" "Q"] ["CHP" "utilpercent"]["Eta" "DES" "CHP" "max"]["Eta" "DES" "CHP" "min"]["Lambda" "DES" "CHP" "heatlosses"]["H" "DES" "CHP" "minon"]["H" "DES" "CHP" "minoff"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["CHP" "DES" "C"] ["CHP" "DES" "Ctrend" "Cap"] ["CHP" "Alpha"] ["CHP" "Inc"] ["Emis" "pss" "CO2"]["C" "pss" "relativeFlow"]["C" "pss" "relativeStatus"]["C" "pss" "absoluteStatus"]  ]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "NS" "GGrid" "DES" "CHP" "energyLink"]["X" "MS" "GMarket" "DES" "CHP" "energyLink"] ["X" "MS" "BMarket" "DES" "CHP" "energyLink"]["X" "MS" "LMarket" "DES" "CHP" "energyLink"]["X" "MS" "HCMarket" "DES" "CHP" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "CHP" "NS" "RGrid" "energyLink"]["X" "DES" "CHP" "DS" "WLoad" "energyLink"] ["X" "DES" "CHP" "DES" "TS" "energyLink"]["X" "DES" "ES" "CHP" "CR" "energyLink"] ["X" "DES" "ES" "DES" "SC" "energyLink"]["X" "DES" "CHP" "DS" "ELoad" "energyLink"]["X" "DES" "CHP" "NS" "EGrid" "energyLink"]["X" "DES" "CHP" "NS" "WGrid" "energyLink"]["X" "DES" "CHP" "DES" "HP" "energyLink"]["X" "DES" "CHP" "DES" "EB" "energyLink"]["X" "DES" "CHP" "DES" "ES" "energyLink"]["X" "DES" "CHP" "NS" "WGrid" "energyLink"]]}]}
+									  {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"] ]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "G" "GGrid" "energy"]["F" "G" "GGrid"  "basic"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["F" "E" "EGrid" "energyinfeed"] ]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "G" "GGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "E" "EGrid" "intenergyinfeed"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+						 {:set "set_tech_DES_CR"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["X" "DES" "CR" "scaling"] ["CR" "Eta"] ["CR" "Wear"] ["CR" "Learning"] ["CR" "Life"] ["CR" "Q"]]}
+												 {:label "Ökonomisch"
+												 :tags [["X" "model"]["CR" "DES" "Cap"]["CR" "DES" "Ctrend" "Cap"] ["CR" "Alpha"] ["CR" "Inc"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "NS" "EGrid" "DES" "CR" "energyLink"] ["X" "DES" "ES" "DES" "CR" "energyLink"] ["X" "DES" "CHP" "DES" "CR" "energyLink"] ["X" "DES" "PV" "DES" "CR" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "CR" "DS" "CLoad" "energyLink"] ["X" "DES" "CR" "DES" "CS" "energyLink"]["X" "DES" "CR" "NS" "CGrid" "energyLink"]["X" "DES" "CR" "NS" "RGrid" "energyLink"] ]}]}
+									  {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "E" "EGrid" "energy"]["F" "E" "EGrid" "basic"]["F" "W" "WGrid" "energy"]["F" "W" "WGrid" "basic"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "E" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+						 {:set "set_tech_DES_SC"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["X" "DES" "SC" "scaling"] ["SC" "Eta"] ["SC" "Wear"] ["SC" "Learning"] ["SC" "Life"] ["SC" "Q"]]}
+												 {:label "Ökonomisch"
+												 :tags [["X" "model"]["SC" "DES" "Cap"]["SC" "DES" "Ctrend" "Cap"] ["SC" "Alpha"] ["SC" "Inc"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"] ["X" "DES" "CHP" "DES" "SC" "energyLink"] ["X" "DES" "ST" "DES" "SC" "energyLink"]["X" "DES" "TS" "DES" "SC" "energyLink"]["X" "DES" "HP" "DES" "SC" "energyLink"]["X" "DES" "NGB" "DES" "SC" "energyLink"]["X" "DES" "EB" "DES" "SC" "energyLink"]["X" "NS" "WGrid" "DES" "SC" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "SC" "DS" "CLoad" "energyLink"] ["X" "DES" "SC" "DES" "CS" "energyLink"]["X" "DES" "SC" "NS" "CGrid" "energyLink"] ]}]}
+									  {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "E" "EGrid" "energy"]["F" "E" "EGrid" "basic"]["F" "W" "WGrid" "energy"]["F" "W" "WGrid" "basic"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "E" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+						 {:set "set_tech_DES_FC"
+			              :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["X" "DES" "FC" "scaling"] ["FC" "Eta"] ["FC" "Wear"] ["FC" "Learning"] ["FC" "Life"] ["FC" "P"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["FC" "DES" "C"] ["FC" "DES" "Ctrend" "Cap"] ["FC" "Alpha"] ["FC" "Inc"]["Emis" "pss" "CO2"]["C" "pss" "relativeFlow"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "H" "NS" "HGrid" "DES" "FC" "energyLink"]["X" "H" "DES" "EY" "DES" "FC" "energyLink"]["X" "H" "DES" "HS" "DES" "FC" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"] ["X" "E" "DES" "FC" "NS" "EGrid" "energyLink"]]}]}
+									{:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+                                      :tags [["X" "model"]["F" "G" "GGrid" "energy"] ["F" "G" "GGrid"  "basic"]]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "G" "GGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "W" "WGrid" "intenergyinfeed"]]}]}]}
+						 {:set "set_tech_DES_EY"
+			              :tags [["X" "model"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Technisch"
+												  :tags [["X" "model"]["X" "DES" "EY" "scaling"] ["EY" "Eta"] ["EY" "Wear"] ["EY" "Learning"] ["EY" "Life"] ["EY" "P" "max"] ["EY" "P" "min"] ["EY" "Sigma"]["P" "DES" "EY" "ru" "general"]["P" "DES" "EY" "rd" "general"]["Eta" "DES" "EY" "max"]["Eta" "DES" "EY" "min"]["Lambda" "DES" "EY" "heatlosses"]["H" "DES" "EY" "minon"]["H" "DES" "EY" "minoff"]["X" "DES" "EY" "avail"] ]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["EY" "DES" "C"] ["EY" "DES" "Ctrend" "Cap"] ["EY" "Alpha"] ["EY" "Inc"]["Emis" "pss" "CO2"]["C" "pss" "relativeFlow"]["C" "pss" "relativeStatus"]["C" "pss" "absoluteStatus"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												 :tags [["X" "model"]["X" "NS" "EGrid" "DES" "EY" "energyLink"] ["X" "DES" "ES" "DES" "EY" "energyLink"] ["X" "DES" "CHP" "DES" "EY" "energyLink"] ["X" "DES" "PV" "DES" "EY" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "DES" "EY" "NS" "HGrid" "energyLink"] ["X" "DES" "EY" "NS" "RGrid" "energyLink"] ["X" "DES" "EY" "DS" "HLoad" "energyLink"]["X" "DES" "EY" "DS" "CLLoad" "energyLink"]["X" "DES" "EY" "DES" "FC" "energyLink"] ["X" "DES" "EY" "DES" "HS" "energyLink"]["X" "DES" "EY" "DES" "CLS" "energyLink"]]}]}
+									{:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "DES" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "DES" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+									 {:label "Endkundentarife"
+                                      :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "E" "EGrid" "energy"] ["F" "E" "EGrid"  "basic"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["F" "R" "RGrid" "neg"]["F" "R" "RGrid" "pos"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["F" "E" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["F" "Cl" "ClGrid" "intenergyinfeed"]]}]}]}]}
+             
+             {:label "Großerzeugungstechnologien"
+:set "set_tech_SSGEN"
+:tags [["X" "model"]["X" "schedule"]]
+              :sections [{:set "set_tech_SS_WT"
+			              :tags [["X" "model"]["X" "schedule"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Fahrplan" 
+												  :tags [["X" "schedule"]["SS" "WT" "schedule"]["Scale" "pss" "schedule"]]}
+												 {:label "Technisch"
+												  :tags [["X" "model"] ["P" "SS" "WT" "max"] ["CP" "SS" "WT" "max"] ["Eta" "SS" "WT"] ["R" "SS" "WT" "diameter"] ["Hub" "SS" "WT"] ["Rho" "SS" "WT"] ["V" "SS" "WT"] ["X" "SS" "WT" "avail"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["X" "schedule"] ["C" "pss" "fixFlow"]["C" "pss" "relativeFlow"]["Emis" "pss" "CO2"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Abfluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "SS" "WT" "NS" "EGrid" "energyLink"] ["X" "SS" "WT" "MS" "EMarket" "energyLink"] ["X" "SS" "WT" "NS" "RGrid" "energyLink"] ["X" "SS" "WT" "SS" "PHS" "energyLink"]["X" "SS" "WT" "MS" "RMarket" "energyLink"]]}]}
+									  {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["OH" "SS" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["COH" "SS" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["X" "schedule"]["SOH" "pss" "sector"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+                         {:set "set_tech_SS_RH"
+						  :tags [["X" "model"]["X" "schedule"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Fahrplan" 
+												  :tags [["X" "schedule"]["SS" "RH" "schedule"]]}
+												 {:label "Technisch"
+												  :tags [["X" "model"] ["P" "SS" "RH" "max"] ["WFH" "SS" "RH"] ["WMF" "SS" "RH"] ["Eta" "SS" "RH"]["X" "SS" "RH" "avail"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["X" "schedule"]["C" "pss" "fixFlow"]["C" "pss" "relativeFlow"]["Emis" "pss" "CO2"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Abfluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "SS" "RH" "NS" "EGrid" "energyLink"] ["X" "SS" "RH" "MS" "EMarket" "energyLink"] ["X" "SS" "RH" "NS" "RGrid" "energyLink"] ["X" "SS" "RH" "SS" "PHS" "energyLink"]["X" "SS" "RH" "MS" "RMarket" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["OH" "SS" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["COH" "SS" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["X" "schedule"]["SOH" "pss" "sector"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+                         {:set "set_tech_SS_PV"
+						  :tags [["X" "model"]["X" "schedule"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Fahrplan" 
+												  :tags [["X" "schedule"]["SS" "PV" "schedule"] ["Scale" "pss" "schedule"]]}
+												 {:label "Technisch"
+												  :tags [["X" "model"] ["P" "SS" "PV" "max"] ["A" "SS" "PV"] ["Eta" "SS" "PV"] ["T" "SS" "PV"] ["TC" "SS" "PV"]["X" "SS" "PV" "avail"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["X" "schedule"]["C" "pss" "fixFlow"]["C" "pss" "relativeFlow"]["Emis" "pss" "CO2"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Abfluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "SS" "PV" "NS" "EGrid" "energyLink"] ["X" "SS" "PV" "MS" "EMarket" "energyLink"] ["X" "SS" "PV" "SS" "PHS" "energyLink"]["X" "SS" "PV" "NS" "RGrid" "energyLink"]["X" "SS" "PV" "MS" "RMarket" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["OH" "SS" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["COH" "SS" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["X" "schedule"]["SOH" "pss" "sector"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+						 {:set "set_tech_SS_TC"
+						  :tags [["X" "model"]["X" "schedule"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Fahrplan" 
+												  :tags [["X" "schedule"]["SS" "TC" "schedule"] ["Scale" "pss" "schedule"]]}
+												 {:label "Technisch"
+												  :tags [["X" "model"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["X" "schedule"]["C" "pss" "fixFlow"]["C" "pss" "relativeFlow"]["Emis" "pss" "CO2"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Abfluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "SS" "TC" "NS" "WGrid" "energyLink"] ["X" "SS" "TC" "MS" "WMarket" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["OH" "SS" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["COH" "SS" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["X" "schedule"]["SOH" "pss" "sector"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 ]}]}
+                         {:set "set_tech_SS_CHP"
+						  :tags [["X" "model"]["X" "schedule"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Fahrplan" 
+												  :tags [["X" "schedule"]["E" "SS" "CHP" "schedule"] ["W" "SS" "CHP" "schedule"]["E" "SS" "CHP" "respos" "schedule"] ["E" "SS" "CHP" "resneg" "schedule"] ["L" "SS" "CHP" "fuel" "schedule"] ["Emis" "SS" "CHP" "CO2"]]}
+												 {:label "Technisch"
+												  :tags [["X" "model"]["X" "SS" "CHP" "condensing"]["X" "SS" "CHP" "pressure"]["P" "SS" "CHP" "max"]["P" "SS" "CHP" "min"]["Q" "SS" "CHP" "max"]["P" "SS" "CHP" "ru" "general"]["P" "SS" "CHP" "rd" "general"]["Eta" "SS" "CHP" "max"]["Eta" "SS" "CHP" "min"]["Lambda" "SS" "CHP" "heatlosses"]["H" "SS" "CHP" "minon"]["H" "SS" "CHP" "minoff"]["T" "SS" "CHP" "feed"]["T" "SS" "CHP" "return"]["T" "SS" "CHP" "cooling"]["X" "SS" "CHP" "avail"]["X" "SS" "CHP" "LSW"]]}
+												{:label "Ökonomisch"
+												  :tags [["X" "model"]["X" "schedule"]["C" "pss" "relativeStatus"] ["C" "pss" "absoluteStatus"]["C" "pss" "fixFlow"]["C" "pss" "relativeFlow"]["Emis" "pss" "CO2"]["X" "E" "CHP" "LSW"]["X" "E" "CHP" "LSWII"]]}]}
+									{:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "NS" "G" "SS" "CHP" "energyLink"]["X" "MS" "GMarket" "SS" "CHP" "energyLink"]["X" "MS" "OMarket" "SS" "CHP" "energyLink"]["X" "MS" "BMarket" "SS" "CHP" "energyLink"]["X" "MS" "HCMarket" "SS" "CHP" "energyLink"]["X" "MS" "LMarket" "SS" "CHP" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "SS" "CHP" "NS" "EGrid" "energyLink"] ["X" "SS" "CHP" "NS" "WGrid" "energyLink"] ["X" "SS" "CHP" "MS" "EMarket" "energyLink"] ["X" "SS" "CHP" "NS" "RGrid" "energyLink"] ["X" "SS" "CHP" "SS" "PHS" "energyLink"]["X" "SS" "CHP" "MS" "WMarket" "energyLink"]["X" "SS" "CHP" "MS" "RMarket" "energyLink"]["X" "SS" "CHP" "DES" "HP" "energyLink"]["X" "SS" "CHP" "DES" "EB" "energyLink"]["X" "SS" "CHP" "DS" "W" "energyLink"]["X" "SS" "CHP" "DES" "TS" "energyLink"]   ]}]}
+								     {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["OH" "SS" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["COH" "SS" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["X" "schedule"]["SOH" "pss" "sector"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["X" "schedule"]["F" "G" "GGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "E" "EGrid" "intenergyinfeed"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+						 {:set "set_tech_SS_TPS"
+						  :tags [["X" "model"]["X" "schedule"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Fahrplan" 
+												  :tags [["X" "schedule"]["E" "SS" "TPS" "schedule"] ["W" "SS" "TPS" "schedule"]["E" "SS" "TPS" "respos" "schedule"] ["E" "SS" "TPS" "resneg" "schedule"] ["L" "SS" "TPS" "fuel" "schedule"] ["Emis" "SS" "TPS" "CO2"]]}
+												 {:label "Technisch"
+												  :tags [["X" "model"]["P" "SS" "TPS" "max"]["P" "SS" "TPS" "min"]["P" "SS" "TPS" "ru" "general"]["P" "SS" "TPS" "rd" "general"]["Eta" "SS" "TPS" "max"]["Eta" "SS" "TPS" "min"]["Lambda" "SS" "TPS" "heatlosses"]["H" "SS" "TPS" "minon"]["H" "SS" "TPS" "minoff"]["X" "SS" "TPS" "avail"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["X" "schedule"]["C" "pss" "relativeStatus"] ["C" "pss" "absoluteStatus"] ["C" "pss" "fixFlow"]["C" "pss" "relativeFlow"]["Emis" "pss" "CO2"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "NS" "G" "SS" "TPS" "energyLink"]["X" "MS" "GMarket" "SS" "TPS" "energyLink"]["X" "MS" "OMarket" "SS" "TPS" "energyLink"]["X" "MS" "BMarket" "SS" "TPS" "energyLink"]["X" "MS" "HCMarket" "SS" "TPS" "energyLink"]["X" "MS" "LMarket" "SS" "TPS" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "SS" "TPS" "NS" "EGrid" "energyLink"] ["X" "SS" "TPS" "MS" "EMarket" "energyLink"] ["X" "SS" "TPS" "NS" "RGrid" "energyLink"] ["X" "SS" "TPS" "SS" "PHS" "energyLink"] ["X" "SS" "TPS" "MS" "RMarket" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["OH" "SS" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["COH" "SS" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["X" "schedule"]["SOH" "pss" "sector"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["X" "schedule"]["F" "G" "GGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+                         {:set "set_tech_SS_RC"
+						  :tags [["X" "model"]["X" "schedule"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Fahrplan" 
+												  :tags [["X" "schedule"]["E" "SS" "RC" "schedule"] ["W" "SS" "RC" "schedule"]["E" "SS" "RC" "respos" "schedule"] ["E" "SS" "RC" "resneg" "schedule"] ["L" "SS" "RC" "fuel" "schedule"] ["Emis" "SS" "RC" "CO2"] ["R" "MS" "disposal"] ]}
+												 {:label "Technisch"
+												  :tags [["X" "model"]["X" "SS" "RC" "condensing"]["X" "SS" "RC" "pressure"]["P" "SS" "RC" "max"]["P" "SS" "RC" "min"]["Q" "SS" "RC" "max"]["P" "SS" "RC" "ru" "general"]["P" "SS" "RC" "rd" "general"]["Eta" "SS" "RC" "max"]["Eta" "SS" "RC" "min"]["Lambda" "SS" "RC" "heatlosses"]["H" "SS" "RC" "minon"]["H" "SS" "RC" "minoff"]["T" "SS" "RC" "feed"]["T" "SS" "RC" "return"]["T" "SS" "RC" "cooling"]["X" "SS" "RC" "avail"]["SOC" "SS" "RC" "initial"]["RF" "SS" "RC"]["Ratio" "SS" "RC"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["X" "schedule"]["C" "pss" "relativeStatus"] ["C" "pss" "absoluteStatus"] ["C" "pss" "fixFlow"]["C" "pss" "relativeFlow"]["Emis" "pss" "CO2"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "NS" "GGrid" "SS" "RC" "energyLink"]["X" "MS" "GMarket" "SS" "RC" "energyLink"]["X" "MS" "OMarket" "SS" "RC" "energyLink"]["X" "MS" "BMarket" "SS" "RC" "energyLink"]["X" "MS" "HCMarket" "SS" "RC" "energyLink"]["X" "MS" "LMarket" "SS" "RC" "energyLink"]["X" "MS" "RFMarket" "SS" "RC" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "SS" "RC" "NS" "EGrid" "energyLink"] ["X" "SS" "RC" "NS" "WGrid" "energyLink"] ["X" "SS" "RC" "MS" "EMarket" "energyLink"] ["X" "SS" "RC" "NS" "RGrid" "energyLink"]["X" "SS" "RC" "MS" "WMarket" "energyLink"] ["X" "SS" "RC" "MS" "RMarket" "energyLink"] ["X" "SS" "RC" "DES" "TS" "energyLink"] ]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["OH" "SS" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["COH" "SS" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["X" "schedule"]["SOH" "pss" "sector"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["X" "schedule"]["F" "G" "GGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "E" "EGrid" "intenergyinfeed"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+                         {:set "set_tech_SS_PHS"
+						  :tags [["X" "model"]["X" "schedule"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Fahrplan" 
+												  :tags [["X" "schedule"]["SS" "PHS" "E"] ["E" "SS" "PHS" "respos" "schedule"] ["E" "SS" "PHS" "resneg" "schedule"] ]}
+												 {:label "Technisch"
+												  :tags [["X" "model"] ["SS" "PHS" "P"] ["SS" "PHS" "SOC"] ["SS" "PHS" "Eta"]["X" "SS" "PHS" "avail"]["X" "SS" "PHS" "sim"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["X" "schedule"]["C" "pss" "fixFlow"]["C" "pss" "relativeFlow"]["Emis" "pss" "CO2"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "NS" "fromEGrid" "SS" "toPHS" "energyLink"]["X" "MS" "fromEMarket" "SS" "toPHS" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "SS" "fromPHS" "NS" "toEGrid" "energyLink"] ["X" "SS" "fromPHS" "MS" "toEMarket" "energyLink"]["X" "SS" "PHS" "NS" "RGrid" "energyLink"]["X" "SS" "fromPHS" "SS" "toPHS" "energyLink"] ["X" "SS" "PHS" "MS" "RMarket" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["OH" "SS" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["COH" "SS" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["X" "schedule"]["SOH" "pss" "sector"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzbezug"
+												  :tags [["X" "model"]["X" "schedule"]["F" "E" "EGrid" "intenergy"]]}
+												 {:label "Netzeinspeisung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "E" "EGrid" "intenergyinfeed"]]}
+												 {:label "Reservevorhaltung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "R" "RGrid" "intneg"]["F" "R" "RGrid" "intpos"]]}]}]}
+						 {:set "set_tech_SS_FC"
+						  :tags [["X" "model"]["X" "schedule"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Fahrplan" 
+												  :tags [["X" "schedule"]["SS" "FC" "schedule"] ["Scale" "pss" "schedule"]]}
+												 {:label "Technisch"
+												  :tags [["X" "model"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["X" "schedule"]["C" "pss" "fixFlow"]["C" "pss" "relativeFlow"]["Emis" "pss" "CO2"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Abfluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "SS" "FC" "NS" "WGrid" "energyLink"] ["X" "SS" "FC" "MS" "WMarket" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["OH" "SS" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["COH" "SS" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["X" "schedule"]["SOH" "pss" "sector"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 ]}]}
+						 {:set "set_tech_SS_EY"
+						  :tags [["X" "model"]["X" "schedule"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Fahrplan" 
+												  :tags [["X" "schedule"]["SS" "EY" "schedule"] ["Scale" "pss" "schedule"]]}
+												 {:label "Technisch"
+												  :tags [["X" "model"]["X" "SS" "EY" "condensing"]["X" "SS" "EY" "pressure"]["P" "SS" "EY" "max"]["P" "SS" "EY" "min"]["Q" "SS" "EY" "max"]["P" "SS" "EY" "ru" "general"]["P" "SS" "EY" "rd" "general"]["Eta" "SS" "EY" "max"]["Eta" "SS" "EY" "min"]["Lambda" "SS" "EY" "heatlosses"]["H" "SS" "EY" "minon"]["H" "SS" "EY" "minoff"]["T" "SS" "EY" "feed"]["T" "SS" "EY" "return"]["T" "SS" "EY" "cooling"]["X" "SS" "EY" "avail"]["SOC" "SS" "EY" "initial"]["RF" "SS" "EY"]["Ratio" "SS" "EY"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["X" "schedule"]["C" "pss" "relativeStatus"] ["C" "pss" "absoluteStatus"] ["C" "pss" "fixFlow"]["C" "pss" "relativeFlow"]["Emis" "pss" "CO2"]]}]}
+ {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "NS" "EGrid" "SS" "EY" "energyLink"]["X" "DES" "ES" "SS" "EY" "energyLink"]["X" "SS" "PV" "SS" "EY" "energyLink"]["X" "SS" "WT" "SS" "EY" "energyLink"]["X" "SS" "CHP" "SS" "EY" "energyLink"]["X" "MS" "LMarket" "SS" "EY" "energyLink"]["X" "MS" "RFMarket" "SS" "EY" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "SS" "EY" "NS" "HGrid" "energyLink"] ["X" "SS" "EY" "NS" "ClGrid" "energyLink"]["X" "SS" "EY" "DES" "CLS" "energyLink"] ["X" "SS" "EY" "DS" "CLLoad" "energyLink"]["X" "SS" "EY" "DS" "HLoad" "energyLink"]["X" "SS" "EY" "SS" "FC" "energyLink"] ["X" "SS" "EY" "DES" "HS" "energyLink"]["X" "SS" "EY" "NS" "RGrid" "energyLink"]["X" "SS" "EY" "MS" "WMarket" "energyLink"] ["X" "SS" "EY" "MS" "RMarket" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["OH" "SS" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["COH" "SS" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["X" "schedule"]["SOH" "pss" "sector"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 ]}]}
+						{:set "set_tech_SS_MT"
+						  :tags [["X" "model"]["X" "schedule"]]
+                          :sections [{:label "Technologieausprägung"
+									  :sections [{:label "Fahrplan" 
+												  :tags [["X" "schedule"]["SS" "MT" "schedule"] ["Scale" "pss" "schedule"]]}
+												 {:label "Technisch"
+												  :tags [["X" "model"]]}
+												 {:label "Ökonomisch"
+												  :tags [["X" "model"]["X" "schedule"]["C" "pss" "fixFlow"]["C" "pss" "relativeFlow"]["Emis" "pss" "CO2"]]}]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Abfluss"
+												  :tags [["X" "model"]["X" "schedule"]["X" "SS" "MT" "NS" "WGrid" "energyLink"] ["X" "SS" "MT" "MS" "WMarket" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["OH" "SS" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["X" "schedule"]["COH" "SS" "side"]]}
+												 {:label "Sektorenschlüssel"
+												  :tags [["X" "model"]["X" "schedule"]["SOH" "pss" "sector"]]}]}
+									 {:label "Geschäftsfeldtarife"
+									  :sections [{:label "Netzeinspeisung"
+												  :tags [["X" "model"]["X" "schedule"]["F" "W" "WGrid" "intenergyinfeed"]]}
+												 ]}]}
+												 
+												 
+												 
+												 
+												 ]}
+			
+			{:label "Übertragungstechnologien"
+			 :set "set_grid_NSTRA"
+			 :tags [["X" "model"]]
+              :sections [{:set "set_grid_NS_E"
+			              :tags [["X" "model"]]
+						  :label "Stromnetz"
+                          :sections [{:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "DES" "fromES" "NS" "toEGrid" "energyLink"]["X" "DES" "PV" "NS" "EGrid" "energyLink"]["X" "DES" "CHP" "NS" "EGrid" "energyLink"]
+														 ["X" "SS" "WT" "NS" "EGrid" "energyLink"]["X" "SS" "CHP" "NS" "EGrid" "energyLink"]["X" "SS" "PV" "NS" "EGrid" "energyLink"]["X" "SS" "RH" "NS" "EGrid" "energyLink"]
+														 ["X" "SS" "fromPHS" "NS" "toEGrid" "energyLink"]["X" "SS" "RC" "NS" "EGrid" "energyLink"]["X" "SS" "TPS" "NS" "EGrid" "energyLink"]["X" "MS" "fromEMarket" "NS" "toEGrid" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "NS" "EGrid" "DS" "ELoad" "energyLink"] ["X" "NS" "EGrid" "SS" "ETB" "energyLink"]["X" "NS" "EGrid" "SS" "CR" "energyLink"]["X" "NS" "EGrid" "DES" "HP" "energyLink"]["X" "NS" "EGrid" "DES" "EB" "energyLink"]["X" "NS" "fromEGrid" "DES" "toES" "energyLink"]["X" "NS" "fromEGrid" "SS" "toPHS" "energyLink"]["X" "NS" "fromEGrid" "MS" "toEMarket"  "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "NS" "grid" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "NS" "grid" "side"]]}]}]}
+       					 {:set "set_grid_NS_W"
+						 :tags [["X" "model"]]
+						  :label "Fernwärmenetz"
+                          :sections [{:label "Technologieausprägung" 
+                                      :tags [["X" "model"]["Eta" "NS" "WGrid"] ["SOC" "NS" "PRGrid" "cap"] ["SOC" "NS" "NRGrid" "cap"]]}
+									 {:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "DES" "fromTS" "NS" "toWGrid" "energyLink"]["X" "DES" "NGB" "NS" "WGrid" "energyLink"]["X" "DES" "CHP" "NS" "WGrid" "energyLink"]["X" "DES" "HP" "NS" "WGrid" "energyLink"]["X" "DES" "ST" "NS" "WGrid" "energyLink"]["X" "DES" "EB" "NS" "WGrid" "energyLink"]
+														 ["X" "SS" "RC" "NS" "WGrid" "energyLink"]["X" "SS" "CHP" "NS" "WGrid" "energyLink"]["X" "SS" "TC" "NS" "WGrid" "energyLink"]["X" "SS" "TPS" "NS" "WGrid" "energyLink"]["X" "MS" "WMarket" "NS" "WGrid" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "NS" "WGrid" "DS" "WLoad" "energyLink"] ["X" "NS" "fromWGrid" "DES" "toTS" "energyLink"]["X" "NS" "WGrid" "DES" "SC" "energyLink"]["X" "NS" "WGrid" "MS" "WMarket" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "NS" "grid" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "NS" "grid" "side"]]}]}]}
+						 {:set "set_grid_NS_G"
+						 :tags [["X" "model"]]
+						  :label "Gasnetz"
+                          :sections [{:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "MS" "GMarket" "NS" "GGrid" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "NS" "GGrid" "DS" "GLoad" "energyLink"]["X" "NS" "GGrid" "DES" "NGB" "energyLink"] ["X" "NS" "GGrid" "DES" "CHP" "energyLink"]
+													     ["X" "NS" "GGrid" "SS" "RC" "energyLink"]["X" "NS" "GGrid" "SS" "TPS" "energyLink"]["X" "NS" "GGrid" "SS" "CHP" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "NS" "grid" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "NS" "grid" "side"]]}]}]}
+												  
+						{:set "set_grid_NS_C"
+						 :tags [["X" "model"]]
+						  :label "Kältenetz"
+                          :sections [{:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "DES" "CS" "NS" "CGrid" "energyLink"]["X" "DES" "SC" "NS" "CGrid" "energyLink"]["X" "DES" "CR" "NS" "CGrid" "energyLink"]
+														 ["X" "MS" "CMarket" "NS" "CGrid" "energyLink"]["X" "MS" "CMarket" "NS" "CGrid" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "NS" "CGrid" "DS" "CLoad" "energyLink"] ["X" "NS" "CGrid" "MS" "CMarket" "energyLink"]]}]}
+							
+									{:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "NS" "grid" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "NS" "grid" "side"]]}]}]}
+												  
+						 {:set "set_grid_NS_H"
+						 :tags [["X" "model"]]
+						  :label "Wasserstoffnetz"
+                          :sections [{:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "MS" "HMarket" "NS" "HGrid" "energyLink"]["X" "H" "DES" "fromHS" "NS" "toHGrid" "energyLink"]["X" "H" "SS" "EY" "NS" "HGrid" "energyLink"]["X" "H" "DES" "EY" "NS" "HGrid" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "H" "NS" "HGrid" "DS" "HLoad" "energyLink"]["X" "H" "NS" "fromHGrid" "DES" "toHS" "energyLink"]["X" "NS" "HGrid" "MS" "HMarket" "energyLink"]["X" "NS" "HGrid" "DES" "NHB" "energyLink"] ["X" "NS" "HGrid" "DES" "CHP" "energyLink"]
+													     ["X" "NS" "HGrid" "SS" "RC" "energyLink"]["X" "NS" "HGrid" "SS" "TPS" "energyLink"]["X" "NS" "HGrid" "SS" "CHP" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "NS" "grid" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "NS" "grid" "side"]]}]}]}
+						 {:set "set_grid_NS_R"
+						 :tags [["X" "model"]]
+						  :label "Reservenetz"
+                          :sections [{:label "Energiesystematik"
+									  :sections [{:label "Zufluss"
+												  :tags [["X" "model"]["X" "DES" "ES" "NS" "RGrid" "energyLink"]["X" "DES" "HP" "NS" "RGrid" "energyLink"]["X" "DES" "CHP" "NS" "RGrid" "energyLink"]["X" "DES" "EB" "NS" "RGrid" "energyLink"]["X" "DES" "PV" "NS" "RGrid" "energyLink"]
+														 ["X" "SS" "PV" "NS" "RGrid" "energyLink"] ["X" "SS" "WT" "NS" "RGrid" "energyLink"] ["X" "SS" "RH" "NS" "RGrid" "energyLink"]  ["X" "SS" "PHS" "NS" "RGrid" "energyLink"] ["X" "SS" "CHP" "NS" "RGrid" "energyLink"] ["X" "SS" "TPS" "NS" "RGrid" "energyLink"] ["X" "SS" "RC" "NS" "RGrid" "energyLink"]]}
+												 {:label "Abfluss"
+												  :tags [["X" "model"]["X" "NS" "RGrid" "MS" "RMarket" "energyLink"]]}]}
+									 {:label "Hoheitssystematik"
+									  :sections [{:label "Optimierungshoheit"
+												  :tags [["X" "model"]["OH" "NS" "grid" "side"]]}
+												 {:label "Bilanzierungshoheit"
+												  :tags [["X" "model"]["COH" "NS" "grid" "side"]]}]}]}
+						
+					]} 
+												  
+
+			
+			{:label "Leistungsmessungspunkte"
+			:set "set_power"
+			:tags [["X" "model"]]
+              :sections [{:set "set_power_E"
+			              :tags [["X" "model"]]
+                          :sections [{:label "Leistungsmessungen" 
+                                      :tags [["X" "model"]["DF" "powerLinkE"]["X" "max"]["X" "max"]["P" "powerLinkE" "max"]["X" "powerLinkE" "lowerbound"]["DES" "powerLinkE"] ["DS" "powerLinkE"]]}
+									 {:label "Optimierungshoheit" 
+                                      :tags [["X" "model"]["OH" "DS" "powerE"]]}
+									 {:label "Endkundentarife" 
+                                      :tags [["X" "model"]["F" "E" "EGrid" "capacity"]]}]}
+                         {:set "set_power_W"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Leistungsmessungen" 
+                                      :tags [["X" "model"]["DF" "powerLinkW"]["Q" "powerLinkW" "lowerbound"]["X" "powerLinkW" "lowerbound"]["DES" "TS" "powerLinkW" ]["DES" "HP" "powerLinkW" ]["DES" "EB" "powerLinkW" ]["DES" "NGB" "powerLinkW" ]["DES" "ST" "powerLinkW" ]["DS" "powerLinkW"]]}
+									 {:label "Optimierungshoheit" 
+                                      :tags [["X" "model"]["OH" "DS" "powerW"]]}
+									  {:label "Endkundentarife" 
+                                      :tags [["X" "model"]["F" "W" "WGrid" "capacity"]]}]}
+                         {:set "set_power_G"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Leistungsmessungen" 
+                                      :tags [["X" "model"]["DF" "powerLinkG"]["G" "powerLinkG" "lowerbound"]["X" "powerLinkG" "lowerbound"] ["DS" "powerLinkG"] ["DES" "powerLinkG"]]}
+									 {:label "Optimierungshoheit" 
+                                      :tags [["X" "model"]["OH" "DS" "powerG"]]}
+									  {:label "Endkundentarife" 
+                                      :tags [["X" "model"]["F" "G" "GGrid" "capacity"]]}]}
+						 {:set "set_power_H"
+						  :tags [["X" "model"]]
+                          :sections [{:label "Leistungsmessungen" 
+                                      :tags [["X" "model"]["DF" "powerLinkH"]["H" "powerLinkH" "lowerbound"]["X" "powerLinkH" "lowerbound"] ["DS" "powerLinkH"] ["DES" "powerLinkH"]]}
+									 {:label "Optimierungshoheit" 
+                                      :tags [["X" "model"]["OH" "DS" "powerH"]]}
+									  {:label "Endkundentarife" 
+                                      :tags [["X" "model"]["F" "H" "HGrid" "capacity"]]}]}]}]}
+									  
+ {:label "Systematik"
+  :description "Bestimmen der Energieflusssystematik der Optimierung"
+  :icon "glyphicon glyphicon-transfer"
+  :sections [{:label "Zufluss"
+              :sections [{:set "set_load_DS_E"
+						  :tags [["X" "model"]["X" "DES" "PV" "DS" "ELoad" "energyLink"] ["X" "DES" "CHP" "DS" "ELoad" "energyLink"]  ["X" "DES" "ES" "DS" "ELoad" "energyLink"] ["X" "NS" "EGrid" "DS" "ELoad" "energyLink"]]}             
+                         {:set "set_load_DS_W"
+                          :tags [["X" "model"]["X" "DES" "NGB" "DS" "WLoad" "energyLink"] ["X" "DES" "EB" "DS" "WLoad" "energyLink"] ["X" "DES" "ST" "DS" "WLoad" "energyLink"]  ["X" "DES" "CHP" "DS" "WLoad" "energyLink"] ["X" "DES" "HP" "DS" "WLoad" "energyLink"] ["X" "DES" "TS" "DS" "WLoad" "energyLink"] ["X" "NS" "WGrid" "DS" "WLoad" "energyLink"]]} 
+						 {:set "set_load_DS_G"
+                          :tags [["X" "model"]["X" "NS" "GGrid" "DS" "GLoad" "energyLink"]["X" "MS" "GMarket" "DS" "GLoad" "energyLink"]]} 
+						 {:set "set_load_DS_C"
+                          :tags [["X" "model"]["X" "NS" "CGrid" "DS" "CLoad" "energyLink"]["X" "DES" "SC" "DS" "CLoad" "energyLink"]["X" "DES" "CR" "DS" "CLoad" "energyLink"]["X" "DES" "CS" "DS" "CLoad" "energyLink"]["X" "MS" "CMarket" "DS" "CLoad" "energyLink"]]} 
+						 {:set "set_tech_DES_ES"
+                          :tags [["X" "model"]["X" "DES" "PV" "DES" "ES" "energyLink"] ["X" "DES" "CHP" "DES" "ES" "energyLink"] ["X" "DES" "fromES" "DES" "toES" "energyLink"]["X" "NS" "fromEGrid" "DES" "toES" "energyLink"]]} 
+						 {:set "set_tech_DES_TS"
+                          :tags [["X" "model"]["X" "DES" "NGB" "DES" "TS" "energyLink"]["X" "DES" "EB" "DES" "TS" "energyLink"] ["X" "DES" "ST" "DES" "TS" "energyLink"]  ["X" "DES" "CHP" "DES" "TS" "energyLink"] ["X" "DES" "HP" "DES" "TS" "energyLink"] ["X" "NS" "fromWGrid" "DES" "toTS" "energyLink"]]} 
+				         {:set "set_tech_DES_CS"
+                          :tags [["X" "model"]["X" "DES" "CR" "DES" "CS" "energyLink"]["X" "DES" "SC" "DES" "CS" "energyLink"] ["X" "NS" "CGrid" "DES" "CS" "energyLink"]]} 	 						
+						{:set "set_tech_DES_NGB"
+                          :tags [["X" "model"]["X" "NS" "GGrid" "DES" "NGB" "energyLink"] ["X" "MS" "GMarket" "DES" "NGB" "energyLink"] ["X" "MS" "OMarket" "DES" "NGB" "energyLink"]]} 
+						 {:set "set_tech_DES_EB"
+                          :tags [["X" "model"]["X" "NS" "EGrid" "DES" "EB" "energyLink"] ["X" "DES" "ES" "DES" "EB" "energyLink"] ["X" "DES" "CHP" "DES" "EB" "energyLink"] ["X" "DES" "PV" "DES" "EB" "energyLink"]]}
+						 {:set "set_tech_DES_CR"
+                          :tags [["X" "model"]["X" "NS" "EGrid" "DES" "CR" "energyLink"] ["X" "DES" "ES" "DES" "CR" "energyLink"] ["X" "DES" "CHP" "DES" "CR" "energyLink"] ["X" "DES" "PV" "DES" "CR" "energyLink"]["X" "DES" "ST" "DES" "CR" "energyLink"]["X" "DES" "TS" "DES" "CR" "energyLink"]["X" "NS" "WGrid" "DES" "CR" "energyLink"]]}
+						 {:set "set_tech_DES_SC"
+                          :tags [["X" "model"]["X" "DES" "CHP" "DES" "SC" "energyLink"] ["X" "DES" "ST" "DES" "SC" "energyLink"]["X" "DES" "TS" "DES" "SC" "energyLink"]["X" "DES" "HP" "DES" "SC" "energyLink"]["X" "DES" "NGB" "DES" "SC" "energyLink"]["X" "DES" "EB" "DES" "SC" "energyLink"]["X" "NS" "WGrid" "DES" "SC" "energyLink"]]}
+						
+						 {:set "set_tech_DES_HP"
+                          :tags [["X" "model"]["X" "NS" "EGrid" "DES" "HP" "energyLink"] ["X" "DES" "ES" "DES" "HP" "energyLink"] ["X" "DES" "CHP" "DES" "HP" "energyLink"] ["X" "DES" "PV" "DES" "HP" "energyLink"]]}
+						 {:set "set_tech_DES_CHP"
+                          :tags [["X" "model"]["X" "NS" "GGrid" "DES" "CHP" "energyLink"]["X" "MS" "GMarket" "DES" "CHP" "energyLink"] ]}
+						 {:set "set_tech_SS_TPS"
+                          :tags [["X" "model"]["X" "NS" "GGrid" "SS" "TPS" "energyLink"]["X" "MS" "GMarket" "SS" "TPS" "energyLink"]["X" "MS" "OMarket" "SS" "TPS" "energyLink"]["X" "MS" "BMarket" "SS" "TPS" "energyLink"]["X" "MS" "HCMarket" "SS" "TPS" "energyLink"]["X" "MS" "LMarket" "SS" "TPS" "energyLink"]]} 						 
+						 {:set "set_tech_SS_CHP"
+                          :tags [["X" "model"]["X" "NS" "GGrid" "SS" "CHP" "energyLink"]["X" "MS" "GMarket" "SS" "CHP" "energyLink"]["X" "MS" "OMarket" "SS" "CHP" "energyLink"]["X" "MS" "BMarket" "SS" "CHP" "energyLink"]["X" "MS" "HCMarket" "SS" "CHP" "energyLink"]["X" "MS" "LMarket" "SS" "CHP" "energyLink"]]} 						 
+						 {:set "set_tech_SS_RC"
+                          :tags [["X" "model"]["X" "NS" "GGrid" "SS" "RC" "energyLink"]["X" "MS" "GMarket" "SS" "RC" "energyLink"]["X" "MS" "OMarket" "SS" "RC" "energyLink"]["X" "MS" "BMarket" "SS" "RC" "energyLink"]["X" "MS" "HCMarket" "SS" "RC" "energyLink"]["X" "MS" "LMarket" "SS" "RC" "energyLink"]["X" "MS" "RFMarket" "SS" "RC" "energyLink"]]} 
+					     {:set "set_tech_SS_PHS"
+                          :tags [["X" "model"]["X" "NS" "fromEGrid" "SS" "toPHS" "energyLink"]["X" "MS" "fromEMarket" "SS" "toPHS" "energyLink"]]}
+						 {:set "set_grid_NS_E"
+                          :tags [["X" "model"]["X" "DES" "fromES" "NS" "toEGrid" "energyLink"]["X" "DES" "PV" "NS" "EGrid" "energyLink"]["X" "DES" "CHP" "NS" "EGrid" "energyLink"]
+														 ["X" "SS" "WT" "NS" "EGrid" "energyLink"]["X" "SS" "CHP" "NS" "EGrid" "energyLink"]["X" "SS" "PV" "NS" "EGrid" "energyLink"]["X" "SS" "RH" "NS" "EGrid" "energyLink"]
+														 ["X" "SS" "fromPHS" "NS" "toEGrid" "energyLink"]["X" "SS" "RC" "NS" "EGrid" "energyLink"]["X" "SS" "TPS" "NS" "EGrid" "energyLink"]["X" "MS" "fromEMarket" "NS" "toEGrid" "energyLink"]]} 
+                         {:set "set_grid_NS_W"
+                          :tags [["X" "model"]["X" "DES" "fromTS" "NS" "toWGrid" "energyLink"]["X" "DES" "NGB" "NS" "WGrid" "energyLink"]["X" "DES" "HP" "NS" "WGrid" "energyLink"]["X" "DES" "CHP" "NS" "WGrid" "energyLink"]["X" "DES" "HP" "NS" "WGrid" "energyLink"]["X" "DES" "ST" "NS" "WGrid" "energyLink"]["X" "DES" "EB" "NS" "WGrid" "energyLink"]["X" "DES" "NGB" "NS" "WGrid" "energyLink"]
+														 ["X" "SS" "RC" "NS" "WGrid" "energyLink"]["X" "SS" "CHP" "NS" "WGrid" "energyLink"]["X" "SS" "TPS" "NS" "WGrid" "energyLink"]]} 
+                          {:set "set_grid_NS_C"
+                          :tags [["X" "model"]["X" "DES" "CS" "NS" "CGrid" "energyLink"]["X" "DES" "SC" "NS" "CGrid" "energyLink"]["X" "DES" "CR" "NS" "CGrid" "energyLink"]
+								 ["X" "MS" "CMarket" "NS" "CGrid" "energyLink"]["X" "MS" "CMarket" "NS" "CGrid" "energyLink"]]} 
+						 {:set "set_grid_NS_R"
+                          :tags [["X" "model"]["X" "DES" "ES" "NS" "RGrid" "energyLink"]["X" "DES" "HP" "NS" "RGrid" "energyLink"]["X" "DES" "CHP" "NS" "RGrid" "energyLink"]["X" "DES" "EB" "NS" "RGrid" "energyLink"]["X" "DES" "PV" "NS" "RGrid" "energyLink"]
+														 ["X" "SS" "PV" "NS" "RGrid" "energyLink"] ["X" "SS" "WT" "NS" "RGrid" "energyLink"] ["X" "SS" "RH" "NS" "RGrid" "energyLink"]  ["X" "SS" "PHS" "NS" "RGrid" "energyLink"] ["X" "SS" "CHP" "NS" "RGrid" "energyLink"] ["X" "SS" "TPS" "NS" "RGrid" "energyLink"] ["X" "SS" "RC" "NS" "RGrid" "energyLink"]]} 
+						 {:set "set_market_MS_E"
+                          :tags [["X" "model"]["X" "NS" "fromEGrid" "MS" "toEMarket"  "energyLink"]["X" "SS" "WT" "MS" "EMarket" "energyLink"]["X" "SS" "PV" "MS" "EMarket" "energyLink"]["X" "SS" "RH" "MS" "EMarket" "energyLink"]["X" "SS" "CHP" "MS" "EMarket" "energyLink"]["X" "SS" "TPS" "MS" "EMarket" "energyLink"]["X" "SS" "PHS" "MS" "EMarket" "energyLink"]["X" "SS" "RC" "MS" "EMarket" "energyLink"]]}
+						 {:set "set_market_MS_W"
+                          :tags [["X" "model"]["X" "SS" "CHP" "MS" "WMarket" "energyLink"]["X" "SS" "RC" "MS" "WMarket" "energyLink"]]}
+						 {:set "set_market_MS_R"
+                          :tags [["X" "model"] ["X" "NS" "RGrid" "MS" "RMarket" "energyLink"]]}]} 
+
+						
+			{:label "Abfluss"
+              :sections [{:set "set_tech_DES_ES"
+                          :tags [["X" "model"]["X" "DES" "fromES" "NS" "toEGrid" "energyLink"] ["X" "DES" "ES" "NS" "RGrid" "energyLink"] ["X" "DES" "ES" "DS" "ELoad" "energyLink"] ["X" "DES" "fromES" "DES" "toES" "energyLink"]["X" "DES" "ES" "DES" "HP" "energyLink"] ["X" "DES" "ES" "DES" "EB" "energyLink"]]} 
+						 {:set "set_tech_DES_TS"
+                          :tags [["X" "model"]["X" "DES" "fromTS" "NS" "toWGrid" "energyLink"] ["X" "DES" "TS" "DS" "WLoad" "energyLink"]["X" "DES" "TS" "DES" "SC" "energyLink"]]} 
+						 {:set "set_tech_DES_CS"
+                          :tags [["X" "model"]["X" "DES" "fromTS" "NS" "toWGrid" "energyLink"] ["X" "DES" "TS" "DS" "WLoad" "energyLink"]]} 
+						 {:set "set_tech_DES_NGB"
+                          :tags [["X" "model"]["X" "DES" "NGB" "DS" "WLoad" "energyLink"] ["X" "DES" "NGB" "NS" "WGrid" "energyLink"]["X" "DES" "NGB" "DES" "TS" "energyLink"]]} 
+						 {:set "set_tech_DES_EB"
+                          :tags [["X" "model"]["X" "DES" "EB" "NS" "RGrid" "energyLink"] ["X" "DES" "EB" "DS" "WLoad" "energyLink"] ["X" "DES" "EB" "DES" "TS" "energyLink"]]} 
+						 {:set "set_tech_DES_CR"
+                          :tags [["X" "model"]["X" "DES" "CR" "DS" "CLoad" "energyLink"] ["X" "DES" "CR" "DES" "CS" "energyLink"]["X" "DES" "CR" "NS" "CGrid" "energyLink"]]} 
+						 {:set "set_tech_DES_SC"
+                          :tags [["X" "model"]["X" "DES" "SC" "DS" "CLoad" "energyLink"] ["X" "DES" "SC" "DES" "CS" "energyLink"]["X" "DES" "SC" "NS" "CGrid" "energyLink"]]} 
+						 {:set "set_tech_DES_PV"
+                          :tags [["X" "model"]["X" "DES" "PV" "DES" "ES" "energyLink"] ["X" "DES" "PV" "DS" "ELoad" "energyLink"] ["X" "DES" "PV" "DES" "EB" "energyLink"] ["X" "DES" "PV" "DES" "HP" "energyLink"] ["X" "DES" "PV" "NS" "EGrid" "energyLink"]["X" "DES" "PV" "NS" "RGrid" "energyLink"]]} 
+						 {:set "set_tech_DES_ST"
+                          :tags [["X" "model"]["X" "DES" "ST" "DES" "ES" "energyLink"] ["X" "DES" "ST" "DS" "ELoad" "energyLink"] ["X" "DES" "ST" "DES" "EB" "energyLink"] ["X" "DES" "ST" "DES" "HP" "energyLink"] ["X" "DES" "ST" "NS" "EGrid" "energyLink"]]}
+						 {:set "set_tech_DES_HP"
+                          :tags [["X" "model"]["X" "DES" "HP" "NS" "WGrid" "energyLink"]["X" "DES" "HP" "NS" "RGrid" "energyLink"]["X" "DES" "HP" "DS" "WLoad" "energyLink"] ["X" "DES" "HP" "DES" "TS" "energyLink"]]}
+						 {:set "set_tech_DES_CHP"
+                          :tags [["X" "model"]["X" "DES" "CHP" "NS" "RGrid" "energyLink"]["X" "DES" "CHP" "DS" "WLoad" "energyLink"] ["X" "DES" "CHP" "DES" "TS" "energyLink"] ["X" "DES" "CHP" "DS" "ELoad" "energyLink"]["X" "DES" "CHP" "NS" "EGrid" "energyLink"]["X" "DES" "CHP" "DES" "HP" "energyLink"]["X" "DES" "CHP" "DES" "EB" "energyLink"]["X" "DES" "CHP" "DES" "ES" "energyLink"]]}
+						 {:set "set_tech_SS_WT"
+                          :tags [["X" "model"]["X" "SS" "WT" "NS" "EGrid" "energyLink"] ["X" "SS" "WT" "MS" "EMarket" "energyLink"] ["X" "SS" "WT" "NS" "RGrid" "energyLink"] ["X" "SS" "WT" "SS" "PHS" "energyLink"]["X" "SS" "WT" "MS" "RMarket" "energyLink"]]} 
+						 {:set "set_tech_SS_RH"
+                          :tags [["X" "model"]["X" "SS" "RH" "NS" "EGrid" "energyLink"] ["X" "SS" "RH" "MS" "EMarket" "energyLink"] ["X" "SS" "RH" "NS" "RGrid" "energyLink"] ["X" "SS" "RH" "SS" "PHS" "energyLink"]["X" "SS" "RH" "MS" "RMarket" "energyLink"]]} 
+						 {:set "set_tech_SS_PV"
+                          :tags [["X" "model"]["X" "SS" "PV" "NS" "EGrid" "energyLink"] ["X" "SS" "PV" "MS" "EMarket" "energyLink"] ["X" "SS" "PV" "SS" "PHS" "energyLink"]["X" "SS" "PV" "NS" "RGrid" "energyLink"]["X" "SS" "PV" "MS" "RMarket" "energyLink"]]} 
+						  {:set "set_tech_SS_PV"
+                          :tags [["X" "model"]["X" "SS" "PV" "NS" "EGrid" "energyLink"] ["X" "SS" "PV" "MS" "EMarket" "energyLink"] ["X" "SS" "PV" "SS" "PHS" "energyLink"]["X" "SS" "PV" "NS" "RGrid" "energyLink"]["X" "SS" "PV" "MS" "RMarket" "energyLink"]]} 
+						 {:set "set_tech_SS_TC"
+                          :tags [["X" "model"]["X" "SS" "TC" "MS" "WMarket" "energyLink"]["X" "SS" "TC" "NS" "WGrid" "energyLink"]]} 
+						 {:set "set_tech_SS_CHP"
+                          :tags [["X" "model"]["X" "SS" "CHP" "NS" "EGrid" "energyLink"] ["X" "SS" "CHP" "NS" "WGrid" "energyLink"] ["X" "SS" "CHP" "MS" "EMarket" "energyLink"] ["X" "SS" "CHP" "NS" "RGrid" "energyLink"] ["X" "SS" "CHP" "SS" "PHS" "energyLink"]["X" "SS" "CHP" "MS" "WMarket" "energyLink"]["X" "SS" "CHP" "MS" "RMarket" "energyLink"]]} 
+						 {:set "set_tech_SS_TPS"
+                          :tags [["X" "model"]["X" "SS" "TPS" "NS" "EGrid" "energyLink"] ["X" "SS" "TPS" "MS" "EMarket" "energyLink"] ["X" "SS" "TPS" "NS" "RGrid" "energyLink"] ["X" "SS" "TPS" "SS" "PHS" "energyLink"] ["X" "SS" "TPS" "MS" "RMarket" "energyLink"]]} 
+						 {:set "set_tech_SS_RC"
+                          :tags [["X" "model"]["X" "SS" "RC" "NS" "EGrid" "energyLink"] ["X" "SS" "RC" "NS" "WGrid" "energyLink"] ["X" "SS" "RC" "MS" "EMarket" "energyLink"] ["X" "SS" "RC" "NS" "RGrid" "energyLink"]["X" "SS" "RC" "MS" "WMarket" "energyLink"] ["X" "SS" "RC" "MS" "RMarket" "energyLink"]]} 
+					     {:set "set_tech_SS_PHS"
+                          :tags [["X" "model"]["X" "model"]["X" "SS" "fromPHS" "NS" "toEGrid" "energyLink"] ["X" "SS" "PHS" "MS" "EMarket" "energyLink"]["X" "SS" "PHS" "NS" "RGrid" "energyLink"]["X" "SS" "PHS" "SS" "PHS" "energyLink"] ["X" "SS" "PHS" "MS" "RMarket" "energyLink"]]} 
+						 {:set "set_grid_NS_E"
+                          :tags [["X" "model"]["X" "NS" "EGrid" "DS" "ELoad" "energyLink"] ["X" "NS" "EGrid" "SS" "ETB" "energyLink"]["X" "NS" "EGrid" "DES" "HP" "energyLink"]["X" "NS" "EGrid" "DES" "CR" "energyLink"]["X" "NS" "EGrid" "DES" "EB" "energyLink"]["X" "NS" "fromEGrid" "DES" "toES" "energyLink"]["X" "NS" "fromEGrid" "SS" "toPHS" "energyLink"]["X" "NS" "fromEGrid" "MS" "toEMarket"  "energyLink"]]} 
+                         {:set "set_grid_NS_W"
+                          :tags [["X" "model"]["X" "NS" "WGrid" "DS" "WLoad" "energyLink"] ["X" "NS" "fromWGrid" "DES" "toTS" "energyLink"] ["X" "NS" "WGrid" "DES" "SC" "energyLink"]]}
+                         {:set "set_grid_NS_G"
+                          :tags [["X" "model"]["X" "NS" "GGrid" "DS" "GLoad" "energyLink"]["X" "NS" "GGrid" "DES" "NGB" "energyLink"] ["X" "NS" "GGrid" "DES" "CHP" "energyLink"]
+													     ["X" "NS" "GGrid" "SS" "RC" "energyLink"]["X" "NS" "GGrid" "SS" "TPS" "energyLink"]["X" "NS" "GGrid" "SS" "CHPC" "energyLink"]]} 
+					     {:set "set_grid_NS_C"
+                          :tags [["X" "model"]["X" "NS" "CGrid" "DS" "CLoad" "energyLink"] ["X" "NS" "CGrid" "MS" "CMarket" "energyLink"]]} 
+						 {:set "set_grid_NS_R"
+                          :tags [["X" "model"] ["X" "NS" "RGrid" "MS" "RMarket" "energyLink"]]} 
+						 {:set "set_market_MS_E"
+                          :tags [["X" "model"]["X" "MS" "fromEMarket" "NS" "toEGrid" "energyLink"]["X" "MS" "fromEMarket" "SS" "toPHS" "energyLink"]]}
+						 {:set "set_market_MS_W"
+                          :tags [["X" "model"]["X" "MS" "WMarket" "NS" "WGrid" "energyLink"]]}
+						 {:set "set_market_MS_G"
+                          :tags [["X" "model"]["X" "MS" "GMarket" "NS" "GGrid" "energyLink"] ["X" "MS" "GMarket" "DES" "CHP" "energyLink"] ["X" "MS" "GMarket" "DS" "GLoad" "energyLink"]["X" "MS" "GMarket" "DES" "NGB" "energyLink"]["X" "MS" "GMarket" "SS" "TPS" "energyLink"]["X" "MS" "GMarket" "SS" "CHP" "energyLink"]["X" "MS" "GMarket" "SS" "RC" "energyLink"]]}
+						 {:set "set_market_MS_fuel"
+                          :tags [["X" "model"]["X" "MS" "GMarket" "NS" "GGrid" "energyLink"]["X" "MS" "GMarket" "DES" "energyLink"]["X" "MS" "GMarket" "SS" "energyLink"]["X" "MS" "GMarket" "DS" "energyLink"] ]}
+						 {:set "set_market_MS_O"
+                          :tags [["X" "model"]["X" "MS" "OMarket" "energyLink"]]}
+						 {:set "set_market_MS_RF"
+                          :tags [["X" "model"]["X" "MS" "RFMarket" "energyLink"]]}
+						 {:set "set_market_MS_B"
+                          :tags [["X" "model"]["X" "MS" "BMarket" "energyLink"]]}
+						 {:set "set_market_MS_L"
+                          :tags [["X" "model"]["X" "MS" "LMarket" "energyLink"]]}
+						 {:set "set_market_MS_HC"
+                          :tags [["X" "model"]["X" "MS" "HCMarket" "energyLink"]]}
+						 {:set "set_market_MS_C"
+                          :tags [["X" "model"]["X" "MS" "CMarket" "energyLink"]]}]}]}
+			  
+ {:label "Koordination"
+  :description "Festlegen der Betreiber- und Besitzerzugehörigkeiten der Optimierung.."
+  :icon "fa fa-cogs"
+              :sections [{:label "Prosumerzugehörigkeit"
+						  :sections [ {:label "Optimierungshoheit"
+									   :set "set_side_cust"
+									   :tags [["OH" "side"]]}
+									  {:label "Bilanzierungshoheit"
+									   :set "set_side_cust"
+									   :tags [["COH" "side"]]}]}
+						 {:label "Organisationszugehörigkeit"
+						  :sections [{:label "Optimierungshoheit"
+									   :set "set_side_orga"
+									   :tags [["OH" "side"]]}
+									 {:label "Bilanzierungshoheit"
+									  :set "set_side_orga"
+									   :tags [["COH" "side"]]}]}]}					  
+ 
+ {:label "Geschäftsmodelle"
+  :description "In den unteren Ebenen legen Sie die regulatorischen bzw. produktbezogenen Anforderungen des Umfeldes als idealtypische Geschäftsmodellkonstrukte fest. Hier wird bspw. angegeben, welche Kundengruppen an den vorher definierten Geschäftsmodellen teilnehmen sollen und wie bspw. geschäftsmodellspezifische Tarife ausgestaltet werden."
+  :icon "fa fa-cubes"
+              :sections [{:label "Direktvermarktung"
+						  :sections [ {:label "Optimierungshoheit"
+									   :set "set_BM_Direktvermarktung"
+									   :tags [["OH" "Side" "BM"]]}
+									  {:label "Modell"
+									   :tags [["X" "MietDirekt"]["X" "RegDirekt"]["X" "NatDirekt"]]} 
+						  			  {:label "Teilnahme PV-Verkauf"
+									   :set "set_tech_DES_PV"
+									   :tags [["X" "model"]["X" "BM" "PVdirect" "DES" "PV"]]}
+									  {:label "Teilnahme KWK-Verkauf"
+									   :set "set_tech_DES_CHP"
+									   :tags [["X" "model"]["X" "BM" "PVdirect" "DES" "CHP"]]}
+									  {:label "Teilnahme Lastbezug"
+									   :set "set_load_DS_E"
+									   :tags [["X" "model"]["X" "BM" "PVdirect" "DS" "E"]]}
+									  {:label "Teilnahme Wärmepumpenbezug"
+									   :set "set_tech_DES_HP"
+									  :tags [["X" "model"]["X" "BM" "PVdirect" "DES" "HP"]]}
+									  {:label "PV-Direktvermarktungstarife"
+									  :sections [{:label "Erzeugungsanlage"
+												  :set "set_tech_DES_PV"
+												  :tags [["X" "model"]["F" "E" "BM" "PVdirect" "energyinfeed"]]}
+												 {:label "Lastbezug"
+												  :set "set_load_DS_E"
+												  :tags [["X" "model"]["F" "E" "BM" "PVdirect" "energy"]]}
+												 {:label "Wärmepumpenbezug"
+												  :set "set_tech_DES_HP"
+												  :tags [["X" "model"]["F" "E" "BM" "PVdirect" "energy"]]}  
+												  ]}
+									 {:label "KWK-Direktvermarktungstarife"
+									  :sections [{:label "Erzeugungsanlage"
+												  :set "set_tech_DES_CHP"
+												  :tags [["X" "model"]["F" "E" "BM" "PVdirect" "energyinfeed"]]}
+												 {:label "Lastbezug"
+												  :set "set_load_DS_E"
+												  :tags [["X" "model"]["F" "E" "BM" "PVdirect" "energy"]]}
+												 {:label "Wärmepumpenbezug"
+												  :set "set_tech_DES_HP"
+												  :tags [["X" "model"]["F" "E" "BM" "PVdirect" "energy"]]}  
+												  ]}]}
+						 {:label "Sonnentank"
+						  :sections [{:label "Optimierungshoheit"
+									   :set "set_BM_Sonnentank"
+									   :tags [["OH" "Side" "BM"]]}
+									{:label "Teilnahme Erzeugungsanlage"
+									 :set "set_tech_DES_PV"
+									   :tags [["X" "model"]["X" "BM" "Sonnentank" "DES" "PV"]]}
+									{:label "Teilnahme Lastbezug"
+									  :set "set_load_DS_E"
+									   :tags [["X" "model"]["X" "BM" "Sonnentank" "DS" "E"]]}
+									 {:label "Teilnahme Sonnentank"
+									  :set "set_tech_DES_ES"
+									   :tags [["X" "model"]["X" "BM" "Sonnentank" "DES" "ES"]] }
+									 {:label "Sonnentanktarife"
+									  :sections [{:label "Erzeugungsanlage"
+												  :set "set_tech_DES_PV"
+												  :tags [["X" "model"]["F" "E" "BM" "Sonnentank" "energyinfeed"]]}
+												 {:label "Lastbezug"
+												  :set "set_load_DS_E"
+												  :tags [["X" "model"]["F" "E" "BM" "Sonnentank" "energy"]]}
+												 {:label "Teilnahmegebühr"
+												  :tags [["X" "model"]["F" "SMS" "E" "fee" "Sonnentank"]["F" "NS" "E" "fee" "Sonnentank"]["F" "PS" "E" "fee" "Sonnentank"]["X" "BM" "Sonnentank" "NS" "disclosure"] ["X" "BM" "Sonnentank" "PS" "disclosure"]]}]}]}
+						{:label "Netzspeicher"
+						  :sections [{:label "Optimierungshoheit"
+									   :set "set_BM_Netzspeicher"
+									   :tags [["OH" "Side" "BM"]]}
+									 {:label "Teilnahme Erzeugungsanlage"
+									  :set "set_tech_DES_PV"
+									   :tags [["X" "model"]["X" "BM" "NaS" "DES" "PV"]]}
+									 {:label "Teilnahme Lastbezug"
+									 :set "set_load_DS_E"
+									   :tags [["X" "model"]["X" "BM" "NaS" "DS" "E"]]}
+									 {:label "Teilnahme Netzspeicher"
+									  :set "set_tech_DES_ES"
+									   :tags [["X" "model"]["X" "BM" "NaS" "DES" "ES"]]}
+									 {:label "Netzspeichertarife"
+									  :sections [{:label "Erzeugungsanlage"
+												  :set "set_tech_DES_PV"
+												  :tags [["X" "model"]["F" "E" "BM" "NaS" "energyinfeed"]]}
+												 {:label "Lastbezug"
+												  :set "set_load_DS_E"
+												  :tags [["X" "model"]["F" "E" "BM" "NaS" "energy"]]}]}]}
+						 {:label "Lastverschiebung"
+						  :sections [{:label "Optimierungshoheit"
+									   :set "set_BM_Lastverschiebung"
+									   :tags [["OH" "Side" "BM"]]}
+									 {:label "Lastverschiebungsoptionen"
+									 :set "set_load_DS_E"
+									   :tags [["X" "model"]["DSM" "DS" "E" "Cdown"] ["DSM" "DS" "E" "Cup"] ["DSM" "DS" "E" "t"]]}
+									 {:label "Lastverschiebungstarife"
+									  :tags [["X" "model"]["F" "E" "EGrid" "energy"]]
+									  }]}]}
+ {:label "Märkte"
+  :icon "fa fa-line-chart "
+  :description "In den unteren Ebenen werden Marktpreise und Marktrestriktionen der Optimierung festgelegt. Unter [Optimierungshoheit] wird definiert, welcher Unternehmensbereich die Optimierungshoheit über einzelne Märkte innehat. Unter [Kurswerte] wird der Wechselkurs zwischen CHF und EUR angegeben."
+  :sections [{:set "set_market_MSPHY"
+			  :label "Optimierungshoheit"
+			  :description "Hier können Sie die Optimierungshoheit der einzelnen Märkte festlegen."
+              :tags [["X" "model"]["OH" "MS" "market" "side"]]}
+			 {:label "Strommarkt"
+			  :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+              :tags [["C" "MS" "E"] ["C" "MS" "P"] ["X" "MS" "CHF" "C" "E"] ["X" "MS" "EUR" "C" "E"] ["P" "MS" "powerLink"]]}
+			 {:label "Gasmarkt"
+			 :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+              :tags [["C" "MS" "fuel"] ["X" "MS" "CHF" "C" "fuel"] ["X" "MS" "EUR" "C" "fuel"] ]}
+			 {:label "Wärmemarkt"
+			 :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+              :tags [["C" "MS" "W"]["X" "MS" "CHF" "C" "W"] ["X" "MS" "EUR" "C" "W"] ]} 
+			 {:label "Reservemärkte"
+			 		  :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+			  :sections [{:label "Primär"
+			  		      :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+						  :tags [["X" "MS" "pri" "sim"]["R" "MS" "PR" "pri"]["R" "MS" "NR" "pri"]["H" "MS" "PR" "pri" "min"]["H" "MS" "NR" "pri" "min"] ["P" "MS" "PR" "pri" "min"] ["P" "MS" "NR" "pri" "min"]["P" "MS" "PR" "pri" "max"]["P" "MS" "NR" "pri" "max"]["X" "MS" "CHF" "R" "pri"] ["X" "MS" "EUR" "R" "pri"]]}
+						 {:label "Sekundär"
+						  :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+						  :tags [["R" "MS" "PR" "sec"]["R" "MS" "NR" "sec"]["H" "MS" "PR" "sec" "min"]["H" "MS" "NR" "sec" "min"] ["P" "MS" "PR" "sec" "min"] ["P" "MS" "NR" "sec" "min"]["P" "MS" "PR" "sec" "max"]["P" "MS" "NR" "sec" "max"]["X" "MS" "CHF" "R" "sec"] ["X" "MS" "EUR" "R" "sec"]]}
+						 {:label "Tertitär"
+						  :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+						  :tags [["R" "MS" "PR" "ter"]["R" "MS" "NR" "ter"]["H" "MS" "PR" "ter" "min"]["H" "MS" "NR" "ter" "min"] ["P" "MS" "PR" "ter" "min"] ["P" "MS" "NR" "ter" "min"]["P" "MS" "PR" "ter" "max"]["P" "MS" "NR" "ter" "max"]["X" "MS" "CHF" "R" "ter"] ["X" "MS" "EUR" "R" "ter"]]}]}	  
+			 {:label "Flexibilitätsmarkt"
+			 :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+              :tags [["X" "MS" "fx" "sim"]["R" "MS" "PR" "fx"]["R" "MS" "NR" "fx"]["H" "MS" "PR" "fx" "min"]["H" "MS" "NR" "fx" "min"] ["P" "MS" "PR" "fx" "min"] ["P" "MS" "NR" "fx" "min"]["P" "MS" "PR" "fx" "max"]["P" "MS" "NR" "fx" "max"]["X" "MS" "CHF" "R" "fx"] ["X" "MS" "EUR" "R" "fx"]]} 
+			 {:label "Sonstige"
+			  :sections [{:label "Ölmarkt"
+					      :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+						  :tags [["C" "MS" "O"]["X" "MS" "CHF" "C" "O"] ["X" "MS" "EUR" "C" "O"] ]}
+						 {:label "Abfallmarkt"
+						  :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+						  :tags [["C" "MS" "RF"]["X" "MS" "CHF" "C" "RF"] ["X" "MS" "EUR" "C" "RF"] ]}	
+						 {:label "Biomassemarkt"
+						  :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+						  :tags [["C" "MS" "B" "l"]["C" "MS" "B" "g"]["C" "MS" "B" "s"]["X" "MS" "CHF" "C" "B"] ["X" "MS" "EUR" "C" "B"] ]}
+						 {:label "Braunkohlemarkt"
+						  :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+						  :tags [["C" "MS" "L"]["X" "MS" "CHF" "C" "L"] ["X" "MS" "EUR" "C" "L"]]}
+						 {:label "Steinkohlemarkt"
+						  :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+						  :tags [["C" "MS" "HC"]["X" "MS" "CHF" "C" "HC"] ["X" "MS" "EUR" "C" "HC"]]}
+						 {:label "Kältemarkt"
+						  :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+						  :tags [["C" "MS" "Cool"]["X" "MS" "CHF" "C" "Cool"] ["X" "MS" "EUR" "C" "Cool"]]}
+						 {:label "Wasserstoffmarkt"
+						  :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+						  :tags [["C" "MS" "Hydro"]["X" "MS" "CHF" "C" "Hydro"] ["X" "MS" "EUR" "C" "Hydro"]]}
+						 {:label "Chemischer-Stoffmarkt"
+						  :description "Hier können Sie die Marktpreise und Marktrestriktionen der relevanten Märkte festlegen."
+						  :tags [["C" "MS" "CL"]["X" "MS" "CHF" "C" "CL"] ["X" "MS" "EUR" "C" "CL"]]}]}	  		     
+			 {:label "Zertifikatemarkt"
+              :tags [["C" "MS" "CO2"] ["X" "MS" "CHF" "C" "CO2"] ["X" "MS" "EUR" "C" "CO2"] ["C" "MS" "GC"] ["X" "MS" "CHF" "C" "GC"] ["X" "MS" "EUR" "C" "GC"] ["R" "MS" "disposal"]]}
+			 {:label "Kurswerte"
+              :tags [["i" "DES"]["exchange" "MS"]["Emis" "MS" "E" "CO2"]]}]} 
+ 		  
+ {:label "Politik"
+  :description "Hier können Sie die landesspezifischen Abgaben festlegen."
+  :icon "fa fa-institution"
+  :tags [["Tax" "PS"]]}
+			 
+ {:label "Umwelt"
+  :icon "fa fa-thermometer-half"
+  :description "In diesem Bereich werden die für die Optimierung relevanten Klimadaten in Form von Zeitreihen für die Sonneneinstrahlung, die Außentemperatur und die Windgeschwindigkeit hinterlegt."    
+  :sections [{:label "Globalstrahlung"
+			  :description "Hier können Sie die regionsbezogene Globalstrahlung festlegen."
+              :tags [["I" "ES"]["S" "DS" "growth"]]}
+			 {:label "Außentemperatur"
+			  :description "Hier können Sie die regionsbezogene Außentemperatur festlegen."
+              :tags [["T" "ES"]["MH" "ES" "T"]]}
+			 {:label "Windgeschwindigkeit"
+			  :description "Hier können Sie die regionsbezogene Windgeschwindigkeit festlegen."
+              :tags [["V" "ES"]["Z" "ES"]["MH" "ES" "V"]]}]}]

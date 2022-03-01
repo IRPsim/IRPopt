@@ -1,0 +1,21 @@
+ALIAS(set_ii,set_iii);
+SET set_m(set_jj);
+SET set_t_ini(set_ii_0);
+SET set_t_help(set_ii_0);
+SET set_t_help_store(set_ii_0);
+SET set_t_help2(set_ii_0);
+SET set_t_help3(set_ii_0);
+SET set_t_help4(set_ii_0);
+SET set_t_store(set_ii_0);
+SET set_t_fin(set_ii_0);
+
+SCALAR sca_iterator;
+SCALAR sca_numberOptimization;
+SCALAR sca_numberStoring;
+SCALAR sca_finalcall;
+SCALAR sca_optsteps;
+sca_iterator = 0;
+sca_numberOptimization =card(set_t);
+sca_numberStoring = card(set_optstore);
+sca_finalcall = card(set_ii_0);
+sca_optsteps = card(set_ii);
