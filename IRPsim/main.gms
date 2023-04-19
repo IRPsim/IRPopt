@@ -1,7 +1,7 @@
 ***-----------------------------------------------------------------------------
 *** #IRPsim 2014-2016#
-*** ##Lehrstuhl für Energiemanagement und Nachhaltigkeit##
-*** ##Universität Leipzig##
+*** ##Lehrstuhl fï¿½r Energiemanagement und Nachhaltigkeit##
+*** ##Universitï¿½t Leipzig##
 *** ##Fabian Scheller##
 ***-----------------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ $ONEMPTY
 $ONORDER
 
 **Erstellen der GDX auf Basis der Spezifikation
-*$CALL GDXXRW ./input/modelinput.xlsx @./input/input_specification.txt
+$CALL GDXXRW ./input/modelinput.xlsx @./input/input_specification.txt
 
 
 ***Einlesen der GDX
@@ -337,7 +337,7 @@ Output_balancing_organizmdl.nd = 6;
 Output_accounting_customermdl.nd = 6;
 Output_accounting_organizmdl.nd = 6;
 
-***.lw-Funktion (number of decimals) legt die Set-Elemt-Bezeichner Beschränkung fest
+***.lw-Funktion (number of decimals) legt die Set-Elemt-Bezeichner Beschrï¿½nkung fest
 Output_balancing_customermdl.lw = 0;
 Output_balancing_organizmdl.lw = 0;
 Output_accounting_customermdl.lw = 0;
@@ -364,12 +364,12 @@ $INCLUDE ./output/output_bm.gms
 
 
 ***-----------------------------------------------------------------------------
-***Testsets zum Begrenzen der Schleifendurchläufe
+***Testsets zum Begrenzen der Schleifendurchlï¿½ufe
 *$INCLUDE ./internal/internal_tests.gms
 
 
 ***-----------------------------------------------------------------------------
-***##Setzen der Optimalitätskriterien des Solvers##
+***##Setzen der Optimalitï¿½tskriterien des Solvers##
 ***-----------------------------------------------------------------------------
 ***Verwenden der Solver OPTION Files
 ***Feasibility Tolerance: eprhs = 0.000000001
@@ -377,26 +377,26 @@ IRPsimEvolution_cust.optfile=1;
 IRPsimEvolution_orga.optfile=1;
 
 ***Angabe eines absoluten gaps: optca (criterium absolute)
-***Maximale Abweichung der ermittelten Lösung von der optimalen Lösung
+***Maximale Abweichung der ermittelten Lï¿½sung von der optimalen Lï¿½sung
 *OPTION optca = 5000;
 
 ***Angabe eines relativen gaps: optcr (criterium relative)
-***Maximale Abweichung der ermittelten Lösung von der optimalen Lösung
+***Maximale Abweichung der ermittelten Lï¿½sung von der optimalen Lï¿½sung
 ***Standardeinstellung optcr = 0.1
 
 OPTION optcr=0.05;
 
 ***Angabe eines absoluten gaps: optcr (criterium absolute)
-***Maximale Abweichung der ermittelten Lösung von der optimalen Lösung
+***Maximale Abweichung der ermittelten Lï¿½sung von der optimalen Lï¿½sung
 ***Standardeinstellung optcr = 0.1
 *OPTION optca = 0.01;
 
-***Angabe der Zeitbeschränkung
-***Maximale Anzahl der Rechenzeit zur Ermittlung der Lösung
+***Angabe der Zeitbeschrï¿½nkung
+***Maximale Anzahl der Rechenzeit zur Ermittlung der Lï¿½sung
 OPTION reslim = 1000;
 
-***Angabe der Iterationsbeschränkung
-***Maximale Anzahl der Iterationen zur Ermittlung der Lösung
+***Angabe der Iterationsbeschrï¿½nkung
+***Maximale Anzahl der Iterationen zur Ermittlung der Lï¿½sung
 *OPTION iterlim = 2e9;
 
 ***-----------------------------------------------------------------------------
@@ -405,31 +405,31 @@ OPTION reslim = 1000;
 ***Befehl Reporting Toolausgabe
 *OPTION PROFILE=3;
 
-***Einschränkung Reporting Toolausgabe
+***Einschrï¿½nkung Reporting Toolausgabe
 *OPTION PROFILETOL=0;
 
-***Hinzufügen von Modellbezogenen Ausgaben
+***Hinzufï¿½gen von Modellbezogenen Ausgaben
 ***Stufen sind on, off und silent
 OPTION Solslack=0;
 
-***Hinzufügen von Solverbezogenen Ausgaben
+***Hinzufï¿½gen von Solverbezogenen Ausgaben
 ***Stufen sind on und off
 OPTION solprint=off;
 
-***Hinzufügen eines prio Solvers
+***Hinzufï¿½gen eines prio Solvers
 ***Stufen sind on und off
 *Option solver=abc;
 
 ***-----------------------------------------------------------------------------
 ***##Aufrufen der Optimierungsschleife und des Solvers##
 ***-----------------------------------------------------------------------------
-***Optimierungsaufrufe in Abhängigkeit der Optimierungsschritte
+***Optimierungsaufrufe in Abhï¿½ngigkeit der Optimierungsschritte
 LOOP(set_optsteps(set_iii),
 
-***Dynamische Sets für den Optimierungsdurchlauf definieren und initialisieren
-***sca_numberOptimization: Länge des Optimierungshorizonts
-***sca_numberStoring: Länge des Speicherhorizonts
-***sca_iterator: Zähler der Optimierungsaufrufe
+***Dynamische Sets fï¿½r den Optimierungsdurchlauf definieren und initialisieren
+***sca_numberOptimization: Lï¿½nge des Optimierungshorizonts
+***sca_numberStoring: Lï¿½nge des Speicherhorizonts
+***sca_iterator: Zï¿½hler der Optimierungsaufrufe
 ***sca_finalcall: Allerletztes Element der Optimierung
    set_t(set_ii)=NO;
    set_t(set_ii)=YES$(ORD(set_ii) > sca_numberStoring*sca_iterator AND
@@ -496,7 +496,7 @@ LOOP(set_optsteps(set_iii),
    set_pss_opt_cust(set_pss) = set_pss_opt(set_pss);
    set_power_opt_cust(set_power) = set_power_opt(set_power);
 
-***Übergabe der Energieverbindungen auf Kundenseite
+***ï¿½bergabe der Energieverbindungen auf Kundenseite
    set_energyLink_fix(set_sector,set_fromPss,set_toPss)=NO;
    set_energyLink_fix(set_sector,set_fromPss,set_toPss)=YES$(set_energyLink_opt(set_sector,set_fromPss,set_toPss));
 
@@ -545,7 +545,7 @@ $INCLUDE ./output/structure/csv_output_accounting_customermdl_step.gms
 
 ***Speicherstand BM Sonnentank
    par_SOC_DES_ES_initial(set_t_ini,set_tech_DES_ES)$(par_X_BM_Sonnentank_DES_ES(set_tech_DES_ES)=1)=par_SOC_DES_ES_initial_Sonnentank_orga(set_t_ini,set_tech_DES_ES);
-*** Speicherfüllstand Ende=Anfang für Wasserstoffspeicher
+*** Speicherfï¿½llstand Ende=Anfang fï¿½r Wasserstoffspeicher
    var_SOC_DES_HS.fx(set_t_fin,set_tech_DES_HS)$((set_pss_opt(set_tech_DES_HS) OR set_pss_opt_cust(set_tech_DES_HS))) = par_SOC_DES_HS_initial('ii0',set_tech_DES_HS);
 
 ***Optionale Erzeugung von GDX-Files nach jedem Optimierungsaufruf
@@ -577,7 +577,7 @@ $INCLUDE ./output/structure/csv_output_accounting_organizmdl_step.gms
 
 
 ***-----------------------------------------------------------------------------
-***##Übergabe der Initialwerte für die weiteren Optimierungsschleifen##
+***##ï¿½bergabe der Initialwerte fï¿½r die weiteren Optimierungsschleifen##
 ***-----------------------------------------------------------------------------
 
 ***Optimierungsschleifenbedingungen iterieren
@@ -585,7 +585,7 @@ $INCLUDE ./output/structure/csv_output_accounting_organizmdl_step.gms
    set_t_ini(set_ii_0)=NO;
    set_t_ini(set_ii_0)=YES$(ORD(set_ii_0) = sca_numberStoring*sca_iterator+1);
 
-***Speicherfüllstand übergeben
+***Speicherfï¿½llstand ï¿½bergeben
    par_SOC_DES_ES_initial(set_t_ini,set_tech_DES_ES)$(set_pss_opt(set_tech_DES_ES) OR set_pss_opt_cust(set_tech_DES_ES)) = max(0,var_SOC_DES_ES_help.l(set_t_ini, set_tech_DES_ES));
    par_SOC_DES_TS_initial(set_t_ini,set_tech_DES_TS)$(set_pss_opt(set_tech_DES_TS) OR set_pss_opt_cust(set_tech_DES_TS)) = max(0,var_SOC_DES_TS_help.l(set_t_ini, set_tech_DES_TS));
    par_SOC_DES_GS_initial(set_t_ini,set_tech_DES_GS)$(set_pss_opt(set_tech_DES_GS) OR set_pss_opt_cust(set_tech_DES_GS)) = max(0,var_SOC_DES_GS_help.l(set_t_ini, set_tech_DES_GS));
@@ -596,19 +596,19 @@ $INCLUDE ./output/structure/csv_output_accounting_organizmdl_step.gms
    par_SOC_pss_initial(set_t_ini,set_tech_SS_RC)$(set_pss_opt(set_tech_SS_RC) OR set_pss_opt_cust(set_tech_SS_RC))= max(0,var_SOC_SS_RC.l(set_t_ini,set_tech_SS_RC));
 
 
-***Speicherfüllstand festsetzen
+***Speicherfï¿½llstand festsetzen
 *   var_SOC_DES_ES.fx(set_t_fin,set_tech_DES_ES)$((set_pss_opt(set_tech_DES_ES) OR set_pss_opt_cust(set_tech_DES_ES)) AND par_X_BM_NaS_DES_ES(set_tech_DES_ES)<>1 AND par_X_BM_Sonnentank_DES_ES(set_tech_DES_ES)<>1) = par_SOC_DES_ES_initial('ii0',set_tech_DES_ES);
 *   var_SOC_DES_TS.fx(set_t_fin,set_tech_DES_TS)$(set_pss_opt(set_tech_DES_TS) OR set_pss_opt_cust(set_tech_DES_TS)) = par_SOC_DES_TS_initial('ii0',set_tech_DES_TS);
 *   var_SOC_SS_PHS.fx(set_t_fin,set_tech_SS_PHS)$(set_pss_opt(set_tech_SS_PHS) OR set_pss_opt_cust(set_tech_SS_PHS)) = par_SOC_SS_PHS_initial('ii0',set_tech_SS_PHS);
 *   var_SOC_DES_CLS_help.fx(set_t_fin,set_tech_DES_CLS)$(set_pss_opt(set_tech_DES_CLS) OR set_pss_opt_cust(set_tech_DES_CLS)) = par_SOC_DES_CLS_initial('ii0',set_tech_DES_CLS);
 
-***Speicherfüllstand BM Sonnentank übergeben
+***Speicherfï¿½llstand BM Sonnentank ï¿½bergeben
    par_SOC_DES_ES_initial_Sonnentank_orga(set_t_ini,set_tech_DES_ES)$(set_pss_opt(set_tech_DES_ES) OR set_pss_opt_cust(set_tech_DES_ES) AND par_X_BM_Sonnentank_DES_ES(set_tech_DES_ES)=1)=max(0,var_SOC_DES_ES_help.l(set_t_ini, set_tech_DES_ES));
 
-***Speicherzyklen übergeben
+***Speicherzyklen ï¿½bergeben
    par_E_DES_ES_charge_total_initial(set_t_ini,set_tech_DES_ES)$(set_pss_opt(set_tech_DES_ES) OR set_pss_opt_cust(set_tech_DES_ES)) = max(0,var_E_DES_ES_charge_total.l(set_t_ini,set_tech_DES_ES));
 
-***Maximalleistung übergeben
+***Maximalleistung ï¿½bergeben
    par_Max_P(set_m,set_power)$(set_power_opt(set_power) OR set_power_opt_cust(set_power)) = max(var_powerMeasurement.l(set_m,set_power), par_Max_P(set_m,set_power));
 
 ***Maximalleistungsgrenzen initial vorgeben
@@ -624,11 +624,11 @@ $INCLUDE ./output/structure/csv_output_accounting_organizmdl_step.gms
    par_Max_P('November',set_power)$(par_X_powerLink_lowerbound_forecast('November',set_power)=1 AND (set_power_opt(set_power) OR set_power_opt_cust(set_power))) = par_Max_P('Oktober',set_power) / 2 ;
    par_Max_P('Dezember',set_power)$(par_X_powerLink_lowerbound_forecast('Dezember',set_power)=1 AND (set_power_opt(set_power) OR set_power_opt_cust(set_power))) = par_Max_P('November',set_power) / 2 ;
 
-***Prosumestorerausnutzung übergeben
+***Prosumestorerausnutzung ï¿½bergeben
 ***Kraftwerksstatus
    par_S_pss_initial(set_t_ini,set_pss)$(set_pss_opt(set_pss) OR set_pss_opt_cust(set_pss))=var_S_pss.l(set_t_ini,set_pss);
 
-***Aktuelle Prosumestorerlaufzeiten bzw. -stillstandszeiten übergeben
+***Aktuelle Prosumestorerlaufzeiten bzw. -stillstandszeiten ï¿½bergeben
 Loop(set_t_help_store(set_ii_0) ,
    par_S_pss_counter_presenton(set_ii_0,set_pss)$(set_t_help_store(set_ii_0) AND (set_pss_opt(set_pss) OR set_pss_opt_cust(set_pss)))=(1+ par_S_pss_counter_presenton(set_ii_0-1,set_pss))*var_S_pss.l(set_ii_0,set_pss);
    par_S_pss_counter_presentoff(set_ii_0,set_pss)$(set_t_help_store(set_ii_0) AND (set_pss_opt(set_pss) OR set_pss_opt_cust(set_pss)))=(1+ par_S_pss_counter_presentoff(set_ii_0-1,set_pss))*(1-var_S_pss.l(set_ii_0,set_pss));
@@ -636,7 +636,7 @@ Loop(set_t_help_store(set_ii_0) ,
    par_H_pss_presenton(set_pss)$(set_pss_opt(set_pss) OR set_pss_opt_cust(set_pss))=SUM(set_t_ini,par_S_pss_counter_presenton(set_t_ini,set_pss));
    par_H_pss_presentoff(set_pss)$(set_pss_opt(set_pss) OR set_pss_opt_cust(set_pss))=SUM(set_t_ini,par_S_pss_counter_presentoff(set_t_ini,set_pss));
 
-***Verbleibende Prosumestorerlaufzeiten bzw. -stillstandszeiten übergeben
+***Verbleibende Prosumestorerlaufzeiten bzw. -stillstandszeiten ï¿½bergeben
    par_H_pss_requon(set_pss)$(set_pss_opt(set_pss) OR set_pss_opt_cust(set_pss))= max(0, min(CARD(set_t),(par_H_pss_minon(set_pss)-par_H_pss_presenton(set_pss))*SUM(set_t_ini,var_S_pss.l(set_t_ini,set_pss))));
    par_H_pss_requoff(set_pss)$(set_pss_opt(set_pss) OR set_pss_opt_cust(set_pss))= max(0,min(CARD(set_t),(par_H_pss_minoff(set_pss)-par_H_pss_presentoff(set_pss))*(1-SUM(set_t_ini,var_S_pss.l(set_t_ini,set_pss)))));
    par_H_pss_permon(set_pss)$(set_pss_opt(set_pss) OR set_pss_opt_cust(set_pss))= max(0,min(CARD(set_t),(par_H_pss_maxon(set_pss)-par_H_pss_presenton(set_pss))*SUM(set_t_ini,var_S_pss.l(set_t_ini,set_pss))));

@@ -592,7 +592,7 @@
 									  :sections [{:label "Zufluss"
 												 :tags [["X" "model"]["X" "NS" "EGrid" "DES" "EY" "energyLink"] ["X" "DES" "ES" "DES" "EY" "energyLink"] ["X" "DES" "CHP" "DES" "EY" "energyLink"] ["X" "DES" "PV" "DES" "EY" "energyLink"]]}
 												 {:label "Abfluss"
-												  :tags [["X" "model"]["X" "DES" "EY" "NS" "HGrid" "energyLink"] ["X" "DES" "EY" "NS" "RGrid" "energyLink"] ["X" "DES" "EY" "DS" "HLoad" "energyLink"]["X" "DES" "EY" "DS" "CLLoad" "energyLink"]["X" "DES" "EY" "DES" "FC" "energyLink"] ["X" "DES" "EY" "DES" "HS" "energyLink"]["X" "DES" "EY" "DES" "CLS" "energyLink"]]}]}
+												  :tags [["X" "model"]["X" "DES" "EY" "NS" "HGrid" "energyLink"]["X" "DES" "EY" "NS" "WGrid" "energyLink"] ["X" "DES" "EY" "NS" "RGrid" "energyLink"] ["X" "DES" "EY" "DS" "HLoad" "energyLink"]["X" "DES" "EY" "DS" "CLLoad" "energyLink"]["X" "DES" "EY" "DES" "FC" "energyLink"] ["X" "DES" "EY" "DES" "HS" "energyLink"]["X" "DES" "EY" "DES" "CLS" "energyLink"]]}]}
 									{:label "Hoheitssystematik"
 									  :sections [{:label "Optimierungshoheit"
 												  :tags [["X" "model"]["OH" "DES" "side"]]}
@@ -923,7 +923,7 @@
                                       :tags [["X" "model"]["Eta" "NS" "WGrid"] ["SOC" "NS" "PRGrid" "cap"] ["SOC" "NS" "NRGrid" "cap"]]}
 									 {:label "Energiesystematik"
 									  :sections [{:label "Zufluss"
-												  :tags [["X" "model"]["X" "DES" "fromTS" "NS" "toWGrid" "energyLink"]["X" "DES" "NGB" "NS" "WGrid" "energyLink"]["X" "DES" "CHP" "NS" "WGrid" "energyLink"]["X" "DES" "HP" "NS" "WGrid" "energyLink"]["X" "DES" "ST" "NS" "WGrid" "energyLink"]["X" "DES" "EB" "NS" "WGrid" "energyLink"]
+												  :tags [["X" "model"]["X" "DES" "fromTS" "NS" "toWGrid" "energyLink"]["X" "DES" "NGB" "NS" "WGrid" "energyLink"]["X" "DES" "CHP" "NS" "WGrid" "energyLink"]["X" "DES" "EY" "NS" "WGrid" "energyLink"]["X" "DES" "HP" "NS" "WGrid" "energyLink"]["X" "DES" "ST" "NS" "WGrid" "energyLink"]["X" "DES" "EB" "NS" "WGrid" "energyLink"]
 														 ["X" "SS" "RC" "NS" "WGrid" "energyLink"]["X" "SS" "CHP" "NS" "WGrid" "energyLink"]["X" "SS" "TC" "NS" "WGrid" "energyLink"]["X" "SS" "TPS" "NS" "WGrid" "energyLink"]["X" "MS" "WMarket" "NS" "WGrid" "energyLink"]]}
 												 {:label "Abfluss"
 												  :tags [["X" "model"]["X" "NS" "WGrid" "DS" "WLoad" "energyLink"] ["X" "NS" "fromWGrid" "DES" "toTS" "energyLink"]["X" "NS" "WGrid" "DES" "SC" "energyLink"]["X" "NS" "WGrid" "MS" "WMarket" "energyLink"]]}]}

@@ -214,6 +214,8 @@ par=par_X_W_DES_EB_NS_WGrid_energyLink rng=energyLink_base_add!CY3:DA3 rdim=2
 par=par_X_W_DES_HP_NS_WGrid_energyLink rng=energyLink_base_add!DB3:DD3 rdim=2
 par=par_X_W_DES_NGB_NS_WGrid_energyLink rng=energyLink_base_add!DE3:DG3 rdim=2
 
+par=par_X_W_DES_EY_NS_WGrid_energyLink rng=energyLink_base_EY!BI3:BK3 rdim=2
+
 par=par_X_H_DES_NGB_NS_HGrid_energyLink rng=energyLink_base_add!DK3:DM3 rdim=2
 par=par_X_H_DES_NGB_DES_HS_energyLink rng=energyLink_base_add!DN3:DP3 rdim=2
 par=par_X_H_DES_NGB_DS_H_energyLink rng=energyLink_base_add!DQ3:DS3 rdim=2

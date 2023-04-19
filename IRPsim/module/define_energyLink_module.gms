@@ -69,6 +69,7 @@ set_energyLink('W',set_tech_DES_NGB,set_load_DS_W)$(par_X_W_DES_NGB_DS_WLoad_ene
 set_energyLink('W',set_tech_DES_NGB,set_tech_DES_TS)$(par_X_W_DES_NGB_DES_TS_energyLink(set_tech_DES_NGB,set_tech_DES_TS)=1 and par_X_pss_model(set_tech_DES_NGB)=1 and par_X_pss_model(set_tech_DES_TS)=1) = yes;
 set_energyLink('W',set_tech_DES_NGB,set_tech_DES_SC)$(par_X_W_DES_NGB_DES_SC_energyLink(set_tech_DES_NGB,set_tech_DES_SC)=1 and par_X_pss_model(set_tech_DES_NGB)=1 and par_X_pss_model(set_tech_DES_SC)=1) = yes;
 set_energyLink('W',set_tech_DES_NGB,set_grid_NS_W)$(par_X_W_DES_NGB_NS_WGrid_energyLink(set_tech_DES_NGB,set_grid_NS_W)=1 and par_X_pss_model(set_tech_DES_NGB)=1 and par_X_pss_model(set_grid_NS_W)=1) = yes;
+set_energyLink('W',set_tech_DES_EY,set_grid_NS_W)$(par_X_W_DES_EY_NS_WGrid_energyLink(set_tech_DES_EY,set_grid_NS_W)=1 and par_X_pss_model(set_tech_DES_EY)=1 and par_X_pss_model(set_grid_NS_W)=1) = yes;
 
 
 set_energyLink('H',set_tech_DES_NGB,set_grid_NS_H)$(par_X_H_DES_NGB_NS_HGrid_energyLink(set_tech_DES_NGB,set_grid_NS_H)=1 and par_X_pss_model(set_tech_DES_NGB)=1 and par_X_pss_model(set_grid_NS_H)=1) = yes;
@@ -109,6 +110,7 @@ set_energyLink('H',set_tech_DES_EY,set_load_DS_H)$(par_X_H_DES_EY_DS_HLoad_energ
 set_energyLink('H',set_tech_DES_EY,set_tech_DES_HS)$(par_X_H_DES_EY_DES_HS_energyLink(set_tech_DES_EY,set_tech_DES_HS)=1 and par_X_pss_model(set_tech_DES_EY)=1 and par_X_pss_model(set_tech_DES_HS)=1) = yes;
 set_energyLink('H',set_tech_DES_EY,set_tech_DES_FC)$(par_X_H_DES_EY_DES_FC_energyLink(set_tech_DES_EY,set_tech_DES_FC)=1 and par_X_pss_model(set_tech_DES_EY)=1 and par_X_pss_model(set_tech_DES_FC)=1) = yes;
 set_energyLink('H',set_tech_DES_EY,set_grid_NS_H)$(par_X_H_DES_EY_NS_HGrid_energyLink(set_tech_DES_EY,set_grid_NS_H)=1 and par_X_pss_model(set_tech_DES_EY)=1 and par_X_pss_model(set_grid_NS_H)=1) = yes;
+
 set_energyLink('H',set_grid_NS_H,set_load_DS_H)$(par_X_H_NS_HGrid_DS_HLoad_energyLink(set_grid_NS_H,set_load_DS_H)=1 and par_X_pss_model(set_load_DS_H)=1) = yes;
 set_energyLink('H',set_grid_NS_H,set_tech_DES_HS)$(par_X_H_NS_fromHGrid_DES_toHS_energyLink(set_grid_NS_H,set_tech_DES_HS)=1 and par_X_pss_model(set_tech_DES_HS)=1) = yes;
 set_energyLink('H',set_tech_DES_HS,set_load_DS_H)$(par_X_H_DES_HS_DS_HLoad_energyLink(set_tech_DES_HS,set_load_DS_H)=1 and par_X_pss_model(set_tech_DES_HS)=1 and par_X_pss_model(set_load_DS_H)=1) = yes;

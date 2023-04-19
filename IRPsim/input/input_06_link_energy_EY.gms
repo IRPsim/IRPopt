@@ -12,6 +12,13 @@ $LOAD par_X_H_DES_EY_DES_FC_energyLink
 PARAMETER par_X_H_DES_EY_NS_HGrid_energyLink(set_tech_DES_EY,set_grid_NS_H) Energieverbindung
 $LOAD par_X_H_DES_EY_NS_HGrid_energyLink
 
+* - description: Bitte legen Sie hier fest, ob eine Energieverbindung vom Elektrolyseur zu folgendem Prosumstorer (Technologie, Last, Netz, Markt etc.) bestehen soll
+* - type: Boolean
+* - identifier: Energieverbindung von Elektrolyseur zu Prosumstorer
+* - domain: [0|1]
+PARAMETER par_X_W_DES_EY_NS_WGrid_energyLink(set_tech_DES_EY,set_grid_NS_W) Energieverbindung
+$LOAD par_X_W_DES_EY_NS_WGrid_energyLink
+
 * - description: Bitte legen Sie hier fest, ob eine Energieverbindung vom Wasserstoffspeicher zu folgendem Prosumstorer (Technologie, Last, Netz, Markt etc.) bestehen soll
 * - type: Boolean
 * - identifier: Energieverbindung von Wasserstoffspeicher zu Prosumstorer
@@ -65,9 +72,9 @@ $LOAD par_X_E_DES_ES_DES_EY_energyLink
 PARAMETER par_X_E_DES_PV_DES_EY_energyLink(set_tech_DES_PV,set_tech_DES_EY) Energieverbindung
 $LOAD par_X_E_DES_PV_DES_EY_energyLink
 
-* - description: Bitte legen Sie hier fest, ob eine Energieverbindung von der Kraft-Wärme-Kopplungsanlage zu folgendem Prosumstorer (Technologie, Last, Netz, Markt etc.) bestehen soll
+* - description: Bitte legen Sie hier fest, ob eine Energieverbindung von der Kraft-Wï¿½rme-Kopplungsanlage zu folgendem Prosumstorer (Technologie, Last, Netz, Markt etc.) bestehen soll
 * - type: Boolean
-* - identifier: Energieverbindung von Kraft-Wärme-Kopplungsanlage zu Prosumstorer
+* - identifier: Energieverbindung von Kraft-Wï¿½rme-Kopplungsanlage zu Prosumstorer
 * - domain: [0|1]
 * - color: DarkCyan
 PARAMETER par_X_E_DES_CHP_DES_EY_energyLink(set_tech_DES_CHP,set_tech_DES_EY) Energieverbindung
