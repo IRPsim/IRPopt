@@ -13,7 +13,7 @@ $ONEMPTY
 $ONORDER
 
 **Erstellen der GDX auf Basis der Spezifikation
-$CALL GDXXRW ./input/modelinput.xlsx @./input/input_specification.txt
+*$CALL GDXXRW ./input/modelinput.xlsx @./input/input_specification.txt
 
 
 ***Einlesen der GDX
