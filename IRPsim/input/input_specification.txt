@@ -117,7 +117,7 @@ set=set_tech_SS_PHS rng=Technologiesets!I3:I3 rdim=1
 set=set_tech_SS_RH rng=Technologiesets!J3:J3 rdim=1
 set=set_tech_SS_PV rng=Technologiesets!K3:K3 rdim=1
 set=set_tech_SS_RC rng=Technologiesets!L3:L3 rdim=1
-set=set_tech_SS_TPS rng=Technologiesets!P3:P33 rdim=1
+set=set_tech_SS_TPS rng=Technologiesets!P3:P3 rdim=1
 set=set_tech_SS_BGP rng=Technologiesets!Q3:Q3 rdim=1
 set=set_tech_SS_ETB rng=Technologiesets!R3:R3 rdim=1
 set=set_tech_SS_PLB rng=Technologiesets!S3:S3 rdim=1
