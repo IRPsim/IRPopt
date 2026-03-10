@@ -22,7 +22,7 @@ $GDXIN modelinput.gdx
 
 SET set_percent_SOC_reduction /pp0*pp100/;
 
-
+**Kommentar
 
 ***-----------------------------------------------------------------------------
 ***##Deklarieren und Initialisieren der ext. Eingabesets und -parameter##
