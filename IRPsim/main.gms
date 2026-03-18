@@ -18,11 +18,10 @@ $ONORDER
 
 ***Einlesen der GDX
 $GDXIN modelinput.gdx
-*$GDXIN job-3340-jahr-0-parameter.gdx
+*$GDXIN job-15-jahr-0-parameter.gdx
 
 SET set_percent_SOC_reduction /pp0*pp100/;
 
-**Kommentar
 
 
 ***-----------------------------------------------------------------------------

@@ -4,10 +4,101 @@
 PARAMETER par_Q_DES_HP_max_temp(set_ii,set_tech_DES_HP) Begrenzung maximale Leistung der Wärmepumpe in Abhängigkeit der Temperatur;
 PARAMETER par_COP_DES_HP(set_ii,set_tech_DES_HP) Wärmekennzahl der Wärmepumpe in Abhängigkeit der Temperatur;
 
+***Neu:
+$ontext
+PARAMETER par_X_DES_HP_type(set_ii,set_tech_DES_HP) Schaltparameter der die Quelle der Wärmepumpe definiert;
+PARAMETER par_X_DES_HP_T_sink (set_ii,set_tech_DES_HP)Schaltparameter der die Zieltemperatur der Wärmepumpe definiert;
+PARAMETER par_T_DES_HP_source(set_ii,set_tech_DES_HP) Quelltemperatur der Wärmepumpe;
+PARAMETER par_T_DES_HP_sink(set_ii,set_tech_DES_HP) Zieltemperatur der Wärmepumpe;
+
+Nutzung von StandIn-Parametern:
+par_X_DES_HP_type   -> par_Inc_PS_HP(set_tech_DES_HP)           [Förderung für Wärmepumpe durch Politik]
+par_X_DES_HP_T_sink -> par_Inc_DES_HP(set_tech_DES_HP)          [Unternehmensförderung Leistung Wärmepumpe]
+par_T_DES_HP_source -> Mindestens dieser Parameter sollte eine zeitliche Variabilität mitbringen!
+                    -> par_T_DES_HP(set_ii,set_tech_DES_HP)     [Außentemperatur]
+par_C_pss_relativeFlow(set_tech_DES_HP)  [Variable Betriebskosten]
+par_T_DES_HP_sink   -> Eigentlich sollte auch dieser Parameter zeitlich variabel sein
+                    -> par_F_R_RGrid_pos(set_ii,PS,set_tech_DES_HP)
+par_C_DES_HP_Cap(set_tech_DES_HP)        [Investitionskosten Wärmepumpe]
+
 ***-----------------------------------------------------------------------------
 ***Leistungszahl
 ***-----------------------------------------------------------------------------
 
+
+IF (par_X_DES_HP_T_sink(set_ii,set_tech_DES_HP) = 'radiator',...;
+        par_T_DES_HP_sink(set_ii,set_tech_DES_HP) = 40 - 1.0 * par_T_DES_HP_source(set_ii,set_tech_DES_HP);
+);
+IF (par_X_DES_HP_T_sink(set_ii,set_tech_DES_HP) = 'floor',...;
+        par_T_DES_HP_sink(set_ii,set_tech_DES_HP) = 30 - 0.5 * par_T_DES_HP_source(set_ii,set_tech_DES_HP);
+);
+*Anpassungen notwendig (über welchen Parameter holt sich IRPopt die manuell eingestellte Zieltemperatur rein?)
+IF (par_X_DES_HP_T_sink(set_ii,set_tech_DES_HP) = 'self',...; 
+        par_T_DES_HP_sink(set_ii,set_tech_DES_HP) = par_T_DES_HP_sink(set_ii,set_tech_DES_HP);
+);
+
+IF (par_X_DES_HP_type(set_ii,set_tech_DES_HP) = 'ASHP',...; 
+        par_COP_DES_HP(set_ii,set_tech_DES_HP) =
+        6.08 - 0.09 * (par_T_DES_HP_sink(set_ii,set_tech_DES_HP) - par_T_DES_HP_source(set_ii,set_tech_DES_HP))
+        + 0.0005 * (par_T_DES_HP_sink(set_ii,set_tech_DES_HP) - par_T_DES_HP_source(set_ii,set_tech_DES_HP))^2;
+);
+IF (par_X_DES_HP_type(set_ii,set_tech_DES_HP) = 'GSHP',...; 
+        par_COP_DES_HP(set_ii,set_tech_DES_HP) =
+        10.29 - 0.21 * (par_T_DES_HP_sink(set_ii,set_tech_DES_HP) - par_T_DES_HP_source(set_ii,set_tech_DES_HP))
+        + 0.0012 * (par_T_DES_HP_sink(set_ii,set_tech_DES_HP) - par_T_DES_HP_source(set_ii,set_tech_DES_HP))^2;
+);
+IF (par_X_DES_HP_type(set_ii,set_tech_DES_HP) = 'WSHP',...; 
+        par_COP_DES_HP(set_ii,set_tech_DES_HP) =
+        9.97 - 0.2 * (par_T_DES_HP_sink(set_ii,set_tech_DES_HP) - par_T_DES_HP_source(set_ii,set_tech_DES_HP))
+        + 0.0012 * (par_T_DES_HP_sink(set_ii,set_tech_DES_HP) - par_T_DES_HP_source(set_ii,set_tech_DES_HP))^2;
+);
+
+*$offtext
+par_Inc_PS_HP(set_tech_DES_HP) = 1;
+par_Inc_DES_HP(set_tech_DES_HP) = 1;
+
+
+LOOP((set_ii,set_tech_DES_HP),
+*radiator heating
+    IF (par_Inc_DES_HP(set_tech_DES_HP) = 1,
+            par_F_R_RGrid_pos(set_ii,'PS',set_tech_DES_HP) = 40 - 1.0 * par_T_DES_HP(set_ii,set_tech_DES_HP);
+    );
+*floor heating
+    IF (par_Inc_DES_HP(set_tech_DES_HP) = 2,
+            par_F_R_RGrid_pos(set_ii,'PS',set_tech_DES_HP) = 30 - 0.5 * par_T_DES_HP(set_ii,set_tech_DES_HP);
+    );
+*manual sink temperature
+*Anpassungen notwendig (über welchen Parameter holt sich IRPopt die manuell eingestellte Zieltemperatur rein?)
+    IF (par_Inc_DES_HP(set_tech_DES_HP) = 3, 
+            par_F_R_RGrid_pos(set_ii,'PS',set_tech_DES_HP) = par_F_R_RGrid_pos(set_ii,'PS',set_tech_DES_HP);
+    );
+);    
+
+LOOP((set_ii,set_tech_DES_HP),
+*ASHP
+    IF (par_Inc_PS_HP(set_tech_DES_HP) = 1, 
+            par_COP_DES_HP(set_ii,set_tech_DES_HP) =
+            6.08 - 0.09 * (par_F_R_RGrid_pos(set_ii,'PS',set_tech_DES_HP) - par_T_DES_HP(set_ii,set_tech_DES_HP))
+            + 0.0005 * (par_F_R_RGrid_pos(set_ii,'PS',set_tech_DES_HP) - par_T_DES_HP(set_ii,set_tech_DES_HP))**2;
+    );
+*GSHP
+    IF (par_Inc_PS_HP(set_tech_DES_HP) = 2, 
+            par_COP_DES_HP(set_ii,set_tech_DES_HP) =
+            10.29 - 0.21 * (par_F_R_RGrid_pos(set_ii,'PS',set_tech_DES_HP) - par_T_DES_HP(set_ii,set_tech_DES_HP))
+            + 0.0012 * (par_F_R_RGrid_pos(set_ii,'PS',set_tech_DES_HP) - par_T_DES_HP(set_ii,set_tech_DES_HP))**2;
+    );
+*WSHP
+    IF (par_Inc_PS_HP(set_tech_DES_HP) = 3, 
+            par_COP_DES_HP(set_ii,set_tech_DES_HP) =
+            9.97 - 0.2 * (par_F_R_RGrid_pos(set_ii,'PS',set_tech_DES_HP) - par_T_DES_HP(set_ii,set_tech_DES_HP))
+            + 0.0012 * (par_F_R_RGrid_pos(set_ii,'PS',set_tech_DES_HP) - par_T_DES_HP(set_ii,set_tech_DES_HP))**2;
+    );
+);    
+
+
+par_Q_DES_HP_max_temp(set_ii,set_tech_DES_HP) = par_Q_DES_HP_max(set_tech_DES_HP);
+
+$offtext
 LOOP((set_ii,set_tech_DES_HP),
           IF (par_T_DES_HP(set_ii,set_tech_DES_HP) <= -20,
                  par_COP_DES_HP(set_ii,set_tech_DES_HP) = 1;
@@ -55,6 +146,8 @@ LOOP((set_ii,set_tech_DES_HP),
                  par_Q_DES_HP_max_temp(set_ii,set_tech_DES_HP) = par_Q_DES_HP_max(set_tech_DES_HP) * 1;
          );
 );
+
+*$offtext
 
 *-------------------------------------------------------------------------------
 *Variablen
