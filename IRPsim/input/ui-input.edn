@@ -433,7 +433,7 @@
 						  :tags [["X" "model"]]
                           :sections [{:label "Technologieausprägung"
 									  :sections [{:label "Technisch"
-												  :tags [["X" "model"]["X" "DES" "HP" "scaling"] ["HR" "Eta"] ["HP" "Wear"] ["HP" "Learning"] ["HP" "Life"]["HP" "Q"]["HP" "COP"]["HP" "T"] ["HP" "utilpercent"]]}
+												  :tags [["X" "model"]["X" "DES" "HP" "scaling"] ["X" "DES" "HP" "T" "sink"] ["X" "DES" "HP" "type"] ["T" "DES" "HP" "source"] ["T" "DES" "HP" "sink"] ["HR" "Eta"] ["HP" "Wear"] ["HP" "Learning"] ["HP" "Life"]["HP" "Q"]["HP" "COP"]["HP" "T"] ["HP" "utilpercent"]]}
 												 {:label "Ökonomisch"
 												  :tags [["X" "model"]["HP" "DES" "C"] ["HP" "DES" "Ctrend" "Cap"] ["HP" "Alpha"] ["HP" "Inc"]["C" "pss" "relativeFlow"]]}]}
 									 {:label "Energiesystematik"

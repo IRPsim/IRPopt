@@ -22,6 +22,126 @@ $LOAD par_Q_DES_HP_max
 PARAMETER par_Eta_DES_HR(set_tech_DES_HP) Wirkungsgrad Wärmepumpen-Heizstab
 $LOAD par_Eta_DES_HR
 
+* ============================================================================
+* HINWEIS (Stand: Zwischenschritt vor Fertigstellung des Frontend-Dropdowns)
+* ----------------------------------------------------------------------------
+* Sobald das Dropdown-Feature im Frontend verfuegbar ist, muss hier lediglich
+* "type: Integer" durch "type: Dropdown" (mit passendem domain-String) ersetzt
+* werden - vorausgesetzt, die Plattform liefert dann weiterhin denselben
+* numerischen Code (1/2/3) in die GDX-Datei. Falls die Plattform stattdessen
+* direkt ein Set-Element/String liefert, muss zusaetzlich die Befuellung der
+* Sets set_DES_HP_type / set_DES_HP_sink im Modul angepasst werden.
+* ============================================================================
+
+* - description: Bitte geben Sie hier den Typ der Wärmepumpe an (1 = Luftwärmepumpe/ASHP, 2 = Erdwärmepumpe/GSHP, 3 = Wasserwärmepumpe/WSHP)
+* - type: Integer
+* - identifier: Wärmepumpentyp
+* - unit:
+* - domain: [1,3]
+* - default: 1
+* - validation:
+* - hidden:
+* - processing:
+PARAMETER par_X_DES_HP_type(set_tech_DES_HP) Waermepumpentyp (1=ASHP, 2=GSHP, 3=WSHP)
+$LOAD par_X_DES_HP_type
+
+* - description: Bitte geben Sie hier das Bestimmungsverfahren für die Zieltemperatur der Wärmepumpe an (1 = Radiatorheizung, 2 = Fußbodenheizung, 3 = manuelle Zieltemperatur)
+* - type: Integer
+* - identifier: Wärmeabgabesystem / Zieltemperaturmodus
+* - unit:
+* - domain: [1,3]
+* - default: 1
+* - validation:
+* - hidden:
+* - processing:
+PARAMETER par_X_DES_HP_T_sink(set_tech_DES_HP) Modus zur Bestimmung der Zieltemperatur (1=radiator, 2=floor, 3=manuell)
+$LOAD par_X_DES_HP_T_sink
+
+
+* - description: Bitte geben Sie hier Daten für die Außentemperatur in Form einer Zeitreihe an
+* - type: Float
+* - identifier: Außentemperatur
+* - unit: [°C]
+* - domain: [-60,60]
+PARAMETER par_T_DES_HP(set_ii,set_tech_DES_HP) Außentemperatur
+$LOAD par_T_DES_HP
+
+* - description: Bitte geben Sie hier die Quelltemperatur der Wärmepumpe in Form einer Zeitreihe an
+* - type: Float
+* - identifier: Quelltemperatur Wärmepumpe
+* - unit: [°C]
+* - domain: [-60,60]
+* - default: 10
+* - validation:
+* - hidden:
+* - processing:
+PARAMETER par_T_DES_HP_source(set_ii,set_tech_DES_HP) Quelltemperatur der Wärmepumpe
+$LOAD par_T_DES_HP_source
+
+* - description: Bitte geben Sie hier die Zieltemperatur der Wärmepumpe in Form einer Zeitreihe an
+* - type: Float
+* - identifier: Schaltparameter Wärmepumpenzieltemperatur
+* - unit: [°C]
+* - domain: [0,10]
+* - default: 55
+* - validation:
+* - hidden:
+* - processing:
+PARAMETER par_T_DES_HP_sink(set_ii,set_tech_DES_HP) Zieltemperatur der Wärmepumpe
+$LOAD par_T_DES_HP_sink
+
+$ontext
+
+* - description: Bitte geben Sie hier den Typ der Wärmepumpe an
+* - type: Dropdown
+* - identifier: Schaltparameter Wärmepumpenquelle
+* - unit:
+* - domain: ('ASHP','WSHP','GSHP')
+* - default: 'ASHP'
+* - validation:
+* - hidden:
+* - processing:
+PARAMETER par_X_DES_HP_type(set_ii,set_tech_DES_HP) Schaltparameter der die Quelle der Wärmepumpe definiert
+$LOAD par_X_DES_HP_type
+
+* - description: Bitte geben Sie hier das Bestimmungsverfahren für die Zieltemperatur der Wärmepumpe an
+* - type: Dropdown
+* - identifier: Schaltparameter Wärmepumpenzieltemperatur
+* - unit:
+* - domain: ('radiator','floor','self')
+* - default: 'self'
+* - validation:
+* - hidden:
+* - processing:
+PARAMETER par_X_DES_HP_T_sink (set_ii,set_tech_DES_HP)Schaltparameter der die Zieltemperatur der Wärmepumpe definiert
+$LOAD par_X_DES_HP_T_sink 
+
+* - description: Bitte geben Sie hier die Quelltemperatur der Wärmepumpe an
+* - type: Float
+* - identifier: Quelltemperatur Wärmepumpe
+* - unit: [°C]
+* - domain: [-50,50]
+* - default: 10
+* - validation:
+* - hidden:
+* - processing:
+PARAMETER par_T_DES_HP_source(set_ii,set_tech_DES_HP) Quelltemperatur der Wärmepumpe
+$LOAD par_T_DES_HP_source
+
+* - description: Bitte geben Sie hier die Zieltemperatur der Wärmepumpe an
+* - type: Float
+* - identifier: Schaltparameter Wärmepumpenzieltemperatur
+* - unit: [°C]
+* - domain: [0,10]
+* - default: 55
+* - validation:
+* - hidden:
+* - processing:
+PARAMETER par_T_DES_HP_sink(set_ii,set_tech_DES_HP) Zieltemperatur der Wärmepumpe
+$LOAD par_T_DES_HP_sink
+
+$offtext
+
 * - description: Bitte geben Sie hier an, ob die Wärmepumpe Reserveenergie bereitstellen können soll
 * - type: Boolean
 * - identifier: Bereitstellung von Reserveenergie durch die Wärmepumpe
@@ -127,13 +247,17 @@ $LOAD par_Alpha_DES_HP_OuM
 PARAMETER par_Inc_DES_HP(set_tech_DES_HP) Unternehmensförderung Leistung Wärmepumpe
 $LOAD par_Inc_DES_HP
 
+
+*Wird nicht mehr genutzt und daher probehalber deaktiviert!
+
 * - description: Bitte geben Sie hier Daten für die Außentemperatur in Form einer Zeitreihe an
 * - type: Float
 * - identifier: Außentemperatur
 * - unit: [°C]
 * - domain: [-60,60]
-PARAMETER par_T_DES_HP(set_ii,set_tech_DES_HP) Außentemperatur
-$LOAD par_T_DES_HP
+
+*PARAMETER par_T_DES_HP(set_ii,set_tech_DES_HP) Außentemperatur
+*$LOAD par_T_DES_HP
 
 * - description: Bitte geben Sie ein, wie viel Prozent der Leistung zur Verfügung stehen soll
 * - type: Float
