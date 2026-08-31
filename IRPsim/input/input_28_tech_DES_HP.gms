@@ -22,17 +22,6 @@ $LOAD par_Q_DES_HP_max
 PARAMETER par_Eta_DES_HR(set_tech_DES_HP) Wirkungsgrad Wärmepumpen-Heizstab
 $LOAD par_Eta_DES_HR
 
-* ============================================================================
-* HINWEIS (Stand: Zwischenschritt vor Fertigstellung des Frontend-Dropdowns)
-* ----------------------------------------------------------------------------
-* Sobald das Dropdown-Feature im Frontend verfuegbar ist, muss hier lediglich
-* "type: Integer" durch "type: Dropdown" (mit passendem domain-String) ersetzt
-* werden - vorausgesetzt, die Plattform liefert dann weiterhin denselben
-* numerischen Code (1/2/3) in die GDX-Datei. Falls die Plattform stattdessen
-* direkt ein Set-Element/String liefert, muss zusaetzlich die Befuellung der
-* Sets set_DES_HP_type / set_DES_HP_sink im Modul angepasst werden.
-* ============================================================================
-
 * - description: Bitte geben Sie hier den Typ der Wärmepumpe an (1 = Luftwärmepumpe/ASHP, 2 = Erdwärmepumpe/GSHP, 3 = Wasserwärmepumpe/WSHP)
 * - type: Integer
 * - identifier: Wärmepumpentyp
