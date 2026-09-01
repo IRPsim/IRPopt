@@ -24,7 +24,7 @@ $LOAD par_Eta_DES_HR
 
 * - description: Bitte geben Sie hier den Typ der Wärmepumpe an (1 = Luftwärmepumpe/ASHP, 2 = Erdwärmepumpe/GSHP, 3 = Wasserwärmepumpe/WSHP)
 * - type: Integer
-* - identifier: Wärmepumpentyp
+* - identifier: Schaltparameter Wärmepumpentyp
 * - unit:
 * - domain: [1,3]
 * - default: 1
@@ -36,7 +36,8 @@ $LOAD par_X_DES_HP_type
 
 * - description: Bitte geben Sie hier das Bestimmungsverfahren für die Zieltemperatur der Wärmepumpe an (1 = Radiatorheizung, 2 = Fußbodenheizung, 3 = manuelle Zieltemperatur)
 * - type: Integer
-* - identifier: Wärmeabgabesystem / Zieltemperaturmodus
+* - identifier: Schaltparameter Wärmebereitstellung
+* - unit: [°C]
 * - unit:
 * - domain: [1,3]
 * - default: 1
@@ -45,15 +46,6 @@ $LOAD par_X_DES_HP_type
 * - processing:
 PARAMETER par_X_DES_HP_T_sink(set_tech_DES_HP) Modus zur Bestimmung der Zieltemperatur (1=radiator, 2=floor, 3=manuell)
 $LOAD par_X_DES_HP_T_sink
-
-
-* - description: Bitte geben Sie hier Daten für die Außentemperatur in Form einer Zeitreihe an
-* - type: Float
-* - identifier: Außentemperatur
-* - unit: [°C]
-* - domain: [-60,60]
-PARAMETER par_T_DES_HP(set_ii,set_tech_DES_HP) Außentemperatur
-$LOAD par_T_DES_HP
 
 * - description: Bitte geben Sie hier die Quelltemperatur der Wärmepumpe in Form einer Zeitreihe an
 * - type: Float
@@ -69,7 +61,7 @@ $LOAD par_T_DES_HP_source
 
 * - description: Bitte geben Sie hier die Zieltemperatur der Wärmepumpe in Form einer Zeitreihe an
 * - type: Float
-* - identifier: Schaltparameter Wärmepumpenzieltemperatur
+* - identifier: Zieltemperatur Wärmepumpe
 * - unit: [°C]
 * - domain: [0,10]
 * - default: 55
