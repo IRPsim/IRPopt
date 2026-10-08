@@ -669,6 +669,14 @@ $LOAD set_tech_DES_HS
 SET set_tech_DES_NGB(set_tech_DEGEN) Heizkessel
 $LOAD set_tech_DES_NGB
 
+* - description: Biomasseboiler
+* - type: String
+* - identifier: Biomasseboiler
+* - shape: square
+* - icon: icons/water_heater.svg
+SET set_tech_DES_BMB(set_tech_DEGEN) Biomasseboiler
+$LOAD set_tech_DES_BMB
+
 * - description: Durchlauferhitzer
 * - type: String
 * - identifier: Durchlauferhitzer

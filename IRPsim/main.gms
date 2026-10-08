@@ -13,12 +13,12 @@ $ONEMPTY
 $ONORDER
 
 **Erstellen der GDX auf Basis der Spezifikation
-*$CALL GDXXRW ./input/modelinput.xlsx @./input/input_specification.txt
+$CALL GDXXRW ./input/modelinput.xlsx @./input/input_specification.txt
 
 
 ***Einlesen der GDX
 $GDXIN modelinput.gdx
-*$GDXIN job-15-jahr-0-parameter.gdx
+*$GDXIN job-57-jahr-0-parameter.gdx
 
 SET set_percent_SOC_reduction /pp0*pp100/;
 
@@ -74,6 +74,7 @@ $INCLUDE ./input/input_26_tech_DES_CR.gms
 $INCLUDE ./input/input_27_tech_DES_NGB.gms
 $INCLUDE ./input/input_27_tech_DES_FC.gms
 $INCLUDE ./input/input_27_tech_DES_EY.gms
+$INCLUDE ./input/input_27_tech_DES_BMB.gms
 $INCLUDE ./input/input_26_tech_DES_SC.gms
 $INCLUDE ./input/input_28_tech_DES_HP.gms
 $INCLUDE ./input/input_29_tech_DES_CHP.gms
@@ -196,6 +197,7 @@ $INCLUDE ./module/set_tech_DES_CR_module.gms
 $INCLUDE ./module/set_tech_DES_SC_module.gms
 $INCLUDE ./module/set_tech_DES_FC_module.gms
 $INCLUDE ./module/set_tech_DES_EY_module.gms
+$INCLUDE ./module/set_tech_DES_BMB_module.gms
 
 $INCLUDE ./module/set_tech_SS_PHS_module.gms
 $INCLUDE ./module/set_tech_SS_PHS_schedule_module.gms

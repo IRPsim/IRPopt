@@ -959,6 +959,28 @@ PARAMETER par_out_IuO_DES_HP_accounting_cust(set_ii, set_tech_DES_HP);
 * - processing: sum, max, min, avg
 PARAMETER par_out_IuO_DES_NGB_accounting_cust(set_ii, set_tech_DES_NGB);
 
+* - description: Ausgabeparameter Technologiebilanzierung Biomasseboiler
+* - type: Float
+* - identifier: Technologiebilanzierung Biomasseboiler
+* - unit: [EUR]
+* - domain:
+* - validation:
+* - hidden:
+* - overview: 1
+* - processing: sum, max, min, avg
+PARAMETER par_out_IuO_DES_BMB_accounting_orga(set_ii, set_tech_DES_BMB);  
+
+* - description: Ausgabeparameter Technologiebilanzierung Biomasseboiler
+* - type: Float
+* - identifier: Technologiebilanzierung Biomasseboiler
+* - unit: [EUR]
+* - domain:
+* - validation:
+* - hidden:
+* - overview: 1
+* - processing: sum, max, min, avg
+PARAMETER par_out_IuO_DES_BMB_accounting_cust(set_ii, set_tech_DES_BMB);  
+
 * - description: Gibt die Stromverkaufserlöse aus der PV-Direktvermarktung an.
 * - type: Float
 * - identifier: PV-Direktvermarktung Verkaufserlöse

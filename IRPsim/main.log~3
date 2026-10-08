@@ -1,0 +1,641 @@
+--- Job main.gms Start 06/22/26 12:21:17 30.1.0 re01a340 WEX-WEI x86 64bit/MS Windows
+--- GAMS Parameters defined
+    Input C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    PageSize 0
+    ScrDir C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\225a\
+    SysDir C:\GAMS\win64\30.1\
+    LogOption 3
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    GDX C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\test3.gdx
+    LstTitleLeftAligned 1
+GAMS 30.1.0   Copyright (C) 1987-2020 GAMS Development. All rights reserved
+Licensee: Small MUD - 5 User License                     S191011/0001AN-GEN
+          Universitaet Leipzig, Wirtschaftswissenschaftliche FakultaeDC8001
+--- Starting compilation
+--- main.gms(21) 2 Mb
+--- GDXin=C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\job-57-jahr-0-parameter.gdx
+--- main.gms(30) 3 Mb
+--- . ./input/input_01_opt.gms(83) 4 Mb
+--- main.gms(31) 4 Mb
+--- . ./input/input_02_set.gms(968) 4 Mb
+--- main.gms(32) 4 Mb
+--- . ./input/input_03_country_selection.gms(1) 4 Mb
+--- . ./input/input_03_country_selection.gms(25) 4 Mb
+--- main.gms(34) 4 Mb
+--- . ./input/input_04_tech_pss_economical.gms(64) 4 Mb
+--- main.gms(35) 4 Mb
+--- . ./input/input_05_tech_pss_technical.gms(44) 4 Mb
+--- main.gms(37) 4 Mb
+--- . ./input/input_06_link_energy.gms(1447) 4 Mb
+--- main.gms(38) 4 Mb
+--- . ./input/input_06_link_energy_EY.gms(167) 4 Mb
+--- main.gms(39) 4 Mb
+--- . ./input/input_06_link_energy_EY_SS.gms(86) 4 Mb
+--- main.gms(40) 4 Mb
+--- . ./input/input_06_link_energy_CL.gms(61) 4 Mb
+--- main.gms(41) 4 Mb
+--- . ./input/input_07_link_power.gms(335) 4 Mb
+--- main.gms(43) 4 Mb
+--- . ./input/input_08_ds.gms(49) 4 Mb
+--- main.gms(44) 4 Mb
+--- . ./input/input_09_optimizationhighness.gms(295) 4 Mb
+--- main.gms(45) 4 Mb
+--- . ./input/input_10_accounting_optimizationhighness.gms(271) 4 Mb
+--- main.gms(46) 4 Mb
+--- . ./input/input_11_ps.gms(181) 4 Mb
+--- main.gms(47) 4 Mb
+--- . ./input/input_12_ms.gms(1094) 8 Mb
+--- . ./input/input_12_ms.gms(1208) 8 Mb
+--- main.gms(48) 8 Mb
+--- . ./input/input_13_es.gms(47) 9 Mb
+--- main.gms(49) 9 Mb
+--- . ./input/input_14_scaling.gms(198) 9 Mb
+--- main.gms(50) 9 Mb
+--- . ./input/input_15_grid.gms(48) 9 Mb
+--- main.gms(52) 9 Mb
+--- . ./input/input_16_fares_E_EGrid.gms(73) 9 Mb
+--- main.gms(53) 9 Mb
+--- . ./input/input_17_fares_W_WGrid.gms(57) 9 Mb
+--- main.gms(54) 9 Mb
+--- . ./input/input_17_fares_C_CGrid.gms(57) 9 Mb
+--- main.gms(55) 9 Mb
+--- . ./input/input_17_fares_H_HGrid.gms(57) 9 Mb
+--- main.gms(56) 9 Mb
+--- . ./input/input_18_fares_G_GGrid.gms(45) 9 Mb
+--- main.gms(57) 9 Mb
+--- . ./input/input_29_fares_R_RGrid.gms(53) 10 Mb
+--- main.gms(59) 10 Mb
+--- . ./input/input_20_load_DS_E.gms(75) 10 Mb
+--- main.gms(60) 10 Mb
+--- . ./input/input_21_load_DS_W.gms(42) 11 Mb
+--- main.gms(61) 11 Mb
+--- . ./input/input_22_load_DS_G.gms(20) 11 Mb
+--- main.gms(62) 11 Mb
+--- . ./input/input_21_load_DS_C.gms(42) 11 Mb
+--- main.gms(63) 11 Mb
+--- . ./input/input_21_load_DS_H.gms(53) 12 Mb
+--- main.gms(64) 12 Mb
+--- . ./input/input_21_load_DS_CL.gms(53) 12 Mb
+--- main.gms(65) 12 Mb
+--- . ./input/input_23_tech_DES_ES.gms(262) 14 Mb
+--- main.gms(66) 14 Mb
+--- . ./input/input_24_tech_DES_TS.gms(225) 16 Mb
+--- main.gms(67) 16 Mb
+--- . ./input/input_24_tech_DES_CS.gms(189) 16 Mb
+--- main.gms(68) 16 Mb
+--- . ./input/input_24_tech_DES_HS.gms(1) 16 Mb
+--- . ./input/input_24_tech_DES_HS.gms(225) 18 Mb
+--- main.gms(69) 18 Mb
+--- . ./input/input_24_tech_DES_CLS.gms(237) 19 Mb
+--- main.gms(70) 19 Mb
+--- . ./input/input_24_tech_DES_GS.gms(225) 21 Mb
+--- main.gms(71) 21 Mb
+--- . ./input/input_25_tech_DES_PV.gms(129) 21 Mb
+--- main.gms(72) 21 Mb
+--- . ./input/input_26_tech_DES_EB.gms(142) 21 Mb
+--- main.gms(73) 21 Mb
+--- . ./input/input_26_tech_DES_CR.gms(129) 21 Mb
+--- main.gms(74) 21 Mb
+--- . ./input/input_27_tech_DES_NGB.gms(128) 22 Mb
+--- main.gms(75) 22 Mb
+--- . ./input/input_27_tech_DES_FC.gms(112) 22 Mb
+--- main.gms(76) 22 Mb
+--- . ./input/input_27_tech_DES_EY.gms(244) 22 Mb
+--- main.gms(77) 22 Mb
+--- . ./input/input_26_tech_DES_SC.gms(129) 22 Mb
+--- main.gms(78) 22 Mb
+--- . ./input/input_28_tech_DES_HP.gms(203) 23 Mb
+--- main.gms(79) 23 Mb
+--- . ./input/input_29_tech_DES_CHP.gms(268) 24 Mb
+--- main.gms(80) 24 Mb
+--- . ./input/input_30_tech_DES_ST.gms(121) 24 Mb
+--- main.gms(82) 24 Mb
+--- . ./input/input_31_tech_SS_WT.gms(115) 24 Mb
+--- main.gms(83) 24 Mb
+--- . ./input/input_32_tech_SS_PV.gms(117) 25 Mb
+--- main.gms(84) 25 Mb
+--- . ./input/input_33_tech_SS_RH.gms(58) 25 Mb
+--- main.gms(85) 25 Mb
+--- . ./input/input_34_tech_SS_CHP.gms(236) 28 Mb
+--- main.gms(86) 28 Mb
+--- . ./input/input_35_tech_SS_RC.gms(263) 30 Mb
+--- main.gms(87) 30 Mb
+--- . ./input/input_36_tech_SS_ETB.gms(35) 30 Mb
+--- main.gms(88) 30 Mb
+--- . ./input/input_37_tech_SS_TPS.gms(224) 32 Mb
+--- main.gms(89) 32 Mb
+--- . ./input/input_38_tech_SS_PLB.gms(35) 32 Mb
+--- main.gms(90) 32 Mb
+
+--- . ./input/input_39_tech_SS_PHS.gms(101) 32 Mb
+--- main.gms(91) 32 Mb
+--- . ./input/input_40_tech_SS_TC.gms(1) 32 Mb
+--- main.gms(92) 32 Mb
+--- . ./input/input_41_tech_SS_BGP.gms(1) 32 Mb
+--- main.gms(93) 32 Mb
+--- . ./input/input_36_tech_SS_FC.gms(35) 32 Mb
+--- main.gms(94) 32 Mb
+--- . ./input/input_36_tech_SS_EY.gms(273) 35 Mb
+--- main.gms(95) 35 Mb
+--- . ./input/input_36_tech_SS_MT.gms(35) 35 Mb
+--- main.gms(97) 35 Mb
+--- . ./input/input_42_tech_SS_PHS_schedule.gms(43) 35 Mb
+--- main.gms(98) 35 Mb
+--- . ./input/input_43_tech_SS_WT_schedule.gms(32) 35 Mb
+--- main.gms(99) 35 Mb
+--- . ./input/input_44_tech_SS_PV_schedule.gms(13) 35 Mb
+--- main.gms(100) 35 Mb
+--- . ./input/input_45_tech_SS_RH_schedule.gms(10) 35 Mb
+--- main.gms(101) 35 Mb
+--- . ./input/input_46_tech_SS_CHP_schedule.gms(65) 36 Mb
+--- main.gms(102) 36 Mb
+--- . ./input/input_47_tech_SS_RC_schedule.gms(66) 38 Mb
+--- main.gms(103) 38 Mb
+--- . ./input/input_48_tech_SS_TPS_schedule.gms(44) 38 Mb
+--- main.gms(104) 38 Mb
+--- . ./input/input_49_tech_SS_BGP_schedule.gms(54) 38 Mb
+--- main.gms(105) 38 Mb
+--- . ./input/input_50_tech_SS_PLB_schedule.gms(22) 38 Mb
+--- main.gms(106) 38 Mb
+--- . ./input/input_51_tech_SS_TC_schedule.gms(10) 38 Mb
+--- main.gms(107) 38 Mb
+--- . ./input/input_52_tech_SS_ETB_schedule.gms(43) 38 Mb
+--- main.gms(109) 38 Mb
+--- . ./input/input_53_businessmodel_optimizationhighness.gms(7) 38 Mb
+--- main.gms(110) 38 Mb
+--- . ./input/input_54_businessmodel_PV-direct.gms(156) 38 Mb
+--- main.gms(111) 38 Mb
+--- . ./input/input_55_businessmodel_sonnentank.gms(167) 38 Mb
+--- main.gms(112) 38 Mb
+--- . ./input/input_56_businessmodel_NaS.gms(107) 38 Mb
+--- main.gms(119) 38 Mb
+--- . ./internal/internal_set.gms(112) 38 Mb
+--- main.gms(120) 38 Mb
+--- . ./internal/internal_parameter.gms(87) 38 Mb
+--- main.gms(121) 38 Mb
+--- . ./internal/internal_loop.gms(21) 38 Mb
+--- main.gms(157) 38 Mb
+--- . ./module/define_energyLink_module.gms(373) 38 Mb
+--- main.gms(158) 38 Mb
+--- . ./module/define_powerLink_module.gms(41) 38 Mb
+--- main.gms(159) 38 Mb
+--- . ./module/define_optimizationhighness_module.gms(91) 38 Mb
+--- main.gms(161) 38 Mb
+--- . ./module/define_operationInitialization.gms(279) 38 Mb
+--- main.gms(162) 38 Mb
+--- . ./module/define_sectoralaffiliation_module.gms(208) 38 Mb
+--- main.gms(163) 38 Mb
+--- . ./module/define_scaling.gms(219) 38 Mb
+--- main.gms(167) 38 Mb
+--- . ./module/define_fares_CH_module.gms(282) 38 Mb
+--- main.gms(168) 38 Mb
+--- . ./module/define_fares_GER_module.gms(418) 38 Mb
+--- main.gms(170) 38 Mb
+
+--- . ./module/define_cashFlow_module.gms(361) 38 Mb
+--- main.gms(172) 38 Mb
+--- . ./module/define_relativeStatusCost_module.gms(7) 38 Mb
+--- main.gms(173) 38 Mb
+--- . ./module/define_absoluteStatusCost_module.gms(5) 38 Mb
+--- main.gms(175) 38 Mb
+--- . ./module/set_energyLink_module.gms(55) 38 Mb
+--- main.gms(176) 38 Mb
+--- . ./module/set_powerLink_module.gms(52) 38 Mb
+--- main.gms(177) 38 Mb
+--- . ./module/set_grid_NS_module.gms(32) 38 Mb
+--- main.gms(178) 38 Mb
+--- . ./module/set_market_MS_module.gms(46) 38 Mb
+--- main.gms(179) 38 Mb
+--- . ./module/set_load_DS_module.gms(282) 38 Mb
+--- main.gms(180) 38 Mb
+--- . ./module/set_load_DS_H_module.gms(251) 38 Mb
+--- main.gms(181) 38 Mb
+--- . ./module/set_load_DS_CL_module.gms(252) 38 Mb
+--- main.gms(183) 38 Mb
+--- . ./module/set_tech_DES_ES_module.gms(176) 38 Mb
+--- main.gms(184) 38 Mb
+--- . ./module/set_tech_DES_TS_module.gms(141) 38 Mb
+--- main.gms(185) 38 Mb
+--- . ./module/set_tech_DES_CS_module.gms(139) 38 Mb
+--- main.gms(186) 38 Mb
+--- . ./module/set_tech_DES_HS_module.gms(139) 38 Mb
+--- main.gms(187) 38 Mb
+--- . ./module/set_tech_DES_CLS_module.gms(117) 38 Mb
+--- main.gms(188) 38 Mb
+--- . ./module/set_tech_DES_GS_module.gms(139) 38 Mb
+--- main.gms(189) 38 Mb
+--- . ./module/set_tech_DES_NGB_module.gms(18) 38 Mb
+--- main.gms(190) 38 Mb
+--- . ./module/set_tech_DES_EB_module.gms(46) 38 Mb
+--- main.gms(191) 38 Mb
+--- . ./module/set_tech_DES_PV_module.gms(40) 38 Mb
+--- main.gms(192) 38 Mb
+--- . ./module/set_tech_DES_HP_module.gms(234) 38 Mb
+--- main.gms(193) 38 Mb
+--- . ./module/set_tech_DES_ST_module.gms(28) 38 Mb
+--- main.gms(194) 38 Mb
+--- . ./module/set_tech_DES_CHP_module.gms(201) 38 Mb
+--- main.gms(195) 38 Mb
+--- . ./module/set_tech_DES_CR_module.gms(43) 38 Mb
+--- main.gms(196) 38 Mb
+--- . ./module/set_tech_DES_SC_module.gms(21) 38 Mb
+--- main.gms(197) 38 Mb
+--- . ./module/set_tech_DES_FC_module.gms(18) 38 Mb
+--- main.gms(198) 38 Mb
+--- . ./module/set_tech_DES_EY_module.gms(252) 38 Mb
+--- main.gms(200) 38 Mb
+--- . ./module/set_tech_SS_PHS_module.gms(117) 38 Mb
+--- main.gms(201) 38 Mb
+--- . ./module/set_tech_SS_PHS_schedule_module.gms(42) 38 Mb
+--- main.gms(202) 38 Mb
+--- . ./module/set_tech_SS_WT_module.gms(76) 38 Mb
+--- main.gms(203) 38 Mb
+--- . ./module/set_tech_SS_WT_schedule_module.gms(41) 38 Mb
+--- main.gms(204) 38 Mb
+--- . ./module/set_tech_SS_CHP_module.gms(654) 38 Mb
+--- main.gms(205) 38 Mb
+
+--- . ./module/set_tech_SS_CHP_schedule_module.gms(53) 38 Mb
+--- main.gms(206) 38 Mb
+--- . ./module/set_tech_SS_RC_module.gms(459) 38 Mb
+--- main.gms(207) 38 Mb
+--- . ./module/set_tech_SS_RC_schedule_module.gms(57) 38 Mb
+--- main.gms(208) 38 Mb
+--- . ./module/set_tech_SS_PV_module.gms(77) 38 Mb
+--- main.gms(209) 38 Mb
+--- . ./module/set_tech_SS_PV_schedule_module.gms(20) 38 Mb
+--- main.gms(210) 38 Mb
+--- . ./module/set_tech_SS_RH_module.gms(38) 38 Mb
+--- main.gms(211) 38 Mb
+--- . ./module/set_tech_SS_RH_schedule_module.gms(16) 38 Mb
+--- main.gms(212) 38 Mb
+--- . ./module/set_tech_SS_ETB_module.gms(31) 38 Mb
+--- main.gms(214) 38 Mb
+--- . ./module/set_tech_SS_TPS_module.gms(228) 38 Mb
+--- main.gms(215) 38 Mb
+--- . ./module/set_tech_SS_TPS_schedule_module.gms(44) 38 Mb
+--- main.gms(217) 38 Mb
+--- . ./module/set_tech_SS_BGP_schedule_module.gms(54) 38 Mb
+--- main.gms(218) 38 Mb
+--- . ./module/set_tech_SS_PLB_module.gms(24) 38 Mb
+--- main.gms(220) 38 Mb
+--- . ./module/set_tech_SS_TC_schedule_module.gms(23) 38 Mb
+--- main.gms(221) 38 Mb
+--- . ./module/set_tech_SS_EY_module.gms(459) 38 Mb
+--- main.gms(223) 38 Mb
+--- . ./module/business_model_PV_direct_CH_module.gms(108) 38 Mb
+--- main.gms(224) 38 Mb
+--- . ./module/business_model_PV_direct_GER_module.gms(208) 38 Mb
+--- main.gms(226) 38 Mb
+--- . ./module/business_model_NaS_CH_module.gms(143) 38 Mb
+--- main.gms(227) 38 Mb
+--- . ./module/business_model_Sonnentank_CH_module.gms(168) 38 Mb
+--- main.gms(229) 38 Mb
+--- . ./module/define_correction.gms(5) 38 Mb
+--- main.gms(236) 38 Mb
+--- . ./module/objective_function_module.gms(30) 38 Mb
+--- main.gms(353) 38 Mb
+--- . ./output/output_opt.gms(39) 38 Mb
+--- main.gms(354) 38 Mb
+--- . ./output/output_npv.gms(255) 38 Mb
+--- main.gms(355) 38 Mb
+--- . ./output/output_kpis.gms(1392) 38 Mb
+--- main.gms(356) 38 Mb
+--- . ./output/output_energy.gms(1720) 38 Mb
+--- main.gms(357) 38 Mb
+--- . ./output/output_power.gms(10) 38 Mb
+--- main.gms(358) 38 Mb
+--- . ./output/output_bm.gms(32) 38 Mb
+--- main.gms(508) 38 Mb
+--- . ./processing/calculate_npv_module.gms(19) 38 Mb
+--- .. ./processing/define_fares_GER_preprocessing.gms(41) 38 Mb
+
+--- . ./processing/calculate_npv_module.gms(178) 39 Mb
+--- .. ./processing/define_fares_GER_postprocessing.gms(64) 39 Mb
+--- . ./processing/calculate_npv_module.gms(218) 39 Mb
+--- main.gms(509) 39 Mb
+--- . ./processing/calculate_kpi_module.gms(687) 39 Mb
+--- main.gms(510) 39 Mb
+--- . ./processing/calculate_energy_module.gms(327) 39 Mb
+--- main.gms(511) 39 Mb
+--- . ./processing/calculate_power_module.gms(7) 39 Mb
+--- main.gms(512) 39 Mb
+--- . ./processing/calculate_opt_module.gms(9) 39 Mb
+--- main.gms(515) 39 Mb
+--- . ./output/structure/csv_output_balancing_customermdl_step.gms(1831) 39 Mb
+--- main.gms(516) 39 Mb
+--- . ./output/structure/csv_output_accounting_customermdl_step.gms(115) 39 Mb
+--- main.gms(564) 39 Mb
+--- . ./processing/calculate_npv_module.gms(19) 39 Mb
+--- .. ./processing/define_fares_GER_preprocessing.gms(41) 39 Mb
+--- . ./processing/calculate_npv_module.gms(178) 39 Mb
+--- .. ./processing/define_fares_GER_postprocessing.gms(64) 39 Mb
+--- . ./processing/calculate_npv_module.gms(218) 39 Mb
+--- main.gms(565) 39 Mb
+--- . ./processing/calculate_kpi_module.gms(687) 39 Mb
+--- main.gms(566) 39 Mb
+--- . ./processing/calculate_energy_module.gms(327) 39 Mb
+--- main.gms(567) 39 Mb
+--- . ./processing/calculate_power_module.gms(7) 39 Mb
+--- main.gms(568) 39 Mb
+--- . ./processing/calculate_opt_module.gms(9) 39 Mb
+--- main.gms(571) 39 Mb
+--- . ./output/structure/csv_output_balancing_organizmdl_step.gms(1854) 39 Mb
+--- main.gms(572) 39 Mb
+--- . ./output/structure/csv_output_accounting_organizmdl_step.gms(138) 39 Mb
+--- main.gms(650) 39 Mb
+--- Starting execution: elapsed 0:00:01.735
+--- main.gms(12983) 63 Mb
+--- main.gms(13267) 65 Mb
+--- main.gms(13537) 74 Mb
+--- main.gms(13630) 74 Mb
+--- main.gms(16229) 74 Mb
+--- main.gms(19558) 74 Mb
+--- main.gms(19659) 78 Mb
+--- main.gms(23816) 80 Mb
+--- Generating MIP model IRPsimEvolution_cust
+--- main.gms(20160) 80 Mb
+--- main.gms(20160) 81 Mb
+--- main.gms(14721) 86 Mb
+--- main.gms(14878) 86 Mb
+--- main.gms(18177) 86 Mb
+--- main.gms(15406) 87 Mb
+--- main.gms(16335) 103 Mb
+--- main.gms(16356) 114 Mb
+--- main.gms(23879) 122 Mb
+--- main.gms(23879) 123 Mb
+--- LOOPS* = ii1
+---   192,722 rows  131,402 columns  438,002 non-zeroes
+--- Executing CPLEX: elapsed 0:00:04.168
+IBM ILOG CPLEX   30.1.0 re01a340 Released Jan 10, 2020 WEI x86 64bit/MS Window
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.10.0.0
+Reading parameter(s) from "C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\cplex.opt"
+>>  *Cplex option file, damit marignal nicht 0 gesetzt werden
+>>  *relaxfixedinfeas 1 
+>>  *Nutzung von nur einem Thread (Maximalwert unserer Lizenz ist 4)
+>>  *threads 12
+>>  *(-1) Deaktiviere Gomory fractional cuts / 0 Auto / 1 An
+>>  *fraccuts=0
+>>  *Initial Relaxtion mit Barrier Algorithmus (4) / 0 Auto
+>>  *startalg=4
+>>  *Daten werden unkomprimiert auf der Festplatte abgespeichert, wenn kein Arbeitsspeicher mehr verf�gbar 
+>>  *nodefileind 2
+>>  *Limit f�r Arbeitsspeicher bei 16 GB bei VMs
+>>  *workmem 8000
+>>  *Knotenauswahl
+>>  *2= Best estimate search
+>>  *nodesel 2
+>>  *Auswahl der branching variable
+>>  *3: strong branching
+>>  *varsel 3
+>>  *names 1
+>>  eprhs 0.000000001
+>>  *mipstart 1
+>> 
+Finished reading from "C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\cplex.opt"
+Reading data...
+Starting Cplex...
+Space for names approximately 11.35 Mb
+Use option 'names no' to turn use of names off
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_Advance                                 0
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_Simplex_Tolerances_Feasibility          1.0000000000000001e-09
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Tune_TimeLimit                          200
+Tried aggregator 1 time.
+LP Presolve eliminated 148924 rows and 78842 columns.
+Reduced LP has 43798 rows, 52560 columns, and 140152 nonzeros.
+Presolve time = 0.27 sec. (142.62 ticks)
+Initializing dual steep norms . . .
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.000000
+Iteration:   576   Dual objective     =          -612.227700
+Iteration:  1227   Dual objective     =         -1135.651865
+Iteration:  1873   Dual objective     =         -1519.364517
+Iteration:  2532   Dual objective     =         -1882.910545
+Iteration:  2756   Dual objective     =         -2192.193396
+Iteration:  2880   Dual objective     =         -2345.577516
+Perturbation started.
+Iteration:  3312   Dual objective     =         -2561.701975
+Iteration:  3899   Dual objective     =         -2561.987129
+Iteration:  5300   Dual objective     =         -2562.322884
+Iteration:  6272   Dual objective     =         -2567.454267
+Iteration:  7366   Dual objective     =         -2567.762147
+Iteration:  8248   Dual objective     =         -2570.157589
+Iteration:  9282   Dual objective     =         -2570.218722
+Iteration: 10293   Dual objective     =         -2570.292608
+Iteration: 11289   Dual objective     =         -2570.524582
+Iteration: 11474   Dual objective     =         -2570.584407
+Removing perturbation.
+LP status(1): optimal
+Cplex Time: 1.58sec (det. 1391.35 ticks)
+Optimal solution found.
+Objective :       -2570.577803
+--- Restarting execution
+--- main.gms(23879) 88 Mb
+--- Reading solution for model IRPsimEvolution_cust
+--- main.gms(23879) 104 Mb
+--- Executing after solve: elapsed 0:00:07.292
+--- main.gms(23816) 107 Mb
+--- main.gms(23816) 110 Mb
+--- main.gms(23816) 110 Mb
+--- main.gms(23816) 110 Mb  3 secs
+--- main.gms(23816) 110 Mb  4 secs
+--- main.gms(23816) 110 Mb  5 secs
+--- main.gms(23816) 110 Mb  6 secs
+--- main.gms(23816) 110 Mb  7 secs
+--- main.gms(23816) 110 Mb  8 secs
+--- main.gms(23816) 110 Mb  9 secs
+--- main.gms(23816) 110 Mb  10 secs
+--- main.gms(23816) 110 Mb  11 secs
+--- main.gms(23816) 110 Mb  12 secs
+--- main.gms(23816) 110 Mb  13 secs
+--- main.gms(23816) 110 Mb  14 secs
+--- main.gms(23816) 110 Mb  15 secs
+--- main.gms(23816) 110 Mb  16 secs
+--- main.gms(23816) 110 Mb  17 secs
+--- main.gms(23816) 110 Mb  18 secs
+--- main.gms(23816) 110 Mb  19 secs
+--- main.gms(23816) 110 Mb  20 secs
+--- main.gms(23816) 110 Mb  21 secs
+--- main.gms(23816) 111 Mb  21 secs
+--- main.gms(23816) 111 Mb  22 secs
+--- main.gms(23816) 111 Mb  23 secs
+--- main.gms(23816) 111 Mb  24 secs
+--- main.gms(23816) 111 Mb  25 secs
+--- main.gms(23816) 111 Mb  26 secs
+--- main.gms(23816) 111 Mb  27 secs
+--- main.gms(23816) 111 Mb  28 secs
+--- main.gms(23816) 111 Mb  29 secs
+--- main.gms(23816) 111 Mb  30 secs
+--- main.gms(23816) 111 Mb  35 secs
+--- main.gms(23816) 111 Mb  40 secs
+--- main.gms(23816) 111 Mb  40 secs
+--- main.gms(23816) 111 Mb  45 secs
+--- main.gms(23816) 111 Mb  50 secs
+--- main.gms(23816) 111 Mb  55 secs
+--- main.gms(23816) 113 Mb  55 secs
+--- main.gms(23816) 117 Mb  55 secs
+--- main.gms(23816) 125 Mb  55 secs
+--- main.gms(23816) 129 Mb  55 secs
+--- main.gms(23816) 131 Mb  55 secs
+--- main.gms(23816) 136 Mb  55 secs
+--- Putfile Output_balancing_customermdl renamed: output/results/a0.ii1.p1.output_balancing_customermdl.csv
+--- main.gms(23816) 138 Mb  55 secs
+--- Putfile Output_balancing_customermdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.p1.output_balancing_customermdl.csv
+--- Putfile Output_balancing_customermdl renamed: output/results/a0.ii1.output_balancing_customermdl.csv
+--- Putfile Output_accounting_customermdl renamed: output/results/a0.ii1.p1.output_accounting_customermdl.csv
+--- main.gms(23816) 140 Mb  60 secs
+--- Putfile Output_accounting_customermdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.p1.output_accounting_customermdl.csv
+--- Putfile Output_accounting_customermdl renamed: output/results/a0.ii1.output_accounting_customermdl.csv
+--- Generating MIP model IRPsimEvolution_orga
+--- main.gms(20160) 140 Mb
+--- main.gms(20160) 141 Mb
+--- main.gms(14505) 153 Mb
+--- main.gms(14617) 153 Mb
+--- main.gms(15176) 153 Mb
+--- main.gms(17404) 153 Mb
+--- main.gms(17017) 153 Mb
+--- main.gms(18138) 153 Mb
+--- main.gms(15940) 153 Mb
+--- main.gms(15563) 153 Mb
+--- main.gms(27241) 153 Mb
+--- LOOPS* = ii1
+---   70,082 rows  70,082 columns  131,402 non-zeroes
+--- Executing CPLEX: elapsed 0:01:09.165
+IBM ILOG CPLEX   30.1.0 re01a340 Released Jan 10, 2020 WEI x86 64bit/MS Window
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.10.0.0
+Reading parameter(s) from "C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\cplex.opt"
+>>  *Cplex option file, damit marignal nicht 0 gesetzt werden
+>>  *relaxfixedinfeas 1 
+>>  *Nutzung von nur einem Thread (Maximalwert unserer Lizenz ist 4)
+>>  *threads 12
+>>  *(-1) Deaktiviere Gomory fractional cuts / 0 Auto / 1 An
+>>  *fraccuts=0
+>>  *Initial Relaxtion mit Barrier Algorithmus (4) / 0 Auto
+>>  *startalg=4
+>>  *Daten werden unkomprimiert auf der Festplatte abgespeichert, wenn kein Arbeitsspeicher mehr verf�gbar 
+>>  *nodefileind 2
+>>  *Limit f�r Arbeitsspeicher bei 16 GB bei VMs
+>>  *workmem 8000
+>>  *Knotenauswahl
+>>  *2= Best estimate search
+>>  *nodesel 2
+>>  *Auswahl der branching variable
+>>  *3: strong branching
+>>  *varsel 3
+>>  *names 1
+>>  eprhs 0.000000001
+>>  *mipstart 1
+>> 
+Finished reading from "C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\cplex.opt"
+Reading data...
+Starting Cplex...
+Space for names approximately 5.96 Mb
+Use option 'names no' to turn use of names off
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_Advance                                 0
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_Simplex_Tolerances_Feasibility          1.0000000000000001e-09
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Tune_TimeLimit                          200
+Tried aggregator 1 time.
+LP Presolve eliminated 70082 rows and 70082 columns.
+All rows and columns eliminated.
+Presolve time = 0.03 sec. (34.13 ticks)
+LP status(1): optimal
+Cplex Time: 0.05sec (det. 54.10 ticks)
+Optimal solution found.
+Objective :     -260734.900531
+--- Restarting execution
+--- main.gms(27241) 134 Mb
+--- Reading solution for model IRPsimEvolution_orga
+--- main.gms(27241) 140 Mb
+--- Executing after solve: elapsed 0:01:10.278
+--- main.gms(23816) 142 Mb
+--- main.gms(23816) 142 Mb  3 secs
+--- main.gms(23816) 142 Mb  4 secs
+--- main.gms(23816) 142 Mb  5 secs
+--- main.gms(23816) 142 Mb  6 secs
+--- main.gms(23816) 142 Mb  7 secs
+--- main.gms(23816) 142 Mb  8 secs
+--- main.gms(23816) 142 Mb  9 secs
+--- main.gms(23816) 142 Mb  10 secs
+--- main.gms(23816) 142 Mb  11 secs
+--- main.gms(23816) 142 Mb  12 secs
+--- main.gms(23816) 142 Mb  13 secs
+--- main.gms(23816) 142 Mb  14 secs
+--- main.gms(23816) 142 Mb  15 secs
+--- main.gms(23816) 142 Mb  16 secs
+--- main.gms(23816) 142 Mb  17 secs
+--- main.gms(23816) 142 Mb  18 secs
+--- main.gms(23816) 142 Mb  19 secs
+--- main.gms(23816) 142 Mb  20 secs
+--- main.gms(23816) 142 Mb  21 secs
+--- main.gms(23816) 142 Mb  22 secs
+--- main.gms(23816) 142 Mb  23 secs
+--- main.gms(23816) 142 Mb  24 secs
+--- main.gms(23816) 142 Mb  25 secs
+--- main.gms(23816) 142 Mb  26 secs
+--- main.gms(23816) 142 Mb  27 secs
+--- main.gms(23816) 143 Mb  27 secs
+--- main.gms(23816) 143 Mb  28 secs
+--- main.gms(23816) 143 Mb  29 secs
+--- main.gms(23816) 143 Mb  30 secs
+--- main.gms(23816) 143 Mb  35 secs
+--- main.gms(23816) 143 Mb  40 secs
+--- main.gms(23816) 143 Mb  45 secs
+--- main.gms(23816) 143 Mb  50 secs
+--- main.gms(23816) 143 Mb  55 secs
+--- main.gms(23816) 143 Mb  55 secs
+--- main.gms(23816) 145 Mb  55 secs
+--- main.gms(23816) 151 Mb  55 secs
+--- Putfile Output_balancing_organizmdl renamed: output/results/a0.ii1.SS.output_balancing_organizmdl.csv
+--- main.gms(23816) 153 Mb  55 secs
+--- Putfile Output_balancing_organizmdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.SS.output_balancing_organizmdl.csv
+--- Putfile Output_balancing_organizmdl renamed: output/results/a0.ii1.DES.output_balancing_organizmdl.csv
+--- Putfile Output_balancing_organizmdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.DES.output_balancing_organizmdl.csv
+--- Putfile Output_balancing_organizmdl renamed: output/results/a0.ii1.NS.output_balancing_organizmdl.csv
+--- Putfile Output_balancing_organizmdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.NS.output_balancing_organizmdl.csv
+--- Putfile Output_balancing_organizmdl renamed: output/results/a0.ii1.SMS.output_balancing_organizmdl.csv
+--- Putfile Output_balancing_organizmdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.SMS.output_balancing_organizmdl.csv
+--- Putfile Output_balancing_organizmdl renamed: output/results/a0.ii1.TS.output_balancing_organizmdl.csv
+--- Putfile Output_balancing_organizmdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.TS.output_balancing_organizmdl.csv
+--- Putfile Output_balancing_organizmdl renamed: output/results/a0.ii1.output_balancing_organizmdl.csv
+--- Putfile Output_accounting_organizmdl renamed: output/results/a0.ii1.SS.output_accounting_organizmdl.csv
+--- main.gms(23816) 155 Mb  55 secs
+--- Putfile Output_accounting_organizmdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.SS.output_accounting_organizmdl.csv
+--- Putfile Output_accounting_organizmdl renamed: output/results/a0.ii1.DES.output_accounting_organizmdl.csv
+--- Putfile Output_accounting_organizmdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.DES.output_accounting_organizmdl.csv
+--- Putfile Output_accounting_organizmdl renamed: output/results/a0.ii1.NS.output_accounting_organizmdl.csv
+--- Putfile Output_accounting_organizmdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.NS.output_accounting_organizmdl.csv
+--- Putfile Output_accounting_organizmdl renamed: output/results/a0.ii1.SMS.output_accounting_organizmdl.csv
+--- Putfile Output_accounting_organizmdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.SMS.output_accounting_organizmdl.csv
+--- Putfile Output_accounting_organizmdl renamed: output/results/a0.ii1.TS.output_accounting_organizmdl.csv
+--- Putfile Output_accounting_organizmdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.TS.output_accounting_organizmdl.csv
+--- Putfile Output_accounting_organizmdl renamed: output/results/a0.ii1.output_accounting_organizmdl.csv
+--- main.gms(23816) 156 Mb  60 secs
+--- main.gms(23816) 156 Mb  60 secs
+--- main.gms(23816) 156 Mb  65 secs
+--- main.gms(23816) 156 Mb  70 secs
+--- main.gms(23816) 157 Mb  70 secs
+--- main.gms(23816) 157 Mb  75 secs
+--- main.gms(23816) 157 Mb  75 secs
+--- main.gms(23816) 157 Mb  80 secs
+--- Putfile Output_balancing_customermdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.output_balancing_customermdl.csv
+--- Putfile Output_balancing_organizmdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.output_balancing_organizmdl.csv
+--- Putfile Output_accounting_customermdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.output_accounting_customermdl.csv
+--- Putfile Output_accounting_organizmdl C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\output/results/a0.ii1.output_accounting_organizmdl.csv
+--- GDX File C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\test3.gdx
+*** Status: Normal completion
+--- Job main.gms Stop 06/22/26 12:23:48 elapsed 0:02:31.193
+

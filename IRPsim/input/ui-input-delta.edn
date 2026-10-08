@@ -69,6 +69,15 @@
 												  :tags [["F" "G" "GGrid" "intenergy"]]}
 												 {:label "Netzeinspeisung"
 												  :tags [["F" "W" "WGrid" "intenergyinfeed"]]}]}]}
+						{:set "set_tech_DES_BMB"
+					 	  :tags [["X" "support"]]
+ 			  :sections [{:label "Endkundentarife"
+             			   :tags [["F" "W" "WGrid" "energy"] ["F" "W" "WGrid" "basic"]]}
+ 									{:label "Geschäftsfeldtarife"
+ 	 								  :sections [{:label "Netzbezug"
+              											:tags [["F" "W" "WGrid" "intenergy"]]}
+             											{:label "Netzeinspeisung"
+              											:tags [["F" "W" "WGrid" "intenergyinfeed"]]}]}]}
 						 {:set "set_tech_DES_EB"
                           :sections [{:label "Endkundentarife"
 									  :sections [{:label "Netzbezug"

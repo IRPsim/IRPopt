@@ -31,20 +31,20 @@ $LOAD par_Eta_DES_HR
 * - validation:
 * - hidden:
 * - processing:
-PARAMETER par_X_DES_HP_type(set_tech_DES_HP) Waermepumpentyp (1=ASHP, 2=GSHP, 3=WSHP)
+PARAMETER par_X_DES_HP_type(set_tech_DES_HP) Waermepumpentyp (1=ASHP 2=GSHP 3=WSHP)
 $LOAD par_X_DES_HP_type
 
 * - description: Bitte geben Sie hier das Bestimmungsverfahren für die Zieltemperatur der Wärmepumpe an (1 = Radiatorheizung, 2 = Fußbodenheizung, 3 = manuelle Zieltemperatur)
 * - type: Integer
 * - identifier: Schaltparameter Wärmebereitstellung
-* - unit: [°C]
+* - unit: [°C] 
 * - unit:
 * - domain: [1,3]
 * - default: 1
 * - validation:
 * - hidden:
 * - processing:
-PARAMETER par_X_DES_HP_T_sink(set_tech_DES_HP) Modus zur Bestimmung der Zieltemperatur (1=radiator, 2=floor, 3=manuell)
+PARAMETER par_X_DES_HP_T_sink(set_tech_DES_HP) Modus zur Bestimmung der Zieltemperatur (1=radiator 2=floor 3=manuell)
 $LOAD par_X_DES_HP_T_sink
 
 * - description: Bitte geben Sie hier die Quelltemperatur der Wärmepumpe in Form einer Zeitreihe an

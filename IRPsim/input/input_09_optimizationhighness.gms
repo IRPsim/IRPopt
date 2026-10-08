@@ -47,6 +47,13 @@ $LOAD par_OH_DS_CLL_side
 PARAMETER par_OH_DES_NGB_side(set_side,set_tech_DES_NGB) Optimierungshoheit
 $LOAD par_OH_DES_NGB_side
 
+* - description: Bitte markieren Sie hier den Aktuer mit "Ja", der die Optimierungshoheit über den Biomasseboiler besitzen soll
+* - type: Boolean
+* - identifier: Optimierungshoheit Biomasseboiler
+* - domain: [0|1]
+PARAMETER par_OH_DES_BMB_side(set_side,set_tech_DES_BMB) Optimierungshoheit
+$LOAD par_OH_DES_BMB_side
+
 * - description: Bitte markieren Sie hier den Aktuer mit "Ja", der die Optimierungshoheit über die Kältemaschine besitzen soll
 * - type: Boolean
 * - identifier: Optimierungshoheit Kältemaschine

@@ -28,7 +28,7 @@
                   :border {:type :parameter 
                            :tags [["COH"]] :heading "Bilanzierungshoheit"} ;optional
                   :shape {:type :subsets
-                          :groups [{:tags [["DES" "NGB"]["DES" "EB"]["DES" "FC"]["DES" "EY"]["DES" "HP"]["DES" "CHP"]["DES" "PV"]["DES" "ST"]["DES" "CR"]["DES" "SC"]["DES" "GTP"]["DES" "ST"]["SS"]] :value "square" :label "Erzeuger"}
+                          :groups [{:tags [["DES" "NGB"]["DES" "BMB"]["DES" "EB"]["DES" "FC"]["DES" "EY"]["DES" "HP"]["DES" "CHP"]["DES" "PV"]["DES" "ST"]["DES" "CR"]["DES" "SC"]["DES" "GTP"]["DES" "ST"]["SS"]] :value "square" :label "Erzeuger"}
                                    {:tags [["DS"]] :value "octagon" :label "Last"}
                                    {:tags [["DES" "TS"]["DES" "ES"]["DES" "CS"]["DES" "GS"]["DES" "HS"]["DES" "CLS"]] :value "diamond" :label "Speicher"}
                                    {:tags [["NS"]] :value "hexagon" :label "Netz"}
@@ -75,7 +75,7 @@
                                       :tags [["X" "model"]["X" "model"]["X" "DS" "W" "scaling"] ["L" "W"]["X" "DS" "W" "self"]  ]}
 									 {:label "Energiesystematik"
 									  :sections [{:label "Zufluss"
-												  :tags [["X" "model"]["X" "DES" "NGB" "DS" "WLoad" "energyLink"] ["X" "DES" "EB" "DS" "WLoad" "energyLink"] ["X" "DES" "ST" "DS" "WLoad" "energyLink"]  ["X" "DES" "CHP" "DS" "WLoad" "energyLink"] ["X" "DES" "HP" "DS" "WLoad" "energyLink"] ["X" "DES" "TS" "DS" "WLoad" "energyLink"] ["X" "NS" "WGrid" "DS" "WLoad" "energyLink"]["X" "SS" "CHP" "DS" "W" "energyLink"]]}]}
+												  :tags [["X" "model"]["X" "DES" "NGB" "DS" "WLoad" "energyLink"] ["X" "DES" "BMB" "DS" "WLoad" "energyLink"] ["X" "DES" "EB" "DS" "WLoad" "energyLink"] ["X" "DES" "ST" "DS" "WLoad" "energyLink"]  ["X" "DES" "CHP" "DS" "WLoad" "energyLink"] ["X" "DES" "HP" "DS" "WLoad" "energyLink"] ["X" "DES" "TS" "DS" "WLoad" "energyLink"] ["X" "NS" "WGrid" "DS" "WLoad" "energyLink"]["X" "SS" "CHP" "DS" "W" "energyLink"]]}]}
 									 {:label "Hoheitssystematik"
 									  :sections [{:label "Optimierungshoheit"
 											      :icon "glyphicon glyphicon-link"
@@ -197,7 +197,7 @@
 												  :tags [["X" "model"]["TS" "DES" "C"] ["TS" "DES" "Ctrend" "Cap"] ["TS" "Alpha"] ["TS" "Inc"]["C" "pss" "relativeFlow"]]}]}
 									 {:label "Energiesystematik"
 									  :sections [{:label "Zufluss"
-												  :tags [["X" "model"]["X" "DES" "NGB" "DES" "TS" "energyLink"]["X" "DES" "EB" "DES" "TS" "energyLink"] ["X" "DES" "TS" "DES" "SC" "energyLink"]["X" "DES" "ST" "DES" "TS" "energyLink"]  ["X" "DES" "CHP" "DES" "TS" "energyLink"] ["X" "DES" "HP" "DES" "TS" "energyLink"] ["X" "NS" "fromWGrid" "DES" "toTS" "energyLink"] ["X" "SS" "CHP" "DES" "TS" "energyLink"] ["X" "SS" "RC" "DES" "TS" "energyLink"] ]}
+												  :tags [["X" "model"]["X" "DES" "NGB" "DES" "TS" "energyLink"]["X" "DES" "BMB" "DES" "TS" "energyLink"]["X" "DES" "EB" "DES" "TS" "energyLink"] ["X" "DES" "TS" "DES" "SC" "energyLink"]["X" "DES" "ST" "DES" "TS" "energyLink"]  ["X" "DES" "CHP" "DES" "TS" "energyLink"] ["X" "DES" "HP" "DES" "TS" "energyLink"] ["X" "NS" "fromWGrid" "DES" "toTS" "energyLink"] ["X" "SS" "CHP" "DES" "TS" "energyLink"] ["X" "SS" "RC" "DES" "TS" "energyLink"] ]}
 												 {:label "Abfluss"
 												  :tags [["X" "model"]["X" "DES" "fromTS" "NS" "toWGrid" "energyLink"] ["X" "DES" "TS" "DS" "WLoad" "energyLink"]["X" "DES" "TS" "DES" "SC" "energyLink"]]}]}
 									 {:label "Hoheitssystematik"
@@ -349,6 +349,34 @@
 												  :tags [["X" "model"]["F" "G" "GGrid" "intenergy"]]}
 												 {:label "Netzeinspeisung"
 												  :tags [["X" "model"]["F" "W" "WGrid" "intenergyinfeed"]]}]}]}
+						{:set "set_tech_DES_BMB"
+ 						 :tags [["X" "model"]]
+			 :sections [{:label "Technologieausprägung"
+             								:sections [{:label "Technisch"
+                       										:tags [["X" "model"]["X" "DES" "BMB" "scaling"] ["BMB" "Eta"] ["BMB" "K"] ["BMB" "Wear"] ["BMB" "Learning"] ["BMB" "Life"] ["BMB" "Q"]["BMB" "utilpercent"]]}
+                      										{:label "Ökonomisch"
+                        									:tags [["X" "model"]["BMB" "DES" "C"] ["BMB" "DES" "Ctrend" "Cap"] ["BMB" "Alpha"] ["BMB" "Inc"]["Emis" "pss" "CO2"]["C" "pss" "relativeFlow"]]}]}
+           								{:label "Energiesystematik"
+             								:sections [{:label "Zufluss"
+                         									:tags [["X" "model"]["X" "MS" "BMarket" "DES" "BMB" "energyLink"]]}
+                      										{:label "Abfluss"
+                         									:tags [["X" "model"]["X" "DES" "BMB" "DS" "WLoad" "energyLink"]["X" "DES" "BMB" "DES" "TS" "energyLink"]]}]}
+           								{:label "Hoheitssystematik"
+             								  :sections [{:label "Optimierungshoheit"
+                         									:tags [["X" "model"]["OH" "DES" "side"]]}
+                      										{:label "Bilanzierungshoheit"
+                         									:tags [["X" "model"]["COH" "DES" "side"]]}
+                      										{:label "Sektorenschlüssel"
+                         									:tags [["X" "model"]["SOH" "pss" "sector"]]}]}
+           								{:label "Endkundentarife"
+									  :sections [{:label "Netzbezug"									
+             											:tags [["X" "model"]["F" "W" "WGrid" "energy"] ["F" "W" "WGrid" "basic"]]}]}
+           								{:label "Geschäftsfeldtarife"
+             								 :sections [{:label "Netzbezug"
+                         									:tags [["X" "model"]["F" "W" "WGrid" "intenergy"]]}
+                      										{:label "Netzeinspeisung"
+                         									:tags [["X" "model"]["F" "W" "WGrid" "intenergyinfeed"]]}]}]}
+
 						 {:set "set_tech_DES_EB"
 						  :tags [["X" "model"]]
                           :sections [{:label "Technologieausprägung"
@@ -1039,7 +1067,7 @@
               :sections [{:set "set_load_DS_E"
 						  :tags [["X" "model"]["X" "DES" "PV" "DS" "ELoad" "energyLink"] ["X" "DES" "CHP" "DS" "ELoad" "energyLink"]  ["X" "DES" "ES" "DS" "ELoad" "energyLink"] ["X" "NS" "EGrid" "DS" "ELoad" "energyLink"]]}             
                          {:set "set_load_DS_W"
-                          :tags [["X" "model"]["X" "DES" "NGB" "DS" "WLoad" "energyLink"] ["X" "DES" "EB" "DS" "WLoad" "energyLink"] ["X" "DES" "ST" "DS" "WLoad" "energyLink"]  ["X" "DES" "CHP" "DS" "WLoad" "energyLink"] ["X" "DES" "HP" "DS" "WLoad" "energyLink"] ["X" "DES" "TS" "DS" "WLoad" "energyLink"] ["X" "NS" "WGrid" "DS" "WLoad" "energyLink"]]} 
+                          :tags [["X" "model"]["X" "DES" "NGB" "DS" "WLoad" "energyLink"]["X" "DES" "BMB" "DS" "WLoad" "energyLink"]["X" "DES" "EB" "DS" "WLoad" "energyLink"] ["X" "DES" "ST" "DS" "WLoad" "energyLink"]  ["X" "DES" "CHP" "DS" "WLoad" "energyLink"] ["X" "DES" "HP" "DS" "WLoad" "energyLink"] ["X" "DES" "TS" "DS" "WLoad" "energyLink"] ["X" "NS" "WGrid" "DS" "WLoad" "energyLink"]]} 
 						 {:set "set_load_DS_G"
                           :tags [["X" "model"]["X" "NS" "GGrid" "DS" "GLoad" "energyLink"]["X" "MS" "GMarket" "DS" "GLoad" "energyLink"]]} 
 						 {:set "set_load_DS_C"
@@ -1047,11 +1075,13 @@
 						 {:set "set_tech_DES_ES"
                           :tags [["X" "model"]["X" "DES" "PV" "DES" "ES" "energyLink"] ["X" "DES" "CHP" "DES" "ES" "energyLink"] ["X" "DES" "fromES" "DES" "toES" "energyLink"]["X" "NS" "fromEGrid" "DES" "toES" "energyLink"]]} 
 						 {:set "set_tech_DES_TS"
-                          :tags [["X" "model"]["X" "DES" "NGB" "DES" "TS" "energyLink"]["X" "DES" "EB" "DES" "TS" "energyLink"] ["X" "DES" "ST" "DES" "TS" "energyLink"]  ["X" "DES" "CHP" "DES" "TS" "energyLink"] ["X" "DES" "HP" "DES" "TS" "energyLink"] ["X" "NS" "fromWGrid" "DES" "toTS" "energyLink"]]} 
+                          :tags [["X" "model"]["X" "DES" "NGB" "DES" "TS" "energyLink"]["X" "DES" "BMB" "DES" "TS" "energyLink"]["X" "DES" "EB" "DES" "TS" "energyLink"] ["X" "DES" "ST" "DES" "TS" "energyLink"]  ["X" "DES" "CHP" "DES" "TS" "energyLink"] ["X" "DES" "HP" "DES" "TS" "energyLink"] ["X" "NS" "fromWGrid" "DES" "toTS" "energyLink"]]} 
 				         {:set "set_tech_DES_CS"
                           :tags [["X" "model"]["X" "DES" "CR" "DES" "CS" "energyLink"]["X" "DES" "SC" "DES" "CS" "energyLink"] ["X" "NS" "CGrid" "DES" "CS" "energyLink"]]} 	 						
 						{:set "set_tech_DES_NGB"
                           :tags [["X" "model"]["X" "NS" "GGrid" "DES" "NGB" "energyLink"] ["X" "MS" "GMarket" "DES" "NGB" "energyLink"] ["X" "MS" "OMarket" "DES" "NGB" "energyLink"]]} 
+						{:set "set_tech_DES_BMB"
+ 			  :tags [["X" "model"]["X" "MS" "BMarket" "DES" "BMB" "energyLink"]]}
 						 {:set "set_tech_DES_EB"
                           :tags [["X" "model"]["X" "NS" "EGrid" "DES" "EB" "energyLink"] ["X" "DES" "ES" "DES" "EB" "energyLink"] ["X" "DES" "CHP" "DES" "EB" "energyLink"] ["X" "DES" "PV" "DES" "EB" "energyLink"]]}
 						 {:set "set_tech_DES_CR"
@@ -1101,6 +1131,8 @@
                           :tags [["X" "model"]["X" "DES" "fromTS" "NS" "toWGrid" "energyLink"] ["X" "DES" "TS" "DS" "WLoad" "energyLink"]]} 
 						 {:set "set_tech_DES_NGB"
                           :tags [["X" "model"]["X" "DES" "NGB" "DS" "WLoad" "energyLink"] ["X" "DES" "NGB" "NS" "WGrid" "energyLink"]["X" "DES" "NGB" "DES" "TS" "energyLink"]]} 
+						 {:set "set_tech_DES_BMB"
+			  :tags [["X" "model"]["X" "DES" "BMB" "DS" "WLoad" "energyLink"]["X" "DES" "BMB" "DES" "TS" "energyLink"]]}
 						 {:set "set_tech_DES_EB"
                           :tags [["X" "model"]["X" "DES" "EB" "NS" "RGrid" "energyLink"] ["X" "DES" "EB" "DS" "WLoad" "energyLink"] ["X" "DES" "EB" "DES" "TS" "energyLink"]]} 
 						 {:set "set_tech_DES_CR"

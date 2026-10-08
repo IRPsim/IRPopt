@@ -1,0 +1,938 @@
+--- Job main.gms Start 09/24/26 09:49:32 30.1.0 re01a340 WEX-WEI x86 64bit/MS Windows
+--- GAMS Parameters defined
+    Input C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    PageSize 0
+    ScrDir C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\225a\
+    SysDir C:\GAMS\win64\30.1\
+    LogOption 3
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    GDX C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\test3.gdx
+    LstTitleLeftAligned 1
+GAMS 30.1.0   Copyright (C) 1987-2020 GAMS Development. All rights reserved
+Licensee: Small MUD - 5 User License                     S191011/0001AN-GEN
+          Universitaet Leipzig, Wirtschaftswissenschaftliche FakultaeDC8001
+--- Starting compilation
+--- main.gms(21) 2 Mb
+--- GDXin=C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\job-57-jahr-0-parameter.gdx
+--- main.gms(30) 3 Mb
+--- . ./input/input_01_opt.gms(83) 4 Mb
+--- main.gms(31) 4 Mb
+--- . ./input/input_02_set.gms(678) 4 Mb 1 Error
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_02_set.gms
+    Symbol not in GDX
+--- . ./input/input_02_set.gms(679) 4 Mb
+--- . ./input/input_02_set.gms(976) 4 Mb
+--- main.gms(32) 4 Mb
+--- . ./input/input_03_country_selection.gms(25) 4 Mb
+--- main.gms(34) 4 Mb
+--- . ./input/input_04_tech_pss_economical.gms(64) 4 Mb
+--- main.gms(35) 4 Mb
+--- . ./input/input_05_tech_pss_technical.gms(44) 4 Mb
+--- main.gms(37) 4 Mb
+--- . ./input/input_06_link_energy.gms(198) 4 Mb 2 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_06_link_energy.gms
+    Symbol not in GDX
+--- . ./input/input_06_link_energy.gms(205) 4 Mb 3 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_06_link_energy.gms
+    Symbol not in GDX
+--- . ./input/input_06_link_energy.gms(212) 4 Mb 4 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_06_link_energy.gms
+    Symbol not in GDX
+--- . ./input/input_06_link_energy.gms(1468) 4 Mb
+--- main.gms(38) 4 Mb
+--- . ./input/input_06_link_energy_EY.gms(167) 4 Mb
+--- main.gms(39) 4 Mb
+--- . ./input/input_06_link_energy_EY_SS.gms(86) 4 Mb
+--- main.gms(40) 4 Mb
+--- . ./input/input_06_link_energy_CL.gms(61) 4 Mb
+--- main.gms(41) 4 Mb
+--- . ./input/input_07_link_power.gms(335) 4 Mb
+--- main.gms(43) 4 Mb
+--- . ./input/input_08_ds.gms(49) 4 Mb
+--- main.gms(44) 4 Mb
+--- . ./input/input_09_optimizationhighness.gms(55) 4 Mb 5 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_09_optimizationhighness.gms
+    Symbol not in GDX
+--- . ./input/input_09_optimizationhighness.gms(302) 4 Mb
+--- main.gms(45) 4 Mb
+--- . ./input/input_10_accounting_optimizationhighness.gms(91) 4 Mb 6 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_10_accounting_optimizationhighness.gms
+    Symbol not in GDX
+--- . ./input/input_10_accounting_optimizationhighness.gms(278) 4 Mb
+--- main.gms(46) 4 Mb
+--- . ./input/input_11_ps.gms(181) 4 Mb
+--- main.gms(47) 4 Mb
+
+--- . ./input/input_12_ms.gms(1208) 8 Mb
+--- main.gms(48) 8 Mb
+--- . ./input/input_13_es.gms(47) 9 Mb
+--- main.gms(49) 9 Mb
+--- . ./input/input_14_scaling.gms(90) 9 Mb 7 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_14_scaling.gms
+    Symbol not in GDX
+--- . ./input/input_14_scaling.gms(207) 9 Mb
+--- main.gms(50) 9 Mb
+--- . ./input/input_15_grid.gms(48) 9 Mb
+--- main.gms(52) 9 Mb
+--- . ./input/input_16_fares_E_EGrid.gms(73) 9 Mb
+--- main.gms(53) 9 Mb
+--- . ./input/input_17_fares_W_WGrid.gms(57) 9 Mb
+--- main.gms(54) 9 Mb
+--- . ./input/input_17_fares_C_CGrid.gms(57) 9 Mb
+--- main.gms(55) 9 Mb
+--- . ./input/input_17_fares_H_HGrid.gms(57) 9 Mb
+--- main.gms(56) 9 Mb
+--- . ./input/input_18_fares_G_GGrid.gms(45) 9 Mb
+--- main.gms(57) 9 Mb
+--- . ./input/input_29_fares_R_RGrid.gms(53) 10 Mb
+--- main.gms(59) 10 Mb
+--- . ./input/input_20_load_DS_E.gms(75) 10 Mb
+--- main.gms(60) 10 Mb
+--- . ./input/input_21_load_DS_W.gms(42) 11 Mb
+--- main.gms(61) 11 Mb
+--- . ./input/input_22_load_DS_G.gms(20) 11 Mb
+--- main.gms(62) 11 Mb
+--- . ./input/input_21_load_DS_C.gms(42) 11 Mb
+--- main.gms(63) 11 Mb
+--- . ./input/input_21_load_DS_H.gms(53) 12 Mb
+--- main.gms(64) 12 Mb
+--- . ./input/input_21_load_DS_CL.gms(53) 12 Mb
+--- main.gms(65) 12 Mb
+--- . ./input/input_23_tech_DES_ES.gms(262) 14 Mb
+--- main.gms(66) 14 Mb
+--- . ./input/input_24_tech_DES_TS.gms(225) 16 Mb
+--- main.gms(67) 16 Mb
+--- . ./input/input_24_tech_DES_CS.gms(189) 16 Mb
+--- main.gms(68) 16 Mb
+--- . ./input/input_24_tech_DES_HS.gms(225) 18 Mb
+--- main.gms(69) 18 Mb
+--- . ./input/input_24_tech_DES_CLS.gms(237) 19 Mb
+--- main.gms(70) 19 Mb
+--- . ./input/input_24_tech_DES_GS.gms(1) 19 Mb
+--- . ./input/input_24_tech_DES_GS.gms(225) 21 Mb
+--- main.gms(71) 21 Mb
+--- . ./input/input_25_tech_DES_PV.gms(129) 21 Mb
+--- main.gms(72) 21 Mb
+--- . ./input/input_26_tech_DES_EB.gms(142) 21 Mb
+--- main.gms(73) 21 Mb
+--- . ./input/input_26_tech_DES_CR.gms(129) 21 Mb
+--- main.gms(74) 21 Mb
+--- . ./input/input_27_tech_DES_NGB.gms(128) 22 Mb
+--- main.gms(75) 22 Mb
+--- . ./input/input_27_tech_DES_FC.gms(112) 22 Mb
+--- main.gms(76) 22 Mb
+--- . ./input/input_27_tech_DES_EY.gms(244) 22 Mb
+--- main.gms(77) 22 Mb
+--- . ./input/input_27_tech_DES_BMB.gms(10) 22 Mb 8 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Symbol not in GDX
+--- . ./input/input_27_tech_DES_BMB.gms(22) 22 Mb 9 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Symbol not in GDX
+--- . ./input/input_27_tech_DES_BMB.gms(34) 22 Mb 10 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Symbol not in GDX
+--- . ./input/input_27_tech_DES_BMB.gms(48) 22 Mb 11 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Symbol not in GDX
+--- . ./input/input_27_tech_DES_BMB.gms(59) 22 Mb 12 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Symbol not in GDX
+--- . ./input/input_27_tech_DES_BMB.gms(70) 22 Mb 13 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Symbol not in GDX
+--- . ./input/input_27_tech_DES_BMB.gms(82) 22 Mb 14 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Symbol not in GDX
+--- . ./input/input_27_tech_DES_BMB.gms(93) 22 Mb 15 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Symbol not in GDX
+--- . ./input/input_27_tech_DES_BMB.gms(103) 22 Mb 16 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Symbol not in GDX
+--- . ./input/input_27_tech_DES_BMB.gms(115) 22 Mb 17 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Symbol not in GDX
+--- . ./input/input_27_tech_DES_BMB.gms(127) 22 Mb 18 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Symbol not in GDX
+--- . ./input/input_27_tech_DES_BMB.gms(138) 22 Mb 19 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Symbol not in GDX
+--- . ./input/input_27_tech_DES_BMB.gms(150) 22 Mb 20 Errors
+*** Error 140 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_27_tech_DES_BMB.gms
+    Unknown symbol
+--- main.gms(78) 22 Mb
+--- . ./input/input_26_tech_DES_SC.gms(129) 22 Mb
+--- main.gms(79) 22 Mb
+--- . ./input/input_28_tech_DES_HP.gms(34) 22 Mb 23 Errors
+*** Error   2 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_28_tech_DES_HP.gms
+    Identifier expected
+*** Error   2 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_28_tech_DES_HP.gms
+    Identifier expected
+*** Error  96 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_28_tech_DES_HP.gms
+    Blank needed between identifier and text
+      (-or- illegal character in identifier)
+      (-or- check for missing ';' on previous line)
+--- . ./input/input_28_tech_DES_HP.gms(35) 22 Mb 24 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_28_tech_DES_HP.gms
+    Symbol not in GDX
+--- . ./input/input_28_tech_DES_HP.gms(47) 22 Mb 27 Errors
+*** Error   2 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_28_tech_DES_HP.gms
+    Identifier expected
+*** Error   2 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_28_tech_DES_HP.gms
+    Identifier expected
+*** Error  96 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_28_tech_DES_HP.gms
+    Blank needed between identifier and text
+      (-or- illegal character in identifier)
+      (-or- check for missing ';' on previous line)
+--- . ./input/input_28_tech_DES_HP.gms(48) 22 Mb 28 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_28_tech_DES_HP.gms
+    Symbol not in GDX
+--- . ./input/input_28_tech_DES_HP.gms(60) 22 Mb 29 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_28_tech_DES_HP.gms
+    Symbol not in GDX
+--- . ./input/input_28_tech_DES_HP.gms(72) 22 Mb 30 Errors
+*** Error 492 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./input/input_28_tech_DES_HP.gms
+    Symbol not in GDX
+--- . ./input/input_28_tech_DES_HP.gms(192) 23 Mb
+--- main.gms(80) 23 Mb
+--- . ./input/input_29_tech_DES_CHP.gms(268) 23 Mb
+--- main.gms(81) 23 Mb
+--- . ./input/input_30_tech_DES_ST.gms(121) 23 Mb
+--- main.gms(83) 23 Mb
+--- . ./input/input_31_tech_SS_WT.gms(115) 24 Mb
+--- main.gms(84) 24 Mb
+--- . ./input/input_32_tech_SS_PV.gms(117) 24 Mb
+--- main.gms(85) 24 Mb
+--- . ./input/input_33_tech_SS_RH.gms(58) 25 Mb
+--- main.gms(86) 25 Mb
+--- . ./input/input_34_tech_SS_CHP.gms(236) 27 Mb
+--- main.gms(87) 27 Mb
+--- . ./input/input_35_tech_SS_RC.gms(263) 30 Mb
+--- main.gms(88) 30 Mb
+--- . ./input/input_36_tech_SS_ETB.gms(35) 30 Mb
+--- main.gms(89) 30 Mb
+--- . ./input/input_37_tech_SS_TPS.gms(224) 31 Mb
+--- main.gms(90) 31 Mb
+--- . ./input/input_38_tech_SS_PLB.gms(35) 31 Mb
+--- main.gms(91) 31 Mb
+--- . ./input/input_39_tech_SS_PHS.gms(101) 32 Mb
+--- main.gms(92) 32 Mb
+--- . ./input/input_40_tech_SS_TC.gms(1) 32 Mb
+--- main.gms(93) 32 Mb
+--- . ./input/input_41_tech_SS_BGP.gms(1) 32 Mb
+--- main.gms(94) 32 Mb
+--- . ./input/input_36_tech_SS_FC.gms(35) 32 Mb
+--- main.gms(95) 32 Mb
+--- . ./input/input_36_tech_SS_EY.gms(273) 34 Mb
+--- main.gms(96) 34 Mb
+--- . ./input/input_36_tech_SS_MT.gms(35) 34 Mb
+--- main.gms(98) 34 Mb
+--- . ./input/input_42_tech_SS_PHS_schedule.gms(43) 34 Mb
+--- main.gms(99) 34 Mb
+--- . ./input/input_43_tech_SS_WT_schedule.gms(32) 34 Mb
+--- main.gms(100) 34 Mb
+--- . ./input/input_44_tech_SS_PV_schedule.gms(13) 34 Mb
+--- main.gms(101) 34 Mb
+--- . ./input/input_45_tech_SS_RH_schedule.gms(10) 34 Mb
+--- main.gms(102) 34 Mb
+--- . ./input/input_46_tech_SS_CHP_schedule.gms(10) 35 Mb
+--- . ./input/input_46_tech_SS_CHP_schedule.gms(65) 36 Mb
+--- main.gms(103) 36 Mb
+--- . ./input/input_47_tech_SS_RC_schedule.gms(66) 37 Mb
+--- main.gms(104) 37 Mb
+--- . ./input/input_48_tech_SS_TPS_schedule.gms(44) 37 Mb
+--- main.gms(105) 37 Mb
+--- . ./input/input_49_tech_SS_BGP_schedule.gms(54) 37 Mb
+--- main.gms(106) 37 Mb
+--- . ./input/input_50_tech_SS_PLB_schedule.gms(22) 37 Mb
+--- main.gms(107) 37 Mb
+--- . ./input/input_51_tech_SS_TC_schedule.gms(10) 37 Mb
+--- main.gms(108) 37 Mb
+--- . ./input/input_52_tech_SS_ETB_schedule.gms(43) 37 Mb
+--- main.gms(110) 37 Mb
+--- . ./input/input_53_businessmodel_optimizationhighness.gms(7) 37 Mb
+--- main.gms(111) 37 Mb
+--- . ./input/input_54_businessmodel_PV-direct.gms(156) 37 Mb
+--- main.gms(112) 37 Mb
+--- . ./input/input_55_businessmodel_sonnentank.gms(167) 37 Mb
+--- main.gms(113) 37 Mb
+--- . ./input/input_56_businessmodel_NaS.gms(107) 37 Mb
+--- main.gms(120) 37 Mb
+--- . ./internal/internal_set.gms(112) 37 Mb
+--- main.gms(121) 37 Mb
+--- . ./internal/internal_parameter.gms(87) 37 Mb
+--- main.gms(122) 37 Mb
+--- . ./internal/internal_loop.gms(21) 37 Mb
+--- main.gms(158) 37 Mb
+--- . ./module/define_energyLink_module.gms(373) 37 Mb
+--- main.gms(159) 37 Mb
+--- . ./module/define_powerLink_module.gms(41) 37 Mb
+--- main.gms(160) 37 Mb
+--- . ./module/define_optimizationhighness_module.gms(91) 37 Mb
+--- main.gms(162) 37 Mb
+--- . ./module/define_operationInitialization.gms(55) 37 Mb 34 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(56) 37 Mb 37 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(57) 37 Mb 40 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(58) 37 Mb 43 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(59) 37 Mb 46 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(60) 37 Mb 49 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(66) 37 Mb 53 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error 148 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Dimension different - The symbol is referenced with more/less
+       indices as declared
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(67) 37 Mb 57 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error 148 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Dimension different - The symbol is referenced with more/less
+       indices as declared
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(68) 37 Mb 61 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error 148 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Dimension different - The symbol is referenced with more/less
+       indices as declared
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(69) 37 Mb 65 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error 148 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Dimension different - The symbol is referenced with more/less
+       indices as declared
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(75) 37 Mb 68 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(76) 37 Mb 71 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(77) 37 Mb 74 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(78) 37 Mb 77 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(79) 37 Mb 80 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(80) 37 Mb 83 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(86) 37 Mb 86 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(87) 37 Mb 89 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(88) 37 Mb 92 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(89) 37 Mb 95 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(90) 37 Mb 98 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(91) 37 Mb 101 Errors
+*** Error 121 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Set expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    ')' expected
+*** Error 409 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_operationInitialization.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- . ./module/define_operationInitialization.gms(279) 37 Mb
+--- main.gms(163) 37 Mb
+--- . ./module/define_sectoralaffiliation_module.gms(208) 37 Mb
+--- main.gms(164) 37 Mb
+--- . ./module/define_scaling.gms(96) 37 Mb 104 Errors
+*** Error 352 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Set has not been initialized
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Set has not been initialized
+--- . ./module/define_scaling.gms(112) 37 Mb 107 Errors
+*** Error 352 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Set has not been initialized
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Set has not been initialized
+--- . ./module/define_scaling.gms(130) 37 Mb 110 Errors
+*** Error 352 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Set has not been initialized
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Set has not been initialized
+--- . ./module/define_scaling.gms(154) 37 Mb 113 Errors
+*** Error 352 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Set has not been initialized
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Set has not been initialized
+--- . ./module/define_scaling.gms(188) 37 Mb 115 Errors
+*** Error 352 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/define_scaling.gms
+    Set has not been initialized
+--- . ./module/define_scaling.gms(224) 37 Mb
+--- main.gms(168) 37 Mb
+--- . ./module/define_fares_CH_module.gms(282) 37 Mb
+--- main.gms(169) 37 Mb
+--- . ./module/define_fares_GER_module.gms(418) 37 Mb
+--- main.gms(171) 37 Mb
+--- . ./module/define_cashFlow_module.gms(361) 37 Mb
+--- main.gms(173) 37 Mb
+--- . ./module/define_relativeStatusCost_module.gms(7) 37 Mb
+--- main.gms(174) 37 Mb
+--- . ./module/define_absoluteStatusCost_module.gms(5) 37 Mb
+--- main.gms(176) 37 Mb
+--- . ./module/set_energyLink_module.gms(55) 37 Mb
+--- main.gms(177) 37 Mb
+--- . ./module/set_powerLink_module.gms(52) 37 Mb
+--- main.gms(178) 37 Mb
+--- . ./module/set_grid_NS_module.gms(32) 37 Mb
+--- main.gms(179) 37 Mb
+--- . ./module/set_market_MS_module.gms(46) 37 Mb
+--- main.gms(180) 37 Mb
+--- . ./module/set_load_DS_module.gms(153) 37 Mb
+--- . ./module/set_load_DS_module.gms(282) 37 Mb
+--- main.gms(181) 37 Mb
+--- . ./module/set_load_DS_H_module.gms(251) 37 Mb
+--- main.gms(182) 37 Mb
+--- . ./module/set_load_DS_CL_module.gms(252) 37 Mb
+--- main.gms(184) 37 Mb
+--- . ./module/set_tech_DES_ES_module.gms(176) 37 Mb
+--- main.gms(185) 37 Mb
+--- . ./module/set_tech_DES_TS_module.gms(141) 37 Mb
+--- main.gms(186) 37 Mb
+--- . ./module/set_tech_DES_CS_module.gms(139) 37 Mb
+--- main.gms(187) 37 Mb
+--- . ./module/set_tech_DES_HS_module.gms(139) 37 Mb
+--- main.gms(188) 37 Mb
+--- . ./module/set_tech_DES_CLS_module.gms(117) 37 Mb
+--- main.gms(189) 37 Mb
+--- . ./module/set_tech_DES_GS_module.gms(139) 37 Mb
+--- main.gms(190) 37 Mb
+--- . ./module/set_tech_DES_NGB_module.gms(18) 37 Mb
+--- main.gms(191) 37 Mb
+--- . ./module/set_tech_DES_EB_module.gms(46) 37 Mb
+--- main.gms(192) 37 Mb
+--- . ./module/set_tech_DES_PV_module.gms(40) 37 Mb
+--- main.gms(193) 37 Mb
+--- . ./module/set_tech_DES_HP_module.gms(26) 37 Mb 116 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_HP_module.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- . ./module/set_tech_DES_HP_module.gms(33) 37 Mb 117 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_HP_module.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- . ./module/set_tech_DES_HP_module.gms(45) 37 Mb 118 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_HP_module.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- . ./module/set_tech_DES_HP_module.gms(51) 37 Mb 119 Errors
+*** Error 140 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_HP_module.gms
+    Unknown symbol
+--- . ./module/set_tech_DES_HP_module.gms(139) 37 Mb 120 Errors
+*** Error 140 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_HP_module.gms
+    Unknown symbol
+--- . ./module/set_tech_DES_HP_module.gms(302) 37 Mb
+--- main.gms(194) 37 Mb
+--- . ./module/set_tech_DES_ST_module.gms(28) 37 Mb
+--- main.gms(195) 37 Mb
+--- . ./module/set_tech_DES_CHP_module.gms(201) 37 Mb
+--- main.gms(196) 37 Mb
+--- . ./module/set_tech_DES_CR_module.gms(43) 37 Mb
+--- main.gms(197) 37 Mb
+--- . ./module/set_tech_DES_SC_module.gms(21) 37 Mb
+--- main.gms(198) 37 Mb
+--- . ./module/set_tech_DES_FC_module.gms(18) 37 Mb
+--- main.gms(199) 37 Mb
+--- . ./module/set_tech_DES_EY_module.gms(252) 37 Mb
+--- main.gms(200) 37 Mb
+--- . ./module/set_tech_DES_BMB_module.gms(27) 37 Mb 123 Errors
+*** Error 120 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+--- . ./module/set_tech_DES_BMB_module.gms(30) 37 Mb 128 Errors
+*** Error 120 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+--- . ./module/set_tech_DES_BMB_module.gms(31) 37 Mb 130 Errors
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+--- . ./module/set_tech_DES_BMB_module.gms(34) 37 Mb 132 Errors
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+--- . ./module/set_tech_DES_BMB_module.gms(35) 37 Mb 136 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+--- . ./module/set_tech_DES_BMB_module.gms(38) 37 Mb 140 Errors
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+--- . ./module/set_tech_DES_BMB_module.gms(39) 37 Mb 143 Errors
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+--- . ./module/set_tech_DES_BMB_module.gms(43) 37 Mb 147 Errors
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+--- . ./module/set_tech_DES_BMB_module.gms(44) 37 Mb 151 Errors
+*** Error 119 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Number (primary) expected
+*** Error   8 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    ')' expected
+*** Error  12 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    ';' expected
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+--- . ./module/set_tech_DES_BMB_module.gms(45) 37 Mb 152 Errors
+*** Error  36 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    '=' or '..' or ':=' or '$=' operator expected
+    rest of statement ignored
+--- . ./module/set_tech_DES_BMB_module.gms(68) 37 Mb 153 Errors
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+--- . ./module/set_tech_DES_BMB_module.gms(69) 37 Mb 154 Errors
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+--- . ./module/set_tech_DES_BMB_module.gms(71) 37 Mb 155 Errors
+*** Error 171 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Domain violation for set
+--- . ./module/set_tech_DES_BMB_module.gms(77) 37 Mb 156 Errors
+*** Error 140 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./module/set_tech_DES_BMB_module.gms
+    Unknown symbol
+--- . ./module/set_tech_DES_BMB_module.gms(86) 37 Mb
+--- main.gms(202) 37 Mb
+--- . ./module/set_tech_SS_PHS_module.gms(117) 37 Mb
+--- main.gms(203) 37 Mb
+--- . ./module/set_tech_SS_PHS_schedule_module.gms(42) 37 Mb
+--- main.gms(204) 37 Mb
+--- . ./module/set_tech_SS_WT_module.gms(76) 37 Mb
+--- main.gms(205) 37 Mb
+--- . ./module/set_tech_SS_WT_schedule_module.gms(41) 37 Mb
+--- main.gms(206) 37 Mb
+--- . ./module/set_tech_SS_CHP_module.gms(654) 37 Mb
+--- main.gms(207) 37 Mb
+--- . ./module/set_tech_SS_CHP_schedule_module.gms(53) 37 Mb
+--- main.gms(208) 37 Mb
+--- . ./module/set_tech_SS_RC_module.gms(459) 37 Mb
+--- main.gms(209) 37 Mb
+--- . ./module/set_tech_SS_RC_schedule_module.gms(57) 37 Mb
+--- main.gms(210) 37 Mb
+--- . ./module/set_tech_SS_PV_module.gms(77) 37 Mb
+--- main.gms(211) 37 Mb
+--- . ./module/set_tech_SS_PV_schedule_module.gms(20) 37 Mb
+--- main.gms(212) 37 Mb
+--- . ./module/set_tech_SS_RH_module.gms(38) 37 Mb
+--- main.gms(213) 37 Mb
+--- . ./module/set_tech_SS_RH_schedule_module.gms(16) 37 Mb
+--- main.gms(214) 37 Mb
+--- . ./module/set_tech_SS_ETB_module.gms(31) 37 Mb
+--- main.gms(216) 37 Mb
+--- . ./module/set_tech_SS_TPS_module.gms(228) 37 Mb
+--- main.gms(217) 37 Mb
+
+--- . ./module/set_tech_SS_TPS_schedule_module.gms(44) 37 Mb
+--- main.gms(219) 37 Mb
+--- . ./module/set_tech_SS_BGP_schedule_module.gms(54) 37 Mb
+--- main.gms(220) 37 Mb
+--- . ./module/set_tech_SS_PLB_module.gms(24) 37 Mb
+--- main.gms(222) 37 Mb
+--- . ./module/set_tech_SS_TC_schedule_module.gms(23) 37 Mb
+--- main.gms(223) 37 Mb
+--- . ./module/set_tech_SS_EY_module.gms(459) 38 Mb
+--- main.gms(225) 38 Mb
+--- . ./module/business_model_PV_direct_CH_module.gms(108) 38 Mb
+--- main.gms(226) 38 Mb
+--- . ./module/business_model_PV_direct_GER_module.gms(208) 38 Mb
+--- main.gms(228) 38 Mb
+--- . ./module/business_model_NaS_CH_module.gms(143) 38 Mb
+--- main.gms(229) 38 Mb
+--- . ./module/business_model_Sonnentank_CH_module.gms(168) 38 Mb
+--- main.gms(231) 38 Mb
+--- . ./module/define_correction.gms(5) 38 Mb
+--- main.gms(238) 38 Mb
+--- . ./module/objective_function_module.gms(30) 38 Mb
+--- main.gms(355) 38 Mb
+--- . ./output/output_opt.gms(39) 38 Mb
+--- main.gms(356) 38 Mb
+--- . ./output/output_npv.gms(255) 38 Mb
+--- main.gms(357) 38 Mb
+--- . ./output/output_kpis.gms(1414) 38 Mb
+--- main.gms(358) 38 Mb
+--- . ./output/output_energy.gms(1720) 38 Mb
+--- main.gms(359) 38 Mb
+--- . ./output/output_power.gms(10) 38 Mb
+--- main.gms(360) 38 Mb
+--- . ./output/output_bm.gms(32) 38 Mb
+--- main.gms(436) 38 Mb 157 Errors
+*** Error 188 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Assigning to this set is NOT allowed. The set may have been
+       used in a domain definition or is a predefined/readonly set.
+--- main.gms(437) 38 Mb 158 Errors
+*** Error 188 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Assigning to this set is NOT allowed. The set may have been
+       used in a domain definition or is a predefined/readonly set.
+--- main.gms(439) 38 Mb 159 Errors
+*** Error 188 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Assigning to this set is NOT allowed. The set may have been
+       used in a domain definition or is a predefined/readonly set.
+--- main.gms(492) 38 Mb 160 Errors
+*** Error 257 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Solve statement not checked because of previous errors
+--- main.gms(506) 38 Mb 161 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- main.gms(507) 38 Mb 162 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- main.gms(510) 38 Mb
+--- . ./processing/calculate_npv_module.gms(19) 38 Mb
+--- .. ./processing/define_fares_GER_preprocessing.gms(41) 38 Mb
+--- . ./processing/calculate_npv_module.gms(67) 38 Mb 163 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./processing/calculate_npv_module.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- . ./processing/calculate_npv_module.gms(70) 38 Mb 164 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./processing/calculate_npv_module.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- . ./processing/calculate_npv_module.gms(75) 38 Mb 165 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./processing/calculate_npv_module.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- . ./processing/calculate_npv_module.gms(178) 38 Mb
+--- .. ./processing/define_fares_GER_postprocessing.gms(64) 38 Mb
+--- . ./processing/calculate_npv_module.gms(218) 38 Mb
+--- main.gms(511) 38 Mb
+--- . ./processing/calculate_kpi_module.gms(134) 38 Mb 166 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./processing/calculate_kpi_module.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- . ./processing/calculate_kpi_module.gms(183) 38 Mb 167 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\./processing/calculate_kpi_module.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- . ./processing/calculate_kpi_module.gms(687) 38 Mb
+--- main.gms(512) 38 Mb
+--- . ./processing/calculate_energy_module.gms(327) 38 Mb
+--- main.gms(513) 38 Mb
+--- . ./processing/calculate_power_module.gms(7) 38 Mb
+--- main.gms(514) 38 Mb
+--- . ./processing/calculate_opt_module.gms(9) 38 Mb
+--- main.gms(517) 38 Mb
+--- . ./output/structure/csv_output_balancing_customermdl_step.gms(1831) 38 Mb
+--- main.gms(518) 38 Mb
+--- . ./output/structure/csv_output_accounting_customermdl_step.gms(115) 38 Mb
+--- main.gms(555) 38 Mb 168 Errors
+*** Error 257 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Solve statement not checked because of previous errors
+--- main.gms(566) 38 Mb
+--- . ./processing/calculate_npv_module.gms(19) 38 Mb
+--- .. ./processing/define_fares_GER_preprocessing.gms(41) 38 Mb
+--- . ./processing/calculate_npv_module.gms(178) 38 Mb
+--- .. ./processing/define_fares_GER_postprocessing.gms(64) 38 Mb
+--- . ./processing/calculate_npv_module.gms(218) 38 Mb
+--- main.gms(567) 38 Mb
+--- . ./processing/calculate_kpi_module.gms(687) 38 Mb
+--- main.gms(568) 38 Mb
+--- . ./processing/calculate_energy_module.gms(327) 38 Mb
+--- main.gms(569) 38 Mb
+--- . ./processing/calculate_power_module.gms(1) 38 Mb
+--- . ./processing/calculate_power_module.gms(7) 38 Mb
+--- main.gms(570) 38 Mb
+--- . ./processing/calculate_opt_module.gms(9) 38 Mb
+--- main.gms(573) 38 Mb
+--- . ./output/structure/csv_output_balancing_organizmdl_step.gms(1854) 38 Mb
+--- main.gms(574) 38 Mb
+--- . ./output/structure/csv_output_accounting_organizmdl_step.gms(138) 38 Mb
+--- main.gms(592) 38 Mb 169 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- main.gms(593) 38 Mb 170 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- main.gms(594) 38 Mb 171 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- main.gms(595) 38 Mb 172 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- main.gms(596) 38 Mb 173 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- main.gms(597) 38 Mb 174 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- main.gms(598) 38 Mb 175 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- main.gms(611) 38 Mb 176 Errors
+*** Error 141 in C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\main.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- main.gms(652) 38 Mb
+--- GDX File C:\Users\ks26mije\Documents\GitHub\IRPopt\IRPsim\test3.gdx
+--- main.gms(652) 38 Mb 176 Errors
+*** Status: Compilation error(s)
+--- Job main.gms Stop 09/24/26 09:49:34 elapsed 0:00:01.705
+

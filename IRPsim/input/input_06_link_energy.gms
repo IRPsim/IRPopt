@@ -190,6 +190,27 @@ $LOAD par_X_W_DES_EB_DS_WLoad_energyLink
 PARAMETER par_X_W_DES_NGB_DS_WLoad_energyLink(set_tech_DES_NGB,set_load_DS_W) Energieverbindung
 $LOAD par_X_W_DES_NGB_DS_WLoad_energyLink
 
+* - description: Bitte legen Sie hier fest, ob eine Energieverbindung vom Biomassemarkt zu folgendem Prosumstorer (Technologie, Last, Netz, Markt etc.) bestehen soll
+* - type: Boolean
+* - identifier: Energieverbindung von Biomassemarkt zu Prosumstorer
+* - domain: [0|1]
+PARAMETER par_X_B_MS_BMarket_DES_BMB_energyLink(set_market_MS_B,set_tech_DES_BMB) Energieverbindung
+$LOAD par_X_B_MS_BMarket_DES_BMB_energyLink
+
+* - description: Bitte legen Sie hier fest, ob eine Energieverbindung vom Biomasseboiler zu folgendem Prosumstorer (Technologie, Last, Netz, Markt etc.) bestehen soll
+* - type: Boolean
+* - identifier: Energieverbindung von Biomasseboiler zu Prosumstorer
+* - domain: [0|1]
+PARAMETER par_X_W_DES_BMB_DS_WLoad_energyLink(set_tech_DES_BMB,set_load_DS_W) Energieverbindung
+$LOAD par_X_W_DES_BMB_DS_WLoad_energyLink
+
+* - description: Bitte legen Sie hier fest, ob eine Energieverbindung vom Biomasseboiler zu folgendem Prosumstorer (Technologie, Last, Netz, Markt etc.) bestehen soll
+* - type: Boolean
+* - identifier: Energieverbindung von Biomasseboiler zu Prosumstorer
+* - domain: [0|1]
+PARAMETER par_X_W_DES_BMB_DES_TS_energyLink(set_tech_DES_BMB,set_tech_DES_TS) Energieverbindung
+$LOAD par_X_W_DES_BMB_DES_TS_energyLink
+
 * - description: Bitte legen Sie hier fest, ob eine Energieverbindung von der Wärmepumpe zu folgendem Prosumstorer (Technologie, Last, Netz, Markt etc.) bestehen soll
 * - type: Boolean
 * - identifier: Energieverbindung von Wärmepumpe zu Prosumstorer

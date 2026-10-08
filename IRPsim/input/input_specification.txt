@@ -110,6 +110,7 @@ set=set_tech_DES_GTP rng=Technologiesets!Z3:Z3 rdim=1
 set=set_tech_DES_FC rng=Technologiesets!AG3:AG3 rdim=1
 set=set_tech_DES_EY rng=Technologiesets!AH3:AH3 rdim=1
 set=set_tech_DES_CLS rng=Technologiesets!AL3:AL3 rdim=1
+set=set_tech_DES_BMB rng=Technologiesets!AN3:AN3 rdim=1
 
 set=set_tech_SS_WT rng=Technologiesets!G3:G3 rdim=1
 set=set_tech_SS_CHP rng=Technologiesets!H3:H3 rdim=1
@@ -191,7 +192,8 @@ par=par_X_H_SS_EY_SS_FC_energyLink rng=energyLink_base_EY_SS!V3:X3 rdim=2
 par=par_X_E_SS_CHP_SS_EY_energyLink rng=energyLink_base_EY_SS!S3:U3 rdim=2
 par=par_X_H_DES_HS_SS_FC_energyLink rng=energyLink_base_EY_SS!AK3:AM3 rdim=2
 par=par_X_E_SS_WT_SS_EY_energyLink rng=energyLink_base_EY_SS!AQ3:AS3 rdim=2
-
+par=par_X_W_DES_BMB_DS_WLoad_energyLink rng=energyLink_base!QR3:QT3 rdim=2
+par=par_X_W_DES_BMB_DES_TS_energyLink rng=energyLink_base!QX3:QZ3 rdim=2
 
 par=par_X_E_NS_fromEGrid_DES_toES_energyLink rng=energyLink_base!AB3:AD4 rdim=2
 par=par_X_E_NS_EGrid_DES_HP_energyLink rng=energyLink_base!AE3:AG3 rdim=2
@@ -287,6 +289,7 @@ par=par_X_B_MS_BMarket_SS_TPS_energyLink rng=energyLink_base!OG3:OI5 rdim=2
 par=par_X_B_MS_BMarket_SS_CHP_energyLink rng=energyLink_base!OJ3:OL5 rdim=2
 
 par=par_X_B_MS_BMarket_DES_CHP_energyLink rng=energyLink_base!QI3:QK5 rdim=2
+par=par_X_B_MS_BMarket_DES_BMB_energyLink rng=energyLink_base!QU3:QW3 rdim=2
 
 par=par_X_B_MS_BMarket_SS_BGP_energyLink rng=energyLink_base!JZ3:KB5 rdim=2
 par=par_X_RF_MS_RFMarket_SS_RC_energyLink rng=energyLink_base!KC3:KE3 rdim=2
@@ -497,6 +500,7 @@ par=par_OH_DES_FC_side rng=OH_DES!AK3:AM10 rdim=2
 par=par_OH_DES_EY_side rng=OH_DES!AN3:AP10 rdim=2
 par=par_OH_DES_GS_side rng=OH_DES!AQ3:AS10 rdim=2
 par=par_OH_DES_CLS_side rng=OH_DES!AT3:AV10 rdim=2
+par=par_OH_DES_BMB_side rng=OH_DES!AX3:AY10 rdim=2
 
 *Optimierungshoheit Lasten
 *****************************************************
@@ -592,6 +596,7 @@ par=par_COH_DES_FC_side rng=COH_DES!AK3:AM10 rdim=2
 par=par_COH_DES_EY_side rng=COH_DES!AN3:AP10 rdim=2
 par=par_COH_DES_GS_side rng=COH_DES!AQ3:AS10 rdim=2
 par=par_COH_DES_CLS_side rng=COH_DES!AT3:AV10 rdim=2
+par=par_COH_DES_BMB_side rng=COH_DES!AW3:AY10 rdim=2
 
 *Optimierungshoheit Sektoren
 *****************************************************
@@ -846,6 +851,7 @@ par=par_X_CL_DES_CLS_scaling rng=DES_CLS!AI3:AJ3 rdim=1
 par=par_X_G_DES_GS_scaling rng=DES_GS!AI3:AJ3 rdim=1
 par=par_X_H_DES_EY_scaling rng=DES_EY!W3:X3 rdim=1
 par=par_X_H_DES_FC_scaling rng=DES_FC!W3:X3 rdim=1
+par=par_X_W_DES_BMB_scaling rng=DES_BMB!AA3:AB3 rdim=1
 
 par=par_X_DS_E_scaling rng=DS!CR3:CS3 rdim=1
 par=par_X_DS_W_scaling rng=DS!CT3:CU3 rdim=1
@@ -944,6 +950,21 @@ par=par_Eta_DES_NGB rng=DES_NGB!C3:D3 rdim=1
 par=par_Wear_DES_NGB rng=DES_NGB!Q3:R3 rdim=1
 par=par_Learning_DES_NGB rng=DES_NGB!S3:T3 rdim=1
 par=par_Q_DES_NGB_utilpercent rng=DES_NGB!AC3:AE674 rdim=2
+
+par=par_Q_DES_BMB_max rng=DES_BMB!A3:B3  rdim=1
+par=par_Q_DES_BMB_min rng=DES_BMB!C3:D3  rdim=1
+par=par_Eta_DES_BMB_nom rng=DES_BMB!E3:F3  rdim=1
+par=par_K_DES_BMB rng=DES_BMB!G3:H3  rdim=1
+par=par_Life_DES_BMB rng=DES_BMB!I3:J3  rdim=1
+par=par_C_DES_BMB_Cap rng=DES_BMB!K3:L3  rdim=1
+par=par_Ctrend_DES_BMB_Cap rng=DES_BMB!M3:N3  rdim=1
+par=par_Alpha_DES_BMB_Ins rng=DES_BMB!O3:P3  rdim=1
+par=par_Alpha_DES_BMB_OuM rng=DES_BMB!Q3:R3  rdim=1
+par=par_Inc_DES_BMB rng=DES_BMB!S3:T3  rdim=1
+par=par_Wear_DES_BMB rng=DES_BMB!U3:V3  rdim=1
+par=par_Learning_DES_BMB rng=DES_BMB!W3:X3  rdim=1
+par=par_Inc_PS_BMB rng=DES_BMB!Y3:Z3  rdim=1
+par=par_Q_DES_BMB_utilpercent rng=DES_BMB!AC3:AE674 rdim=2
 
 par=par_P_DES_FC_max rng=DES_FC!A3:B3 rdim=1
 par=par_Eta_DES_FC rng=DES_FC!C3:D3 rdim=1

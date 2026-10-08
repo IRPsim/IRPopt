@@ -80,6 +80,15 @@ $LOAD par_X_C_DES_SC_scaling
 PARAMETER par_X_W_DES_NGB_scaling(set_tech_DES_NGB) Skalierungsoption
 $LOAD par_X_W_DES_NGB_scaling
 
+* - description: Bitte geben Sie an, ob der Biomasseboiler auf die Anzahl der Mitglieder der ihm zugeordneten Prosumergruppe skaliert werden soll
+* - type: Boolean
+* - identifier: Skalierung Biomasseboiler
+* - unit:
+* - domain: [0|1]
+* - default: 1
+PARAMETER par_X_W_DES_BMB_scaling(set_tech_DES_BMB) Skalierungsoption
+$LOAD par_X_W_DES_BMB_scaling
+
 * - description: Bitte geben Sie an, ob die Brennstoffzelle auf die Anzahl der Mitglieder der ihm zugeordneten Prosumergruppe skaliert werden soll
 * - type: Boolean
 * - identifier: Skalierung Brennstoffzelle

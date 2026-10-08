@@ -64,6 +64,16 @@ $LOAD par_X_R_DES_EY_NS_RGrid_energyLink
 PARAMETER par_X_E_DES_ES_DES_EY_energyLink(set_tech_DES_ES,set_tech_DES_EY) Energieverbindung
 $LOAD par_X_E_DES_ES_DES_EY_energyLink
 
+$ontext
+* - description: Bitte legen Sie hier fest, ob eine Energieverbindung von der Windturbine zu folgendem Prosumstorer (Technologie, Last, Netz, Markt etc.) bestehen soll
+* - type: Boolean
+* - identifier: Energieverbindung von Windturbine zu Prosumstorer
+* - domain: [0|1]
+* - color: DarkCyan
+PARAMETER par_X_E_SS_WT_DES_EY_energyLink(set_tech_SS_WT,set_tech_DES_EY) Energieverbindung
+$LOAD par_X_E_SS_WT_DES_EY_energyLink
+$offtext
+
 * - description: Bitte legen Sie hier fest, ob eine Energieverbindung von der PV-Anlage zu folgendem Prosumstorer (Technologie, Last, Netz, Markt etc.) bestehen soll
 * - type: Boolean
 * - identifier: Energieverbindung von PV-Anlage zu Prosumstorer

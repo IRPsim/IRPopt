@@ -83,6 +83,13 @@ $LOAD par_COH_DES_CS_side
 PARAMETER par_COH_DES_NGB_side(set_side,set_tech_DES_NGB) Bilanzierungshoheit
 $LOAD par_COH_DES_NGB_side
 
+* - description: Bitte markieren Sie hier den Aktuer mit "Ja", der die Bilanzierungshoheit über den Biomasseboiler besitzen soll
+* - type: Boolean
+* - identifier: Bilanzierungshoheit Biomasseboiler
+* - domain: [0|1]
+PARAMETER par_COH_DES_BMB_side(set_side,set_tech_DES_BMB) Bilanzierungshoheit
+$LOAD par_COH_DES_BMB_side
+
 * - description: Bitte markieren Sie hier den Aktuer mit "Ja", der die Bilanzierungshoheit über die Kältemaschine besitzen soll
 * - type: Boolean
 * - identifier: Bilanzierungshoheit Kältemaschine
