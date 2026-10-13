@@ -963,7 +963,6 @@ par=par_Alpha_DES_BMB_OuM rng=DES_BMB!Q3:R3 rdim=1
 par=par_Inc_DES_BMB rng=DES_BMB!S3:T3 rdim=1
 par=par_Wear_DES_BMB rng=DES_BMB!U3:V3 rdim=1
 par=par_Learning_DES_BMB rng=DES_BMB!W3:X3 rdim=1
-par=par_Inc_PS_BMB rng=DES_BMB!Y3:Z3 rdim=1
 par=par_Q_DES_BMB_utilpercent rng=DES_BMB!AA3:AC674 rdim=2
 
 par=par_P_DES_FC_max rng=DES_FC!A3:B3 rdim=1
