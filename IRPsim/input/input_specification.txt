@@ -500,7 +500,7 @@ par=par_OH_DES_FC_side rng=OH_DES!AK3:AM10 rdim=2
 par=par_OH_DES_EY_side rng=OH_DES!AN3:AP10 rdim=2
 par=par_OH_DES_GS_side rng=OH_DES!AQ3:AS10 rdim=2
 par=par_OH_DES_CLS_side rng=OH_DES!AT3:AV10 rdim=2
-par=par_OH_DES_BMB_side rng=OH_DES!AX3:AY10 rdim=2
+par=par_OH_DES_BMB_side rng=OH_DES!AW3:AY10 rdim=2
 
 *Optimierungshoheit Lasten
 *****************************************************
