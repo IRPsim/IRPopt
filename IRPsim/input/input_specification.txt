@@ -851,7 +851,7 @@ par=par_X_CL_DES_CLS_scaling rng=DES_CLS!AI3:AJ3 rdim=1
 par=par_X_G_DES_GS_scaling rng=DES_GS!AI3:AJ3 rdim=1
 par=par_X_H_DES_EY_scaling rng=DES_EY!W3:X3 rdim=1
 par=par_X_H_DES_FC_scaling rng=DES_FC!W3:X3 rdim=1
-par=par_X_W_DES_BMB_scaling rng=DES_BMB!AA3:AB3 rdim=1
+par=par_X_W_DES_BMB_scaling rng=DES_BMB!Y3:Z3 rdim=1
 
 par=par_X_DS_E_scaling rng=DS!CR3:CS3 rdim=1
 par=par_X_DS_W_scaling rng=DS!CT3:CU3 rdim=1
@@ -951,20 +951,20 @@ par=par_Wear_DES_NGB rng=DES_NGB!Q3:R3 rdim=1
 par=par_Learning_DES_NGB rng=DES_NGB!S3:T3 rdim=1
 par=par_Q_DES_NGB_utilpercent rng=DES_NGB!AC3:AE674 rdim=2
 
-par=par_Q_DES_BMB_max rng=DES_BMB!A3:B3  rdim=1
-par=par_Q_DES_BMB_min rng=DES_BMB!C3:D3  rdim=1
-par=par_Eta_DES_BMB_nom rng=DES_BMB!E3:F3  rdim=1
-par=par_K_DES_BMB rng=DES_BMB!G3:H3  rdim=1
-par=par_Life_DES_BMB rng=DES_BMB!I3:J3  rdim=1
-par=par_C_DES_BMB_Cap rng=DES_BMB!K3:L3  rdim=1
-par=par_Ctrend_DES_BMB_Cap rng=DES_BMB!M3:N3  rdim=1
-par=par_Alpha_DES_BMB_Ins rng=DES_BMB!O3:P3  rdim=1
-par=par_Alpha_DES_BMB_OuM rng=DES_BMB!Q3:R3  rdim=1
-par=par_Inc_DES_BMB rng=DES_BMB!S3:T3  rdim=1
-par=par_Wear_DES_BMB rng=DES_BMB!U3:V3  rdim=1
-par=par_Learning_DES_BMB rng=DES_BMB!W3:X3  rdim=1
-par=par_Inc_PS_BMB rng=DES_BMB!Y3:Z3  rdim=1
-par=par_Q_DES_BMB_utilpercent rng=DES_BMB!AC3:AE674 rdim=2
+par=par_Q_DES_BMB_max rng=DES_BMB!A3:B3 rdim=1
+par=par_Q_DES_BMB_min rng=DES_BMB!C3:D3 rdim=1
+par=par_Eta_DES_BMB_nom rng=DES_BMB!E3:F3 rdim=1
+par=par_K_DES_BMB rng=DES_BMB!G3:H3 rdim=1
+par=par_Life_DES_BMB rng=DES_BMB!I3:J3 rdim=1
+par=par_C_DES_BMB_Cap rng=DES_BMB!K3:L3 rdim=1
+par=par_Ctrend_DES_BMB_Cap rng=DES_BMB!M3:N3 rdim=1
+par=par_Alpha_DES_BMB_Ins rng=DES_BMB!O3:P3 rdim=1
+par=par_Alpha_DES_BMB_OuM rng=DES_BMB!Q3:R3 rdim=1
+par=par_Inc_DES_BMB rng=DES_BMB!S3:T3 rdim=1
+par=par_Wear_DES_BMB rng=DES_BMB!U3:V3 rdim=1
+par=par_Learning_DES_BMB rng=DES_BMB!W3:X3 rdim=1
+par=par_Inc_PS_BMB rng=DES_BMB!Y3:Z3 rdim=1
+par=par_Q_DES_BMB_utilpercent rng=DES_BMB!AA3:AC674 rdim=2
 
 par=par_P_DES_FC_max rng=DES_FC!A3:B3 rdim=1
 par=par_Eta_DES_FC rng=DES_FC!C3:D3 rdim=1
