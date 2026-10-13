@@ -33,9 +33,7 @@ $LOAD par_Q_DES_BMB_min
 PARAMETER par_Eta_DES_BMB_nom(set_tech_DES_BMB) Nennwirkungsgrad Biomasseboiler
 $LOAD par_Eta_DES_BMB_nom
 
-* - description: Bitte geben Sie hier den Kurvenparameter K der lastabhaengigen Effizienzkurve eta(beta) = eta_nom*(1-exp(-K*beta)) an.
-*                ACHTUNG: beta ist im Modell auf [0,1] normiert, daher par_K_DES_BMB = 100 * K_Literatur
-*                (z.B. 14.0 fuer den 12-kW-Pelletkessel, 2. Regression)
+* - description: Bitte geben Sie hier den Kurvenparameter K der lastabhaengigen Effizienzkurve eta(beta) = eta_nom*(1-exp(-K*beta)) an. ACHTUNG: beta ist im Modell auf [0,1] normiert, daher par_K_DES_BMB = 100 * K_Literatur (z.B. 14.0 fuer den 12-kW-Pelletkessel, 2. Regression)
 * - type: Float
 * - identifier: Kurvenparameter Biomasseboiler
 * - unit:
