@@ -144,5 +144,5 @@ $LOAD par_Inc_DES_BMB
 * - validation:
 * - hidden:
 * - processing:
-PARAMETER par_Q_DES_BMB_percent(set_ii,set_tech_DES_BMB) Prozentuale Verfuegung Leistung Biomasseboiler
+PARAMETER par_Q_DES_BMB_utilpercent(set_ii,set_tech_DES_BMB) Prozentuale Verfuegung Leistung Biomasseboiler
 $LOAD par_Q_DES_BMB_utilpercent
