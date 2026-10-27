@@ -48,7 +48,7 @@ par_T_DES_HP_sink(set_ii,set_tech_DES_HP)$set_DES_HP_sink(set_tech_DES_HP,'floor
     = 30 - 0.5 * par_T_DES_HP_source(set_ii,set_tech_DES_HP);
 
 par_T_DES_HP_sink(set_ii,set_tech_DES_HP)$set_DES_HP_sink(set_tech_DES_HP,'manual')
-    = par_T_DES_HP_sink_manual(set_tech_DES_HP);
+    = par_T_DES_HP_sink(set_ii,set_tech_DES_HP);
     
 ***-----------------------------------------------------------------------------
 ***Leistungszahl (COP)
@@ -128,7 +128,7 @@ IF (par_X_DES_HP_type(set_ii,set_tech_DES_HP) = 'WSHP',...;
         + 0.00149 * (par_T_DES_HP_sink(set_ii,set_tech_DES_HP) - par_T_DES_HP_source(set_ii,set_tech_DES_HP))^2;
 );
 
-$offtext
+
 par_Inc_PS_HP(set_tech_DES_HP) = 1;
 par_Inc_DES_HP(set_tech_DES_HP) = 1;
 
@@ -174,7 +174,7 @@ LOOP((set_ii,set_tech_DES_HP),
 
 par_Q_DES_HP_max_temp(set_ii,set_tech_DES_HP) = par_Q_DES_HP_max(set_tech_DES_HP);
 
-*$offtext
+$offtext
 $ontext
 LOOP((set_ii,set_tech_DES_HP),
           IF (par_T_DES_HP(set_ii,set_tech_DES_HP) <= -20,
